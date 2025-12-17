@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Awatif Ejemplos FEM - Fork Personal</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            min-height: 100vh;
+            color: #fff;
+            padding: 40px 20px;
+        }
+        .container { max-width: 1200px; margin: 0 auto; }
+        h1 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            background: linear-gradient(90deg, #00d4ff, #00ff88);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .subtitle {
+            text-align: center;
+            color: #888;
+            margin-bottom: 40px;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+        }
+        .card {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 12px;
+            padding: 24px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: inherit;
+        }
+        .card:hover {
+            background: rgba(255,255,255,0.1);
+            transform: translateY(-5px);
+            border-color: #00d4ff;
+        }
+        .card h3 {
+            color: #00d4ff;
+            margin-bottom: 8px;
+            font-size: 1.3rem;
+        }
+        .card p { color: #aaa; font-size: 0.95rem; }
+        .attribution {
+            text-align: center;
+            margin-top: 60px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #666;
+            font-size: 0.85rem;
+        }
+        .attribution a { color: #00d4ff; text-decoration: none; }
+        .attribution a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Awatif Ejemplos FEM</h1>
+        <p class="subtitle">Plataforma Web de Ingenieria Estructural Parametrica</p>
+
+        <div class="grid">
+            <a href="truss/" class="card">
+                <h3>Truss (Armadura)</h3>
+                <p>Ejemplo basico de armadura con analisis de barras</p>
+            </a>
+            <a href="advanced-truss/" class="card">
+                <h3>Advanced Truss</h3>
+                <p>Armadura avanzada con parametros editables</p>
+            </a>
+            <a href="beams/" class="card">
+                <h3>Beams (Vigas)</h3>
+                <p>Analisis de vigas con cargas y apoyos</p>
+            </a>
+            <a href="plate/" class="card">
+                <h3>Plate (Placa)</h3>
+                <p>Elemento de placa con analisis FEM</p>
+            </a>
+            <a href="3d-structure/" class="card">
+                <h3>3D Structure</h3>
+                <p>Estructura tridimensional completa</p>
+            </a>
+            <a href="building/" class="card">
+                <h3>Building (Edificio)</h3>
+                <p>Modelo de edificio multipisos</p>
+            </a>
+            <a href="slab-designer/" class="card">
+                <h3>Slab Designer</h3>
+                <p>Disenador interactivo de losas</p>
+            </a>
+            <a href="1d-mesh/" class="card">
+                <h3>1D Mesh</h3>
+                <p>Generacion de malla unidimensional</p>
+            </a>
+            <a href="2d-mesh/" class="card">
+                <h3>2D Mesh</h3>
+                <p>Triangulacion y malla bidimensional</p>
+            </a>
+            <a href="color-map/" class="card">
+                <h3>Color Map</h3>
+                <p>Visualizacion con mapas de colores</p>
+            </a>
+            <a href="curves/" class="card">
+                <h3>Curves</h3>
+                <p>Generacion de curvas parametricas</p>
+            </a>
+            <a href="drawing/" class="card">
+                <h3>Drawing</h3>
+                <p>Herramientas de dibujo interactivo</p>
+            </a>
+            <a href="tables/" class="card">
+                <h3>Tables</h3>
+                <p>Edicion tabular de datos estructurales</p>
+            </a>
+            <a href="report/" class="card">
+                <h3>Report</h3>
+                <p>Generacion de reportes de analisis</p>
+            </a>
+        </div>
+
+        <div class="attribution">
+            <p><strong>Creditos:</strong> Basado en <a href="https://github.com/madil4/awatif" target="_blank">Awatif 2.0</a> por Mohamed Adil</p>
+            <p>Licencia MIT | Fork personal para ejemplos de ingenieria estructural</p>
+            <p style="margin-top: 10px;"><a href="https://awatif.co" target="_blank">Sitio oficial de Awatif</a></p>
+        </div>
+    </div>
+</body>
+</html>
