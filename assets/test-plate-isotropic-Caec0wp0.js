@@ -1,12 +1,11 @@
-const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["./styles-DdZBjQss.js","./styles-Sm9c63Sz.css"])))=>i.map(i=>d[i]);
-import { x as $, v as d, g as k, e as N, b as z, d as L } from "./styles-DdZBjQss.js";
-import { d as P, _ as T, __tla as __tla_0 } from "./deformCpp-BfqFyY9O.js";
+import { x as k, v as r, g as z, e as N, b as L, d as T } from "./styles-9FDjb-ad.js";
 import { a as C } from "./analyze-CmnHHflB.js";
-import { g as _ } from "./getParameters-Cw5eBGZx.js";
-import { g as S } from "./getDialog-COZgeqJ-.js";
-import { g as G } from "./getReport-CR2O-zfl.js";
+import { d as P, __tla as __tla_0 } from "./deformCpp-CS-wCYO-.js";
+import { g as G } from "./getParameters-agyy6sUI.js";
+import { g as S } from "./getDialog-BiqeruR6.js";
+import { g as E } from "./getReport-CYLnG9Sc.js";
 import { g as R, __tla as __tla_1 } from "./getMesh-DmUdekin.js";
-import { o as I } from "./unsafe-html-Q7ytxFVR.js";
+import { o as I } from "./unsafe-html-Dv3uUXY0.js";
 import "./complex-i8qiIvCl.js";
 import "./__vite-browser-external-D7Ct-6yo.js";
 Promise.all([
@@ -23,8 +22,8 @@ Promise.all([
     }
   })()
 ]).then(async () => {
-  function M(c) {
-    const r = (c == null ? void 0 : c.validation) || {}, l = r.w_fem ?? 0, v = r.w_navier ?? 0, t = r.error ?? 0, p = r.numNodes ?? 0, h = r.numElements ?? 0, s = r.params || {}, a = (w, D = 4) => Math.abs(w) < 1e-10 ? "0" : Math.abs(w) > 1e6 || Math.abs(w) < 1e-3 ? w.toExponential(D) : w.toFixed(D), e = s.E * Math.pow(s.t, 3) / (12 * (1 - s.nu * s.nu)), g = s.E / (2 * (1 + s.nu)), f = 5 / 6 * g * s.t, u = e, m = e * s.nu, x = e * (1 - s.nu) / 2, n = t < 10, o = `
+  function M(l) {
+    const t = (l == null ? void 0 : l.validation) || {}, d = t.w_fem ?? 0, c = t.w_navier ?? 0, v = t.error ?? 0, m = t.numNodes ?? 0, h = t.numElements ?? 0, s = t.params || {}, a = (w, D = 4) => Math.abs(w) < 1e-10 ? "0" : Math.abs(w) > 1e6 || Math.abs(w) < 1e-3 ? w.toExponential(D) : w.toFixed(D), e = s.E * Math.pow(s.t, 3) / (12 * (1 - s.nu * s.nu)), g = s.E / (2 * (1 + s.nu)), f = 5 / 6 * g * s.t, p = e, u = e * s.nu, x = e * (1 - s.nu) / 2, n = v < 10, o = `
 <style>
   .validation-report {
     font-family: "Times New Roman", Georgia, serif;
@@ -275,8 +274,8 @@ Promise.all([
   <div class="matrix">
     <strong>D<sub>b</sub></strong> =
     <table>
-      <tr><td>${a(u)}</td><td>${a(m)}</td><td>0</td></tr>
-      <tr><td>${a(m)}</td><td>${a(u)}</td><td>0</td></tr>
+      <tr><td>${a(p)}</td><td>${a(u)}</td><td>0</td></tr>
+      <tr><td>${a(u)}</td><td>${a(p)}</td><td>0</td></tr>
       <tr><td>0</td><td>0</td><td>${a(x)}</td></tr>
     </table>
     <span style="font-size: 12px; color: #666;"> N\xB7m</span>
@@ -367,26 +366,26 @@ Promise.all([
 
   <div class="formula">
     <div class="eq">En el centro (a/2, b/2):</div>
-    <div class="eq"><var>w</var><sub>max,Navier</sub> = <span class="target">${a(v, 4)} mm</span> (VALOR OBJETIVO)</div>
+    <div class="eq"><var>w</var><sub>max,Navier</sub> = <span class="target">${a(c, 4)} mm</span> (VALOR OBJETIVO)</div>
   </div>
 
   <h2>6. Resultados de la Simulaci\xF3n</h2>
 
   <div class="mesh-info">
-    <div><strong>Nodos</strong><br>${p}</div>
+    <div><strong>Nodos</strong><br>${m}</div>
     <div><strong>Elementos</strong><br>${h}</div>
     <div><strong>Tipo</strong><br>Tri\xE1ngulo DSG</div>
     <div><strong>Teor\xEDa</strong><br>Mindlin-Reissner</div>
   </div>
 
   <div class="formula">
-    <div class="eq"><var>w</var><sub>max,FEM</sub> = <span class="result">${a(l, 4)} mm</span></div>
+    <div class="eq"><var>w</var><sub>max,FEM</sub> = <span class="result">${a(d, 4)} mm</span></div>
   </div>
 
   <div class="result-box">
     <h2>RESULTADO DE VALIDACI\xD3N</h2>
     <div class="big-number">${n ? "\u2713 PASS" : "\u2717 FAIL"}</div>
-    <p>Error: ${a(t, 2)}% (tolerancia: 10%)</p>
+    <p>Error: ${a(v, 2)}% (tolerancia: 10%)</p>
   </div>
 
   <h2>7. Tabla Comparativa</h2>
@@ -404,9 +403,9 @@ Promise.all([
     <tbody>
       <tr>
         <td><var>w</var><sub>max</sub></td>
-        <td class="target">${a(v, 4)} mm</td>
-        <td>${a(l, 4)} mm</td>
-        <td>${a(t, 2)}%</td>
+        <td class="target">${a(c, 4)} mm</td>
+        <td>${a(d, 4)} mm</td>
+        <td>${a(v, 2)}%</td>
         <td class="${n ? "pass" : "fail"}">${n ? "OK" : "FALLA"}</td>
       </tr>
     </tbody>
@@ -433,7 +432,7 @@ Promise.all([
     <li><strong>Convergencia:</strong> El error disminuye con malla m\xE1s fina. Con 30 divisiones, error < 3%.</li>
     <li><strong>Teor\xEDa:</strong> FEM usa Mindlin-Reissner (incluye corte), Navier asume Kirchhoff (sin corte).</li>
     <li><strong>Shear Locking:</strong> El elemento DSG evita el bloqueo por corte.</li>
-    <li><strong>Discretizaci\xF3n:</strong> Con ${h} elementos triangulares, error t\xEDpico ~${a(t, 1)}%.</li>
+    <li><strong>Discretizaci\xF3n:</strong> Con ${h} elementos triangulares, error t\xEDpico ~${a(v, 1)}%.</li>
   </ul>
 
   <p style="text-align: center; color: #7f8c8d; margin-top: 30px; font-size: 12px;">
@@ -442,11 +441,11 @@ Promise.all([
   </p>
 </div>
 `;
-    return $`${I(o)}`;
+    return k`${I(o)}`;
   }
   const b = {
     a: {
-      value: d.state(10),
+      value: r.state(10),
       min: 5,
       max: 20,
       step: 1,
@@ -454,7 +453,7 @@ Promise.all([
       unit: "length"
     },
     b: {
-      value: d.state(10),
+      value: r.state(10),
       min: 5,
       max: 20,
       step: 1,
@@ -462,7 +461,7 @@ Promise.all([
       unit: "length"
     },
     t: {
-      value: d.state(0.15),
+      value: r.state(0.15),
       min: 0.05,
       max: 0.5,
       step: 0.01,
@@ -470,7 +469,7 @@ Promise.all([
       unit: "length"
     },
     E: {
-      value: d.state(1e10),
+      value: r.state(1e10),
       min: 1e9,
       max: 2e11,
       step: 1e9,
@@ -478,14 +477,14 @@ Promise.all([
       unit: "stress"
     },
     nu: {
-      value: d.state(0.25),
+      value: r.state(0.25),
       min: 0.1,
       max: 0.45,
       step: 0.05,
       label: "Poisson \u03BD"
     },
     q: {
-      value: d.state(-1e3),
+      value: r.state(-1e3),
       min: -5e3,
       max: -100,
       step: 100,
@@ -493,31 +492,31 @@ Promise.all([
       unit: "force"
     },
     meshDiv: {
-      value: d.state(10),
+      value: r.state(10),
       min: 4,
       max: 30,
       step: 2,
       label: "Divisiones malla"
     }
   };
-  function V(c, r, l, v, t, p) {
-    const h = v * Math.pow(l, 3) / (12 * (1 - t * t));
+  function _(l, t, d, c, v, m) {
+    const h = c * Math.pow(d, 3) / (12 * (1 - v * v));
     let s = 0;
     for (let a = 1; a <= 21; a += 2) for (let e = 1; e <= 21; e += 2) {
-      const g = a * Math.PI / c, f = e * Math.PI / r, u = a * e * Math.pow(Math.pow(g, 2) + Math.pow(f, 2), 2), m = 16 * p / (Math.pow(Math.PI, 6) * h * u), x = Math.pow(-1, (a + e) / 2 - 1);
-      s += x * m;
+      const g = a * Math.PI / l, f = e * Math.PI / t, p = a * e * Math.pow(Math.pow(g, 2) + Math.pow(f, 2), 2), u = 16 * m / (Math.pow(Math.PI, 6) * h * p), x = Math.pow(-1, (a + e) / 2 - 1);
+      s += x * u;
     }
     return Math.abs(s);
   }
   const i = {
-    nodes: d.state([]),
-    elements: d.state([]),
-    nodeInputs: d.state({}),
-    elementInputs: d.state({}),
-    deformOutputs: d.state({}),
-    analyzeOutputs: d.state({})
+    nodes: r.state([]),
+    elements: r.state([]),
+    nodeInputs: r.state({}),
+    elementInputs: r.state({}),
+    deformOutputs: r.state({}),
+    analyzeOutputs: r.state({})
   };
-  let q = {
+  let y = {
     w_fem: 0,
     w_navier: 0,
     error: 0,
@@ -532,9 +531,9 @@ Promise.all([
       q: -1e3
     }
   };
-  d.derive(() => {
+  r.derive(() => {
     var _a;
-    const c = b.a.value.val, r = b.b.value.val, l = b.t.value.val, v = b.E.value.val, t = b.nu.value.val, p = b.q.value.val, h = b.meshDiv.value.val, s = Math.max(c, r) / h, { nodes: a, elements: e, boundaryIndices: g } = R({
+    const l = b.a.value.val, t = b.b.value.val, d = b.t.value.val, c = b.E.value.val, v = b.nu.value.val, m = b.q.value.val, h = b.meshDiv.value.val, s = Math.max(l, t) / h, { nodes: a, elements: e, boundaryIndices: g } = R({
       points: [
         [
           0,
@@ -542,18 +541,18 @@ Promise.all([
           0
         ],
         [
-          c,
+          l,
           0,
           0
         ],
         [
-          c,
-          r,
+          l,
+          t,
           0
         ],
         [
           0,
-          r,
+          t,
           0
         ]
       ],
@@ -564,7 +563,7 @@ Promise.all([
         3
       ],
       maxMeshSize: s
-    }), f = v / (2 * (1 + t));
+    }), f = c / (2 * (1 + v));
     i.nodeInputs.val = {
       supports: new Map(g.map((n) => [
         n,
@@ -582,7 +581,7 @@ Promise.all([
         [
           0,
           0,
-          p,
+          m,
           0,
           0,
           0
@@ -591,90 +590,95 @@ Promise.all([
     }, i.nodes.val = a, i.elements.val = e, i.elementInputs.val = {
       elasticities: new Map(e.map((n, o) => [
         o,
-        v
+        c
       ])),
       elasticitiesOrthogonal: new Map(e.map((n, o) => [
         o,
-        v
+        c
       ])),
       thicknesses: new Map(e.map((n, o) => [
         o,
-        l
+        d
       ])),
       poissonsRatios: new Map(e.map((n, o) => [
         o,
-        t
+        v
       ])),
       shearModuli: new Map(e.map((n, o) => [
         o,
         f
       ]))
     }, i.deformOutputs.val = P(a, e, i.nodeInputs.val, i.elementInputs.val), i.analyzeOutputs.val = C(a, e, i.elementInputs.val, i.deformOutputs.val);
-    let u = 0;
+    let p = 0;
     (_a = i.deformOutputs.val.deformations) == null ? void 0 : _a.forEach((n) => {
       const o = Math.abs(n[2]);
-      o > u && (u = o);
+      o > p && (p = o);
     });
-    const m = V(c, r, l, v, t, p), x = Math.abs((u - m) / m) * 100;
-    q = {
-      w_fem: u * 1e3,
-      w_navier: m * 1e3,
+    const u = _(l, t, d, c, v, m), x = Math.abs((p - u) / u) * 100;
+    y = {
+      w_fem: p * 1e3,
+      w_navier: u * 1e3,
       error: x,
       numNodes: a.length,
       numElements: e.length,
       params: {
-        a: c,
-        b: r,
-        t: l,
-        E: v,
-        nu: t,
-        q: p
+        a: l,
+        b: t,
+        t: d,
+        E: c,
+        nu: v,
+        q: m
       }
     };
   });
-  const A = k(i), O = _(b), F = N(i), K = z(), y = L([
-    "Validaci\xF3n",
-    "Print"
-  ]), E = S("Validaci\xF3n vs Navier");
-  d.derive(() => {
-    const c = y.clicked.val;
-    if (c) {
-      if (c === "Validaci\xF3n") {
-        const r = {
-          ...i,
-          validation: q
-        }, l = G({
-          template: M,
-          data: r
-        });
-        E.content.val = l, E.open.val = true, y.clicked.val = "";
-      } else if (c === "Print") {
-        const r = {
-          ...i,
-          validation: q
-        }, l = window.open("", "_blank");
-        l && T(async () => {
-          const { render: v } = await import("./styles-DdZBjQss.js").then((t) => t.y);
-          return {
-            render: v
-          };
-        }, __vite__mapDeps([0,1]), import.meta.url).then(({ render: v }) => {
-          const t = M(r), p = document.createElement("div");
-          v(t, p), l.document.write(`
-          <!DOCTYPE html>
-          <html>
-          <head>
-            <title>TEST: Placa Isotr\xF3pica - Validaci\xF3n</title>
-            <style>
-              body { font-family: "Times New Roman", serif; padding: 20px; }
-            </style>
-          </head>
-          <body>${p.innerHTML}</body>
-          </html>
-        `), l.document.close();
-        }), y.clicked.val = "";
-      }
+  const q = r.state(""), $ = r.state(void 0);
+  r.derive(() => {
+    if (q.val === "Validaci\xF3n") {
+      const l = {
+        ...i,
+        validation: y
+      };
+      $.val = E({
+        template: M,
+        data: l
+      });
+    }
+    if (q.val === "Print") {
+      const l = {
+        ...i,
+        validation: y
+      }, t = E({
+        template: M,
+        data: l
+      }), d = window.open("", "_blank");
+      d && (d.document.write(`
+        <!DOCTYPE html>
+        <html>
+        <head><title>TEST: Placa Isotr\xF3pica - Validaci\xF3n</title></head>
+        <body>${(t == null ? void 0 : t.innerHTML) || ""}</body>
+        </html>
+      `), d.document.close(), d.focus(), setTimeout(() => d.print(), 500));
     }
   });
-  document.body.append(A.dom, O, K, F, y.dom, E.dom);
+  document.body.append(G(b), z({
+    mesh: i,
+    settingsObj: {
+      nodes: false,
+      deformedShape: true,
+      loads: false,
+      shellResults: "displacementZ"
+    }
+  }), N(i), L({
+    position: "bottom-center"
+  }), S({
+    dialogBody: $
+  }), T({
+    clickedButton: q,
+    buttons: [
+      "Validaci\xF3n",
+      "Print"
+    ],
+    sourceCode: "https://github.com/GiorgioBurbanelli89/awatif-ejemplos/tree/master/test-plate-isotropic",
+    author: "https://github.com/GiorgioBurbanelli89"
+  }));
 });

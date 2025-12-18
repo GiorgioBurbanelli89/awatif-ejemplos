@@ -1,12 +1,11 @@
-const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["./styles-DdZBjQss.js","./styles-Sm9c63Sz.css"])))=>i.map(i=>d[i]);
-import { x as F, v as n, g as Y, e as X, b as B, d as j } from "./styles-DdZBjQss.js";
-import { d as K, _ as U, __tla as __tla_0 } from "./deformCpp-BfqFyY9O.js";
-import { a as H } from "./analyze-CmnHHflB.js";
-import { g as W } from "./getParameters-Cw5eBGZx.js";
-import { g as Z } from "./getDialog-COZgeqJ-.js";
-import { g as J } from "./getReport-CR2O-zfl.js";
-import { g as Q, __tla as __tla_1 } from "./getMesh-DmUdekin.js";
-import { o as ee } from "./unsafe-html-Q7ytxFVR.js";
+import { x as Y, v as r, g as B, e as X, b as j, d as K } from "./styles-9FDjb-ad.js";
+import { a as U } from "./analyze-CmnHHflB.js";
+import { d as Z, __tla as __tla_0 } from "./deformCpp-CS-wCYO-.js";
+import { g as H } from "./getParameters-agyy6sUI.js";
+import { g as W } from "./getDialog-BiqeruR6.js";
+import { g as N } from "./getReport-CYLnG9Sc.js";
+import { g as J, __tla as __tla_1 } from "./getMesh-DmUdekin.js";
+import { o as Q } from "./unsafe-html-Dv3uUXY0.js";
 import "./complex-i8qiIvCl.js";
 import "./__vite-browser-external-D7Ct-6yo.js";
 Promise.all([
@@ -23,25 +22,25 @@ Promise.all([
     }
   })()
 ]).then(async () => {
-  function r(a, t = 4) {
-    return Math.abs(a) < 1e-10 ? "0" : Math.abs(a) >= 1e6 || Math.abs(a) < 1e-3 ? a.toExponential(t) : a.toFixed(t);
+  function o(t, e = 4) {
+    return Math.abs(t) < 1e-10 ? "0" : Math.abs(t) >= 1e6 || Math.abs(t) < 1e-3 ? t.toExponential(e) : t.toFixed(e);
   }
-  function b(a, t, e) {
-    return `<span class="eq">${a} = ${t} = <strong>${e}</strong></span>`;
+  function b(t, e, a) {
+    return `<span class="eq">${t} = ${e} = <strong>${a}</strong></span>`;
   }
-  function N(a, t) {
-    const e = a.map((o) => `<tr>${o.map((i) => `<td>${r(i, 4)}</td>`).join("")}</tr>`).join("");
+  function S(t, e) {
+    const a = t.map((i) => `<tr>${i.map((d) => `<td>${o(d, 4)}</td>`).join("")}</tr>`).join("");
     return `
     <div class="matrix-container">
-      <span class="matrix-label">${t} =</span>
+      <span class="matrix-label">${e} =</span>
       <table class="matrix">
-        ${e}
+        ${a}
       </table>
     </div>
   `;
   }
-  function S(a) {
-    const t = a.validationData || {}, e = t.params || {}, o = t.orthoInfo || {}, i = e.a || 10, c = e.b || 10, v = e.t || 0.15, p = e.Ex || 1e10, u = e.Ey || 5e9, l = e.nu || 0.25, m = e.q || -1e3, y = e.meshDiv || 30, k = t.w_fem_mm || 0, f = t.w_reference || 16.903575, h = t.error || 0, E = t.numNodes || 0, x = t.numElements || 0, s = o.nuYX || l * u / p, C = 1 - l * s, O = o.Dx || p * Math.pow(v, 3) / (12 * C), w = o.Dy || u * Math.pow(v, 3) / (12 * C), D = o.Dxy || l * w, M = o.Gxy || 0.5 * p / (1 + l), z = p / u, P = h < 10, A = P ? "result-pass" : "result-fail", L = P ? "\u2713 PASS" : "\u2717 FAIL", q = [
+  function _(t) {
+    const e = t.validationData || {}, a = e.params || {}, i = e.orthoInfo || {}, d = a.a || 10, m = a.b || 10, u = a.t || 0.15, c = a.Ex || 1e10, v = a.Ey || 5e9, n = a.nu || 0.25, p = a.q || -1e3, y = a.meshDiv || 30, R = e.w_fem_mm || 0, f = e.w_reference || 16.903575, g = e.error || 0, E = e.numNodes || 0, x = e.numElements || 0, s = i.nuYX || n * v / c, C = 1 - n * s, O = i.Dx || c * Math.pow(u, 3) / (12 * C), w = i.Dy || v * Math.pow(u, 3) / (12 * C), D = i.Dxy || n * w, M = i.Gxy || 0.5 * c / (1 + n), k = c / v, P = g < 10, L = P ? "result-pass" : "result-fail", G = P ? "\u2713 PASS" : "\u2717 FAIL", q = [
       [
         O,
         D,
@@ -57,14 +56,14 @@ Promise.all([
         0,
         (O + w - 2 * D) / 4
       ]
-    ], I = 5 / 6, G = [
+    ], I = 5 / 6, F = [
       [
-        I * M * v,
+        I * M * u,
         0
       ],
       [
         0,
-        I * M * v
+        I * M * u
       ]
     ], V = `
     <style>
@@ -216,9 +215,9 @@ Promise.all([
       <p><strong>Validaci\xF3n FEM vs Valor de Referencia</strong></p>
 
       <!-- RESULTADO -->
-      <div class="result-box ${A}">
-        ${L}<br>
-        <span style="font-size: 16px;">Error: ${r(h, 2)}% (tolerancia: 10%)</span>
+      <div class="result-box ${L}">
+        ${G}<br>
+        <span style="font-size: 16px;">Error: ${o(g, 2)}% (tolerancia: 10%)</span>
       </div>
 
       <!-- COMPARACI\xD3N -->
@@ -231,12 +230,12 @@ Promise.all([
         </tr>
         <tr>
           <td><strong>FEM (Awatif)</strong></td>
-          <td>${r(k, 6)} mm</td>
-          <td>${r(h, 2)}%</td>
+          <td>${o(R, 6)} mm</td>
+          <td>${o(g, 2)}%</td>
         </tr>
         <tr>
           <td><strong>Referencia</strong></td>
-          <td>${r(f, 6)} mm</td>
+          <td>${o(f, 6)} mm</td>
           <td>\u2014</td>
         </tr>
       </table>
@@ -253,19 +252,19 @@ Promise.all([
       <div class="params-grid">
         <div class="param-card">
           <div class="label">Ancho (a)</div>
-          <div class="value">${i} m</div>
+          <div class="value">${d} m</div>
         </div>
         <div class="param-card">
           <div class="label">Largo (b)</div>
-          <div class="value">${c} m</div>
+          <div class="value">${m} m</div>
         </div>
         <div class="param-card">
           <div class="label">Espesor (t)</div>
-          <div class="value">${v} m</div>
+          <div class="value">${u} m</div>
         </div>
         <div class="param-card">
           <div class="label">\xC1rea</div>
-          <div class="value">${i * c} m\xB2</div>
+          <div class="value">${d * m} m\xB2</div>
         </div>
       </div>
 
@@ -273,36 +272,36 @@ Promise.all([
       <div class="params-grid">
         <div class="param-card">
           <div class="label">M\xF3dulo Ex</div>
-          <div class="value">${r(p, 2)} Pa</div>
+          <div class="value">${o(c, 2)} Pa</div>
         </div>
         <div class="param-card">
           <div class="label">M\xF3dulo Ey</div>
-          <div class="value">${r(u, 2)} Pa</div>
+          <div class="value">${o(v, 2)} Pa</div>
         </div>
         <div class="param-card">
           <div class="label">\u03BDxy</div>
-          <div class="value">${l}</div>
+          <div class="value">${n}</div>
         </div>
         <div class="param-card">
           <div class="label">Gxy</div>
-          <div class="value">${r(M, 2)} Pa</div>
+          <div class="value">${o(M, 2)} Pa</div>
         </div>
       </div>
 
       <div class="theory-box">
-        <strong>Ratio de Anisotrop\xEDa:</strong> Ex/Ey = ${r(z, 2)}<br>
-        La placa es <strong class="highlight">${z}x m\xE1s r\xEDgida en X</strong> que en Y.
+        <strong>Ratio de Anisotrop\xEDa:</strong> Ex/Ey = ${o(k, 2)}<br>
+        La placa es <strong class="highlight">${k}x m\xE1s r\xEDgida en X</strong> que en Y.
       </div>
 
       <h3>2.3 Cargas</h3>
       <div class="params-grid">
         <div class="param-card">
           <div class="label">Carga uniforme (q)</div>
-          <div class="value">${m} N/m\xB2</div>
+          <div class="value">${p} N/m\xB2</div>
         </div>
         <div class="param-card">
           <div class="label">Carga total</div>
-          <div class="value">${r(Math.abs(m * i * c), 0)} N</div>
+          <div class="value">${o(Math.abs(p * d * m), 0)} N</div>
         </div>
       </div>
 
@@ -318,7 +317,7 @@ Promise.all([
       <h3>3.1 Relaci\xF3n de Reciprocidad</h3>
       <p>Para materiales ortotr\xF3picos, los coeficientes de Poisson est\xE1n relacionados:</p>
       <div class="formula-box">
-        ${b("\u03BDyx", `\u03BDxy \xB7 (Ey/Ex) = ${l} \xB7 (${r(u)}/${r(p)})`, r(s, 4))}
+        ${b("\u03BDyx", `\u03BDxy \xB7 (Ey/Ex) = ${n} \xB7 (${o(v)}/${o(c)})`, o(s, 4))}
       </div>
       <p>Esta relaci\xF3n garantiza la simetr\xEDa de la matriz constitutiva.</p>
 
@@ -326,25 +325,25 @@ Promise.all([
       <p>Las rigideces flexionales para material ortotr\xF3pico son:</p>
 
       <div class="formula-box">
-        ${b("Dx", "Ex\xB7t\xB3/[12\xB7(1-\u03BDxy\xB7\u03BDyx)]", r(O, 2))} N\xB7m<br><br>
-        ${b("Dy", "Ey\xB7t\xB3/[12\xB7(1-\u03BDxy\xB7\u03BDyx)]", r(w, 2))} N\xB7m<br><br>
-        ${b("Dxy", "\u03BDxy\xB7Dy", r(D, 2))} N\xB7m
+        ${b("Dx", "Ex\xB7t\xB3/[12\xB7(1-\u03BDxy\xB7\u03BDyx)]", o(O, 2))} N\xB7m<br><br>
+        ${b("Dy", "Ey\xB7t\xB3/[12\xB7(1-\u03BDxy\xB7\u03BDyx)]", o(w, 2))} N\xB7m<br><br>
+        ${b("Dxy", "\u03BDxy\xB7Dy", o(D, 2))} N\xB7m
       </div>
 
       <h3>3.3 Matriz Constitutiva de Flexi\xF3n (Db)</h3>
       <p>Para material ortotr\xF3pico, la matriz Db relaciona curvaturas con momentos:</p>
-      ${N(q, "Db")}
+      ${S(q, "Db")}
 
       <p><strong>Diferencia con isotr\xF3pico:</strong> En material isotr\xF3pico Dx = Dy = D.
       Aqu\xED Dx \u2260 Dy, lo que produce mayor deflexi\xF3n en la direcci\xF3n m\xE1s flexible (Y).</p>
 
       <h3>3.4 Matriz de Corte (Ds)</h3>
       <p>Para deformaci\xF3n por cortante (teor\xEDa de Mindlin-Reissner):</p>
-      ${N(G, "Ds")}
+      ${S(F, "Ds")}
 
       <div class="formula-box">
         \u03BA = 5/6 (factor de correcci\xF3n de corte)<br>
-        ${b("Gxy", `0.5\xB7Ex/(1+\u03BDxy) = 0.5\xB7${r(p)}/(1+${l})`, r(M, 2))} Pa
+        ${b("Gxy", `0.5\xB7Ex/(1+\u03BDxy) = 0.5\xB7${o(c)}/(1+${n})`, o(M, 2))} Pa
       </div>
 
       <!-- ELEMENTO FINITO -->
@@ -446,7 +445,7 @@ Promise.all([
 
           <!-- Leyenda -->
           <rect x="260" y="260" width="130" height="35" fill="white" stroke="#ccc"/>
-          <text x="270" y="278" font-size="11">Ex/Ey = ${r(z, 1)}</text>
+          <text x="270" y="278" font-size="11">Ex/Ey = ${o(k, 1)}</text>
           <text x="270" y="292" font-size="11">Mayor deflexi\xF3n en Y</text>
         </svg>
       </div>
@@ -468,11 +467,11 @@ Promise.all([
 
     </div>
   `;
-    return F`${ee(V)}`;
+    return Y`${Q(V)}`;
   }
-  const $ = 16.903575, g = {
+  const $ = 16.903575, h = {
     a: {
-      value: n.state(10),
+      value: r.state(10),
       min: 5,
       max: 20,
       step: 1,
@@ -480,7 +479,7 @@ Promise.all([
       unit: "length"
     },
     b: {
-      value: n.state(10),
+      value: r.state(10),
       min: 5,
       max: 20,
       step: 1,
@@ -488,7 +487,7 @@ Promise.all([
       unit: "length"
     },
     t: {
-      value: n.state(0.15),
+      value: r.state(0.15),
       min: 0.05,
       max: 0.5,
       step: 0.01,
@@ -496,7 +495,7 @@ Promise.all([
       unit: "length"
     },
     Ex: {
-      value: n.state(1e10),
+      value: r.state(1e10),
       min: 1e9,
       max: 2e11,
       step: 1e9,
@@ -504,7 +503,7 @@ Promise.all([
       unit: "stress"
     },
     Ey: {
-      value: n.state(5e9),
+      value: r.state(5e9),
       min: 1e9,
       max: 1e11,
       step: 1e9,
@@ -512,14 +511,14 @@ Promise.all([
       unit: "stress"
     },
     nu: {
-      value: n.state(0.25),
+      value: r.state(0.25),
       min: 0.1,
       max: 0.45,
       step: 0.05,
       label: "Poisson \u03BD"
     },
     q: {
-      value: n.state(-1e3),
+      value: r.state(-1e3),
       min: -5e3,
       max: -100,
       step: 100,
@@ -527,32 +526,32 @@ Promise.all([
       unit: "force"
     },
     meshDiv: {
-      value: n.state(30),
+      value: r.state(30),
       min: 10,
       max: 50,
       step: 5,
       label: "Divisiones malla"
     }
   };
-  function te(a, t, e, o) {
-    const i = e * t / a, c = 1 - e * i, v = a * Math.pow(o, 3) / (12 * c), p = t * Math.pow(o, 3) / (12 * c), u = e * p, l = 0.5 * a / (1 + e);
+  function ee(t, e, a, i) {
+    const d = a * e / t, m = 1 - a * d, u = t * Math.pow(i, 3) / (12 * m), c = e * Math.pow(i, 3) / (12 * m), v = a * c, n = 0.5 * t / (1 + a);
     return {
-      Dx: v,
-      Dy: p,
-      Dxy: u,
-      Gxy: l,
-      nuYX: i
+      Dx: u,
+      Dy: c,
+      Dxy: v,
+      Gxy: n,
+      nuYX: d
     };
   }
-  const d = {
-    nodes: n.state([]),
-    elements: n.state([]),
-    nodeInputs: n.state({}),
-    elementInputs: n.state({}),
-    deformOutputs: n.state({}),
-    analyzeOutputs: n.state({})
+  const l = {
+    nodes: r.state([]),
+    elements: r.state([]),
+    nodeInputs: r.state({}),
+    elementInputs: r.state({}),
+    deformOutputs: r.state({}),
+    analyzeOutputs: r.state({})
   };
-  let T = {
+  let z = {
     w_fem_mm: 0,
     w_reference: $,
     error: 0,
@@ -575,9 +574,9 @@ Promise.all([
       nuYX: 0
     }
   };
-  n.derive(() => {
+  r.derive(() => {
     var _a;
-    const a = g.a.value.val, t = g.b.value.val, e = g.t.value.val, o = g.Ex.value.val, i = g.Ey.value.val, c = g.nu.value.val, v = g.q.value.val, p = g.meshDiv.value.val, u = Math.max(a, t) / p, { nodes: l, elements: m, boundaryIndices: y } = Q({
+    const t = h.a.value.val, e = h.b.value.val, a = h.t.value.val, i = h.Ex.value.val, d = h.Ey.value.val, m = h.nu.value.val, u = h.q.value.val, c = h.meshDiv.value.val, v = Math.max(t, e) / c, { nodes: n, elements: p, boundaryIndices: y } = J({
       points: [
         [
           0,
@@ -585,18 +584,18 @@ Promise.all([
           0
         ],
         [
-          a,
+          t,
           0,
           0
         ],
         [
-          a,
           t,
+          e,
           0
         ],
         [
           0,
-          t,
+          e,
           0
         ]
       ],
@@ -606,9 +605,9 @@ Promise.all([
         2,
         3
       ],
-      maxMeshSize: u
-    }), k = 0.5 * o / (1 + c);
-    d.nodeInputs.val = {
+      maxMeshSize: v
+    }), R = 0.5 * i / (1 + m);
+    l.nodeInputs.val = {
       supports: new Map(y.map((x) => [
         x,
         [
@@ -620,106 +619,101 @@ Promise.all([
           false
         ]
       ])),
-      loads: new Map(l.map((x, s) => [
+      loads: new Map(n.map((x, s) => [
         s,
         [
           0,
           0,
-          v,
+          u,
           0,
           0,
           0
         ]
       ]))
-    }, d.nodes.val = l, d.elements.val = m, d.elementInputs.val = {
-      elasticities: new Map(m.map((x, s) => [
-        s,
-        o
-      ])),
-      elasticitiesOrthogonal: new Map(m.map((x, s) => [
+    }, l.nodes.val = n, l.elements.val = p, l.elementInputs.val = {
+      elasticities: new Map(p.map((x, s) => [
         s,
         i
       ])),
-      thicknesses: new Map(m.map((x, s) => [
+      elasticitiesOrthogonal: new Map(p.map((x, s) => [
         s,
-        e
+        d
       ])),
-      poissonsRatios: new Map(m.map((x, s) => [
+      thicknesses: new Map(p.map((x, s) => [
         s,
-        c
+        a
       ])),
-      shearModuli: new Map(m.map((x, s) => [
+      poissonsRatios: new Map(p.map((x, s) => [
         s,
-        k
+        m
+      ])),
+      shearModuli: new Map(p.map((x, s) => [
+        s,
+        R
       ]))
-    }, d.deformOutputs.val = K(l, m, d.nodeInputs.val, d.elementInputs.val), d.analyzeOutputs.val = H(l, m, d.elementInputs.val, d.deformOutputs.val);
+    }, l.deformOutputs.val = Z(n, p, l.nodeInputs.val, l.elementInputs.val), l.analyzeOutputs.val = U(n, p, l.elementInputs.val, l.deformOutputs.val);
     let f = 0;
-    (_a = d.deformOutputs.val.deformations) == null ? void 0 : _a.forEach((x) => {
+    (_a = l.deformOutputs.val.deformations) == null ? void 0 : _a.forEach((x) => {
       const s = Math.abs(x[2]);
       s > f && (f = s);
     });
-    const h = f * 1e3, E = Math.abs((h - $) / $) * 100;
-    T = {
-      w_fem_mm: h,
+    const g = f * 1e3, E = Math.abs((g - $) / $) * 100;
+    z = {
+      w_fem_mm: g,
       w_reference: $,
       error: E,
-      numNodes: l.length,
-      numElements: m.length,
+      numNodes: n.length,
+      numElements: p.length,
       params: {
-        a,
-        b: t,
-        t: e,
-        Ex: o,
-        Ey: i,
-        nu: c,
-        q: v
+        a: t,
+        b: e,
+        t: a,
+        Ex: i,
+        Ey: d,
+        nu: m,
+        q: u
       },
-      orthoInfo: te(o, i, c, e)
+      orthoInfo: ee(i, d, m, a)
     };
   });
-  const ae = Y(d), oe = W(g), re = X(d), se = B(), R = j([
-    "Validaci\xF3n",
-    "Print"
-  ]), _ = Z("Validaci\xF3n Ortotr\xF3pica");
-  n.derive(() => {
-    const a = R.clicked.val;
-    if (a) {
-      if (a === "Validaci\xF3n") {
-        const t = {
-          ...d,
-          validationData: T
-        }, e = J({
-          template: S,
-          data: t
-        });
-        _.content.val = e, _.open.val = true, R.clicked.val = "";
-      } else if (a === "Print") {
-        const t = {
-          ...d,
-          validationData: T
-        }, e = window.open("", "_blank");
-        e && U(async () => {
-          const { render: o } = await import("./styles-DdZBjQss.js").then((i) => i.y);
-          return {
-            render: o
-          };
-        }, __vite__mapDeps([0,1]), import.meta.url).then(({ render: o }) => {
-          const i = S(t), c = document.createElement("div");
-          o(i, c), e.document.write(`
-          <!DOCTYPE html>
-          <html>
-          <head>
-            <title>TEST: Placa Ortotr\xF3pica - Validaci\xF3n</title>
-            <style>
-              body { font-family: "Times New Roman", serif; padding: 20px; }
-            </style>
-          </head>
-          <body>${c.innerHTML}</body>
-          </html>
-        `), e.document.close();
-        }), R.clicked.val = "";
+  const T = r.state(""), A = r.state(void 0);
+  r.derive(() => {
+    if (T.val === "Validaci\xF3n" && (A.val = N({
+      template: _,
+      data: {
+        ...l,
+        validationData: z
       }
+    })), T.val === "Print") {
+      const t = N({
+        template: _,
+        data: {
+          ...l,
+          validationData: z
+        }
+      }), e = window.open("", "_blank");
+      e && (e.document.write(`<!DOCTYPE html><html><head><title>TEST: Placa Ortotr\xF3pica</title></head><body>${(t == null ? void 0 : t.innerHTML) || ""}</body></html>`), e.document.close(), e.focus(), setTimeout(() => e.print(), 500));
     }
   });
-  document.body.append(ae.dom, oe, se, re, R.dom, _.dom);
+  document.body.append(H(h), B({
+    mesh: l,
+    settingsObj: {
+      nodes: false,
+      deformedShape: true,
+      loads: false,
+      shellResults: "displacementZ"
+    }
+  }), X(l), j({
+    position: "bottom-center"
+  }), W({
+    dialogBody: A
+  }), K({
+    clickedButton: T,
+    buttons: [
+      "Validaci\xF3n",
+      "Print"
+    ],
+    sourceCode: "https://github.com/GiorgioBurbanelli89/awatif-ejemplos/tree/master/test-plate-orthotropic",
+    author: "https://github.com/GiorgioBurbanelli89"
+  }));
 });

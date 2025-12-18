@@ -1,15 +1,11 @@
 var __defProp = Object.defineProperty;
 var __defNormalProp = (obj, key, value) => key in obj ? __defProp(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
 var __publicField = (obj, key, value) => __defNormalProp(obj, typeof key !== "symbol" ? key + "" : key, value);
-let rt, nt;
+let nt;
 let __tla = (async () => {
-  let Qr, et, nr;
-  Qr = "modulepreload";
-  et = function(z, L) {
+  const Qr = "modulepreload", et = function(z, L) {
     return new URL(z, L).href;
-  };
-  nr = {};
-  rt = function(L, F, d) {
+  }, nr = {}, rt = function(L, F, d) {
     let _ = Promise.resolve();
     if (F && F.length > 0) {
       const U = document.getElementsByTagName("link"), D = document.querySelector("meta[property=csp-nonce]"), Y = (D == null ? void 0 : D.nonce) || (D == null ? void 0 : D.getAttribute("nonce"));
@@ -2458,7 +2454,6 @@ let __tla = (async () => {
   }
 })();
 export {
-  rt as _,
   __tla,
   nt as d
 };

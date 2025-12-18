@@ -1,10 +1,9 @@
-const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["./styles-DdZBjQss.js","./styles-Sm9c63Sz.css"])))=>i.map(i=>d[i]);
-import { x as T, v as r, g as $, e as M, b as _, d as C } from "./styles-DdZBjQss.js";
-import { d as P, _ as R, __tla as __tla_0 } from "./deformCpp-BfqFyY9O.js";
-import { g as k } from "./getParameters-Cw5eBGZx.js";
-import { g as N } from "./getDialog-COZgeqJ-.js";
-import { g as F } from "./getReport-CR2O-zfl.js";
-import { o as S } from "./unsafe-html-Q7ytxFVR.js";
+import { x as T, v as r, g as M, e as C, b as P, d as N } from "./styles-9FDjb-ad.js";
+import { d as R, __tla as __tla_0 } from "./deformCpp-CS-wCYO-.js";
+import { g as F } from "./getParameters-agyy6sUI.js";
+import { g as k } from "./getDialog-BiqeruR6.js";
+import { g as L } from "./getReport-CYLnG9Sc.js";
+import { o as _ } from "./unsafe-html-Dv3uUXY0.js";
 Promise.all([
   (() => {
     try {
@@ -13,8 +12,8 @@ Promise.all([
     }
   })()
 ]).then(async () => {
-  function w(t) {
-    const s = (t == null ? void 0 : t.validation) || {}, o = s.grad_fem ?? 0, i = s.epsilon_analytical ?? 0, l = s.error ?? 0, c = s.Rx_total ?? 0, u = s.F_applied ?? 0, m = s.ux0 ?? 0, p = s.ux1 ?? 0, e = s.params || {}, a = (d, g = 6) => Math.abs(d) < 1e-10 ? "0" : Math.abs(d) > 1e4 || Math.abs(d) < 1e-4 ? d.toExponential(g) : d.toFixed(g), v = l < 0.1, f = `
+  function w(o) {
+    const e = (o == null ? void 0 : o.validation) || {}, p = e.grad_fem ?? 0, d = e.epsilon_analytical ?? 0, c = e.error ?? 0, b = e.Rx_total ?? 0, v = e.F_applied ?? 0, m = e.ux0 ?? 0, i = e.ux1 ?? 0, s = e.params || {}, a = (n, g = 6) => Math.abs(n) < 1e-10 ? "0" : Math.abs(n) > 1e4 || Math.abs(n) < 1e-4 ? n.toExponential(g) : n.toFixed(g), l = c < 0.1, f = `
 <style>
   .validation-report {
     font-family: "Times New Roman", Georgia, serif;
@@ -42,7 +41,7 @@ Promise.all([
     padding: 8px;
   }
   .result-box {
-    background: linear-gradient(135deg, ${v ? "#27ae60" : "#e74c3c"} 0%, ${v ? "#2ecc71" : "#c0392b"} 100%);
+    background: linear-gradient(135deg, ${l ? "#27ae60" : "#e74c3c"} 0%, ${l ? "#2ecc71" : "#c0392b"} 100%);
     color: white;
     padding: 20px;
     border-radius: 10px;
@@ -142,11 +141,11 @@ Promise.all([
   <h2>2. Par\xE1metros de Entrada</h2>
 
   <div class="params-grid">
-    <div class="param-card"><div class="label">Lado L</div><div class="value">${a(e.L, 2)} m</div></div>
-    <div class="param-card"><div class="label">Espesor t</div><div class="value">${a(e.t, 3)} m</div></div>
-    <div class="param-card"><div class="label">M\xF3dulo E</div><div class="value">${a(e.E, 0)} Pa</div></div>
-    <div class="param-card"><div class="label">Poisson \u03BD</div><div class="value">${a(e.nu, 2)}</div></div>
-    <div class="param-card"><div class="label">Tracci\xF3n q</div><div class="value">${a(e.q, 2)} N/m</div></div>
+    <div class="param-card"><div class="label">Lado L</div><div class="value">${a(s.L, 2)} m</div></div>
+    <div class="param-card"><div class="label">Espesor t</div><div class="value">${a(s.t, 3)} m</div></div>
+    <div class="param-card"><div class="label">M\xF3dulo E</div><div class="value">${a(s.E, 0)} Pa</div></div>
+    <div class="param-card"><div class="label">Poisson \u03BD</div><div class="value">${a(s.nu, 2)}</div></div>
+    <div class="param-card"><div class="label">Tracci\xF3n q</div><div class="value">${a(s.q, 2)} N/m</div></div>
     <div class="param-card"><div class="label">Elementos</div><div class="value">2 (CST)</div></div>
   </div>
 
@@ -193,31 +192,31 @@ Promise.all([
 
   <div class="formula">
     <div class="eq">Para tracci\xF3n uniforme <var>q</var> en el borde:</div>
-    <div class="eq"><var>\u03C3</var><sub>x</sub> = <var>q</var> / <var>t</var> = ${a(e.q, 2)} / ${a(e.t, 3)} = ${a(e.q / e.t)} Pa</div>
-    <div class="eq"><var>\u03B5</var><sub>x</sub> = <var>\u03C3</var><sub>x</sub> / <var>E</var> = <var>q</var> / (<var>E</var>\xB7<var>t</var>) = <span class="target">${a(i)}</span> (VALOR OBJETIVO)</div>
-    <div class="eq"><var>\u0394u</var> = <var>\u03B5</var><sub>x</sub> \xB7 <var>L</var> = ${a(i)} \xD7 ${a(e.L)} = ${a(i * e.L)} m</div>
+    <div class="eq"><var>\u03C3</var><sub>x</sub> = <var>q</var> / <var>t</var> = ${a(s.q, 2)} / ${a(s.t, 3)} = ${a(s.q / s.t)} Pa</div>
+    <div class="eq"><var>\u03B5</var><sub>x</sub> = <var>\u03C3</var><sub>x</sub> / <var>E</var> = <var>q</var> / (<var>E</var>\xB7<var>t</var>) = <span class="target">${a(d)}</span> (VALOR OBJETIVO)</div>
+    <div class="eq"><var>\u0394u</var> = <var>\u03B5</var><sub>x</sub> \xB7 <var>L</var> = ${a(d)} \xD7 ${a(s.L)} = ${a(d * s.L)} m</div>
   </div>
 
   <h2>5. Resultados FEM</h2>
 
   <div class="formula">
     <div class="eq"><var>u</var><sub>x,0</sub> (nodo 0) = <span class="result">${a(m)} m</span></div>
-    <div class="eq"><var>u</var><sub>x,1</sub> (nodo 1) = <span class="result">${a(p)} m</span></div>
-    <div class="eq"><var>\u03B5</var><sub>x,FEM</sub> = (<var>u</var><sub>1</sub> - <var>u</var><sub>0</sub>) / <var>L</var> = <span class="result">${a(o)}</span></div>
+    <div class="eq"><var>u</var><sub>x,1</sub> (nodo 1) = <span class="result">${a(i)} m</span></div>
+    <div class="eq"><var>\u03B5</var><sub>x,FEM</sub> = (<var>u</var><sub>1</sub> - <var>u</var><sub>0</sub>) / <var>L</var> = <span class="result">${a(p)}</span></div>
   </div>
 
   <h3>5.1 Verificaci\xF3n de Equilibrio</h3>
 
   <div class="formula">
-    <div class="eq">Fuerza aplicada total: F = 2 \xD7 (q \xD7 L/2) = <span class="result">${a(u)} N</span></div>
-    <div class="eq">Reacci\xF3n total en x: R<sub>x</sub> = <span class="result">${a(c)} N</span></div>
-    <div class="eq">Equilibrio: F + R<sub>x</sub> = ${a(u + c)} N \u2248 0 \u2713</div>
+    <div class="eq">Fuerza aplicada total: F = 2 \xD7 (q \xD7 L/2) = <span class="result">${a(v)} N</span></div>
+    <div class="eq">Reacci\xF3n total en x: R<sub>x</sub> = <span class="result">${a(b)} N</span></div>
+    <div class="eq">Equilibrio: F + R<sub>x</sub> = ${a(v + b)} N \u2248 0 \u2713</div>
   </div>
 
   <div class="result-box">
     <h2 style="color: white; border: none;">RESULTADO DE VALIDACI\xD3N</h2>
-    <div class="big-number">${v ? "\u2713 PASS" : "\u2717 FAIL"}</div>
-    <p>Error: ${a(l, 4)}% (tolerancia: 0.1%)</p>
+    <div class="big-number">${l ? "\u2713 PASS" : "\u2717 FAIL"}</div>
+    <p>Error: ${a(c, 4)}% (tolerancia: 0.1%)</p>
   </div>
 
   <h2>6. Tabla Comparativa</h2>
@@ -235,10 +234,10 @@ Promise.all([
     <tbody>
       <tr>
         <td><var>\u03B5</var><sub>x</sub></td>
-        <td class="target">${a(i)}</td>
-        <td>${a(o)}</td>
-        <td>${a(l, 4)}%</td>
-        <td class="${v ? "pass" : "fail"}">${v ? "OK" : "FALLA"}</td>
+        <td class="target">${a(d)}</td>
+        <td>${a(p)}</td>
+        <td>${a(c, 4)}%</td>
+        <td class="${l ? "pass" : "fail"}">${l ? "OK" : "FALLA"}</td>
       </tr>
     </tbody>
   </table>
@@ -273,9 +272,9 @@ Promise.all([
   </p>
 </div>
 `;
-    return T`${S(f)}`;
+    return T`${_(f)}`;
   }
-  const b = {
+  const u = {
     L: {
       value: r.state(1),
       min: 0.5,
@@ -315,7 +314,7 @@ Promise.all([
       label: "Tracci\xF3n q",
       unit: "force"
     }
-  }, n = {
+  }, t = {
     nodes: r.state([]),
     elements: r.state([]),
     nodeInputs: r.state({}),
@@ -323,7 +322,7 @@ Promise.all([
     deformOutputs: r.state({}),
     analyzeOutputs: r.state({})
   };
-  let y = {
+  let h = {
     grad_fem: 0,
     epsilon_analytical: 0,
     error: 0,
@@ -341,28 +340,28 @@ Promise.all([
   };
   r.derive(() => {
     var _a, _b, _c, _d, _e;
-    const t = b.L.value.val, s = b.t.value.val, o = b.E.value.val, i = b.nu.value.val, l = b.q.value.val, c = [
+    const o = u.L.value.val, e = u.t.value.val, p = u.E.value.val, d = u.nu.value.val, c = u.q.value.val, b = [
       [
         0,
         0,
         0
       ],
       [
-        t,
+        o,
         0,
         0
       ],
       [
-        t,
-        t,
+        o,
+        o,
         0
       ],
       [
         0,
-        t,
+        o,
         0
       ]
-    ], u = [
+    ], v = [
       [
         0,
         1,
@@ -373,32 +372,32 @@ Promise.all([
         2,
         3
       ]
-    ], m = l * t / 2, p = {
+    ], m = c * o / 2, i = {
       supports: /* @__PURE__ */ new Map(),
       loads: /* @__PURE__ */ new Map()
     };
-    p.loads.set(1, [
+    i.loads.set(1, [
       m,
       0,
       0,
       0,
       0,
       0
-    ]), p.loads.set(2, [
+    ]), i.loads.set(2, [
       m,
       0,
       0,
       0,
       0,
       0
-    ]), p.supports.set(0, [
+    ]), i.supports.set(0, [
       true,
       true,
       false,
       true,
       true,
       false
-    ]), p.supports.set(3, [
+    ]), i.supports.set(3, [
       true,
       false,
       false,
@@ -406,78 +405,72 @@ Promise.all([
       true,
       false
     ]);
-    const e = {
+    const s = {
       elasticities: /* @__PURE__ */ new Map(),
       poissonsRatios: /* @__PURE__ */ new Map(),
       thicknesses: /* @__PURE__ */ new Map()
     };
-    u.forEach((L, h) => {
-      e.elasticities.set(h, o), e.poissonsRatios.set(h, i), e.thicknesses.set(h, s);
-    }), n.nodes.val = c, n.elements.val = u, n.nodeInputs.val = p, n.elementInputs.val = e, n.deformOutputs.val = P(c, u, p, e);
-    const a = ((_b = (_a = n.deformOutputs.val.deformations) == null ? void 0 : _a.get(0)) == null ? void 0 : _b[0]) ?? 0, v = ((_d = (_c = n.deformOutputs.val.deformations) == null ? void 0 : _c.get(1)) == null ? void 0 : _d[0]) ?? 0, f = v - a, d = l / (o * s), g = Math.abs((f - d) / d) * 100;
-    let E = 0;
-    (_e = n.deformOutputs.val.reactions) == null ? void 0 : _e.forEach((L) => {
-      E += L[0];
-    }), y = {
+    v.forEach((E, x) => {
+      s.elasticities.set(x, p), s.poissonsRatios.set(x, d), s.thicknesses.set(x, e);
+    }), t.nodes.val = b, t.elements.val = v, t.nodeInputs.val = i, t.elementInputs.val = s, t.deformOutputs.val = R(b, v, i, s);
+    const a = ((_b = (_a = t.deformOutputs.val.deformations) == null ? void 0 : _a.get(0)) == null ? void 0 : _b[0]) ?? 0, l = ((_d = (_c = t.deformOutputs.val.deformations) == null ? void 0 : _c.get(1)) == null ? void 0 : _d[0]) ?? 0, f = l - a, n = c / (p * e), g = Math.abs((f - n) / n) * 100;
+    let q = 0;
+    (_e = t.deformOutputs.val.reactions) == null ? void 0 : _e.forEach((E) => {
+      q += E[0];
+    }), h = {
       grad_fem: f,
-      epsilon_analytical: d,
+      epsilon_analytical: n,
       error: g,
-      Rx_total: E,
+      Rx_total: q,
       F_applied: 2 * m,
       ux0: a,
-      ux1: v,
+      ux1: l,
       params: {
-        L: t,
-        t: s,
-        E: o,
-        nu: i,
-        q: l
+        L: o,
+        t: e,
+        E: p,
+        nu: d,
+        q: c
       }
     };
   });
-  const V = $(n), D = k(b), A = M(n), O = _(), x = C([
-    "Validaci\xF3n",
-    "Print"
-  ]), q = N("Validaci\xF3n Membrana CST");
+  const y = r.state(""), $ = r.state(void 0);
   r.derive(() => {
-    const t = x.clicked.val;
-    if (t) {
-      if (t === "Validaci\xF3n") {
-        const s = {
-          ...n,
-          validation: y
-        }, o = F({
-          template: w,
-          data: s
-        });
-        q.content.val = o, q.open.val = true, x.clicked.val = "";
-      } else if (t === "Print") {
-        const s = {
-          ...n,
-          validation: y
-        }, o = window.open("", "_blank");
-        o && R(async () => {
-          const { render: i } = await import("./styles-DdZBjQss.js").then((l) => l.y);
-          return {
-            render: i
-          };
-        }, __vite__mapDeps([0,1]), import.meta.url).then(({ render: i }) => {
-          const l = w(s), c = document.createElement("div");
-          i(l, c), o.document.write(`
-          <!DOCTYPE html>
-          <html>
-          <head>
-            <title>TEST: Membrana CST - Validaci\xF3n</title>
-            <style>
-              body { font-family: "Times New Roman", serif; padding: 20px; }
-            </style>
-          </head>
-          <body>${c.innerHTML}</body>
-          </html>
-        `), o.document.close();
-        }), x.clicked.val = "";
+    if (y.val === "Validaci\xF3n" && ($.val = L({
+      template: w,
+      data: {
+        ...t,
+        validation: h
       }
+    })), y.val === "Print") {
+      const o = L({
+        template: w,
+        data: {
+          ...t,
+          validation: h
+        }
+      }), e = window.open("", "_blank");
+      e && (e.document.write(`<!DOCTYPE html><html><head><title>TEST: Membrana CST</title></head><body>${(o == null ? void 0 : o.innerHTML) || ""}</body></html>`), e.document.close(), e.focus(), setTimeout(() => e.print(), 500));
     }
   });
-  document.body.append(V.dom, D, O, A, x.dom, q.dom);
+  document.body.append(F(u), M({
+    mesh: t,
+    settingsObj: {
+      nodes: true,
+      deformedShape: true,
+      loads: true
+    }
+  }), C(t), P({
+    position: "bottom-center"
+  }), k({
+    dialogBody: $
+  }), N({
+    clickedButton: y,
+    buttons: [
+      "Validaci\xF3n",
+      "Print"
+    ],
+    sourceCode: "https://github.com/GiorgioBurbanelli89/awatif-ejemplos/tree/master/test-membrane-cst",
+    author: "https://github.com/GiorgioBurbanelli89"
+  }));
 });
