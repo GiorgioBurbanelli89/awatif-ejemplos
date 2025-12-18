@@ -1,8 +1,8 @@
-import { v as e, g as y, e as M, b as E, d as w } from "./styles-CWPU-Lqy.js";
-import { d as z, a as S, __tla as __tla_0 } from "./deformCpp-BprT8Kg9.js";
-import { g as C } from "./getParameters-COCExR_5.js";
-import { g as D } from "./getDialog-Dp-ldI_q.js";
-import { g as k, __tla as __tla_1 } from "./getMesh-DmUdekin.js";
+import { v as e, g as D, e as C, b as A, d as I } from "./styles-CWPU-Lqy.js";
+import { d as k, a as T, __tla as __tla_0 } from "./deformCpp-BprT8Kg9.js";
+import { g as R } from "./getParameters-COCExR_5.js";
+import { g as O } from "./getDialog-Dp-ldI_q.js";
+import { g as L, __tla as __tla_1 } from "./getMesh-DmUdekin.js";
 import "./complex-i8qiIvCl.js";
 import "./__vite-browser-external-D7Ct-6yo.js";
 Promise.all([
@@ -19,7 +19,7 @@ Promise.all([
     }
   })()
 ]).then(async () => {
-  const I = `
+  const P = `
 <style>
   .report-calcpad {
     font-family: 'Segoe UI', 'Arial Nova', Helvetica, sans-serif;
@@ -140,6 +140,62 @@ Promise.all([
     <tr><td>Tama\xF1o de Malla</td><td>h</td><td>{{mallado}}</td><td>Tama\xF1o m\xE1ximo de elemento</td></tr>
     <tr><td>Carga Uniforme</td><td>q</td><td>{{carga}}</td><td>Carga distribuida en Z</td></tr>
   </table>
+
+  <h2>2. C\xC1LCULOS ESTILO CALCPAD</h2>
+
+  <h3>2.1 Datos de Entrada</h3>
+  <div class="equation">
+    B = {{ancho}}<br>
+    L = {{largo}}<br>
+    t = {{espesor}}<br>
+    E = {{moduloE}}<br>
+    \u03BD = {{poisson}}<br>
+    q = {{carga}}
+  </div>
+
+  <h3>2.2 Propiedades Derivadas</h3>
+  <div class="equation">
+    <strong>M\xF3dulo de Corte:</strong><br>
+    G = E / [2\xB7(1 + \u03BD)] = {{moduloE}} / [2\xB7(1 + {{poisson}})] = <strong>{{G}}</strong>
+  </div>
+
+  <div class="equation">
+    <strong>Rigidez a Flexi\xF3n:</strong><br>
+    D = E\xB7t\xB3 / [12\xB7(1 - \u03BD\xB2)] = {{moduloE}}\xB7{{espesor}}\xB3 / [12\xB7(1 - {{poisson}}\xB2)] = <strong>{{D}}</strong>
+  </div>
+
+  <div class="equation">
+    <strong>\xC1rea de la Placa:</strong><br>
+    A = B\xB7L = {{ancho}}\xB7{{largo}} = <strong>{{area}}</strong>
+  </div>
+
+  <h3>2.3 Malla de Elementos Finitos</h3>
+  <div class="equation-result">
+    N\xFAmero de Nodos = <strong>{{numNodes}}</strong><br>
+    N\xFAmero de Elementos = <strong>{{numElements}}</strong><br>
+    Tama\xF1o promedio de elemento \u2248 \u221A(A / n<sub>elem</sub>) = \u221A({{area}} / {{numElements}}) \u2248 <strong>{{avgElemSize}}</strong>
+  </div>
+
+  <h3>2.4 Resultados del An\xE1lisis FEM</h3>
+  <div class="equation-result">
+    <strong>Desplazamiento M\xE1ximo:</strong><br>
+    U<sub>z,max</sub> = <strong>{{maxDisplacement}}</strong>
+  </div>
+
+  <div class="equation-result">
+    <strong>Momento Flector M\xE1ximo:</strong><br>
+    M<sub>xx,max</sub> = <strong>{{maxMoment}}</strong>
+  </div>
+
+  <div class="equation">
+    <strong>Verificaci\xF3n Anal\xEDtica (Placa Simplemente Apoyada):</strong><br>
+    Para placa rectangular con carga uniforme (Navier):<br>
+    w<sub>max</sub> \u2248 0.00406\xB7q\xB7a\u2074/D (para a/b = 1)<br>
+    w<sub>max,calc</sub> = 0.00406\xB7{{carga}}\xB7{{ancho}}\u2074/{{D}} = <strong>{{wAnalytical}}</strong>
+  </div>
+
+  <hr style="margin: 30px 0; border: 2px solid #3498db;">
+  <h1 style="color: #e74c3c;">EXPLICACI\xD3N DEL C\xD3DIGO</h1>
 
   <h2>2. FUNCIONES DE AWATIF UTILIZADAS</h2>
 
@@ -647,7 +703,7 @@ export function getMesh(options: MeshOptions): MeshResult {
     Fork: <a href="https://github.com/GiorgioBurbanelli89/awatif-ejemplos">GiorgioBurbanelli89/awatif-ejemplos</a>
   </p>
 </div>
-`, a = {
+`, s = {
     ancho: {
       value: e.state(10),
       min: 1,
@@ -712,7 +768,7 @@ export function getMesh(options: MeshOptions): MeshResult {
     analyzeOutputs: e.state({})
   };
   e.derive(() => {
-    const i = a.ancho.value.val, o = a.largo.value.val, b = a.espesor.value.val, l = a.moduloE.value.val, u = a.poisson.value.val, g = a.mallado.value.val, h = a.carga.value.val, { nodes: d, elements: r, boundaryIndices: m } = k({
+    const r = s.ancho.value.val, a = s.largo.value.val, u = s.espesor.value.val, l = s.moduloE.value.val, d = s.poisson.value.val, b = s.mallado.value.val, m = s.carga.value.val, { nodes: c, elements: n, boundaryIndices: g } = L({
       points: [
         [
           0,
@@ -720,18 +776,18 @@ export function getMesh(options: MeshOptions): MeshResult {
           0
         ],
         [
-          i,
+          r,
           0,
           0
         ],
         [
-          i,
-          o,
+          r,
+          a,
           0
         ],
         [
           0,
-          o,
+          a,
           0
         ]
       ],
@@ -741,11 +797,11 @@ export function getMesh(options: MeshOptions): MeshResult {
         2,
         3
       ],
-      maxMeshSize: g
+      maxMeshSize: b
     });
     t.nodeInputs.val = {
-      supports: new Map(m.map((n) => [
-        n,
+      supports: new Map(g.map((i) => [
+        i,
         [
           true,
           true,
@@ -755,76 +811,78 @@ export function getMesh(options: MeshOptions): MeshResult {
           true
         ]
       ])),
-      loads: new Map(d.map((n, s) => [
-        s,
+      loads: new Map(c.map((i, o) => [
+        o,
         [
           0,
           0,
-          h,
+          m,
           0,
           0,
           0
         ]
       ]))
-    }, t.nodes.val = d, t.elements.val = r;
-    const c = l / (2 * (1 + u));
+    }, t.nodes.val = c, t.elements.val = n;
+    const h = l / (2 * (1 + d));
     t.elementInputs.val = {
-      elasticities: new Map(r.map((n, s) => [
-        s,
+      elasticities: new Map(n.map((i, o) => [
+        o,
         l
       ])),
-      elasticitiesOrthogonal: new Map(r.map((n, s) => [
-        s,
+      elasticitiesOrthogonal: new Map(n.map((i, o) => [
+        o,
         l
       ])),
-      thicknesses: new Map(r.map((n, s) => [
-        s,
-        b
-      ])),
-      poissonsRatios: new Map(r.map((n, s) => [
-        s,
+      thicknesses: new Map(n.map((i, o) => [
+        o,
         u
       ])),
-      shearModuli: new Map(r.map((n, s) => [
-        s,
-        c
+      poissonsRatios: new Map(n.map((i, o) => [
+        o,
+        d
+      ])),
+      shearModuli: new Map(n.map((i, o) => [
+        o,
+        h
       ]))
-    }, t.deformOutputs.val = z(d, r, t.nodeInputs.val, t.elementInputs.val), t.analyzeOutputs.val = S(d, r, t.elementInputs.val, t.deformOutputs.val);
+    }, t.deformOutputs.val = k(c, n, t.nodeInputs.val, t.elementInputs.val), t.analyzeOutputs.val = T(c, n, t.elementInputs.val, t.deformOutputs.val);
   });
-  const f = e.state(""), x = e.state(void 0);
-  function v() {
-    const i = a.ancho.value.val, o = a.largo.value.val, b = a.espesor.value.val, l = a.moduloE.value.val, u = a.poisson.value.val, g = a.mallado.value.val, h = a.carga.value.val, d = t.nodes.val, r = t.elements.val, m = t.deformOutputs.val;
-    let c = 0;
-    (m == null ? void 0 : m.displacements) && m.displacements.forEach((p) => {
-      Math.abs(p[2]) > Math.abs(c) && (c = p[2]);
+  const x = e.state(""), E = e.state(void 0);
+  function y() {
+    const r = s.ancho.value.val, a = s.largo.value.val, u = s.espesor.value.val, l = s.moduloE.value.val, d = s.poisson.value.val, b = s.mallado.value.val, m = s.carga.value.val, c = l / (2 * (1 + d)), n = l * Math.pow(u, 3) / (12 * (1 - d * d)), g = r * a, h = t.nodes.val, i = t.elements.val, o = t.deformOutputs.val, w = Math.sqrt(g / Math.max(i.length, 1));
+    let f = 0;
+    (o == null ? void 0 : o.displacements) && o.displacements.forEach((p) => {
+      Math.abs(p[2]) > Math.abs(f) && (f = p[2]);
     });
-    let n = 0;
-    const s = t.analyzeOutputs.val;
-    return (s == null ? void 0 : s.bendingMomentsX) && s.bendingMomentsX.forEach((p) => {
-      Math.abs(p) > Math.abs(n) && (n = p);
-    }), I.replace("{{date}}", (/* @__PURE__ */ new Date()).toLocaleString()).replace("{{ancho}}", i.toString()).replace("{{largo}}", o.toString()).replace("{{espesor}}", b.toString()).replace("{{moduloE}}", l.toString()).replace("{{poisson}}", u.toString()).replace("{{mallado}}", g.toString()).replace("{{carga}}", h.toString()).replace("{{numNodes}}", d.length.toString()).replace("{{numElements}}", r.length.toString()).replace("{{maxDisplacement}}", c.toFixed(6)).replace("{{maxMoment}}", n.toFixed(4));
+    let v = 0;
+    const M = t.analyzeOutputs.val;
+    (M == null ? void 0 : M.bendingMomentsX) && M.bendingMomentsX.forEach((p) => {
+      Math.abs(p) > Math.abs(v) && (v = p);
+    });
+    const z = Math.min(r, a), S = 406e-5 * Math.abs(m) * Math.pow(z, 4) / n;
+    return P.replace(/\{\{date\}\}/g, (/* @__PURE__ */ new Date()).toLocaleString()).replace(/\{\{ancho\}\}/g, r.toString()).replace(/\{\{largo\}\}/g, a.toString()).replace(/\{\{espesor\}\}/g, u.toString()).replace(/\{\{moduloE\}\}/g, l.toString()).replace(/\{\{poisson\}\}/g, d.toString()).replace(/\{\{mallado\}\}/g, b.toString()).replace(/\{\{carga\}\}/g, m.toString()).replace(/\{\{G\}\}/g, c.toFixed(2)).replace(/\{\{D\}\}/g, n.toFixed(4)).replace(/\{\{area\}\}/g, g.toString()).replace(/\{\{avgElemSize\}\}/g, w.toFixed(3)).replace(/\{\{numNodes\}\}/g, h.length.toString()).replace(/\{\{numElements\}\}/g, i.length.toString()).replace(/\{\{maxDisplacement\}\}/g, f.toFixed(6)).replace(/\{\{maxMoment\}\}/g, v.toFixed(4)).replace(/\{\{wAnalytical\}\}/g, S.toFixed(6));
   }
   e.derive(() => {
-    if (f.val === "Report") {
-      const i = v(), o = document.createElement("div");
-      o.innerHTML = i, x.val = o;
+    if (x.val === "Report") {
+      const r = y(), a = document.createElement("div");
+      a.innerHTML = r, E.val = a;
     }
-    if (f.val === "Print") {
-      const i = v(), o = window.open("", "_blank");
-      o && (o.document.write(`
+    if (x.val === "Print") {
+      const r = y(), a = window.open("", "_blank");
+      a && (a.document.write(`
         <!DOCTYPE html>
         <html>
         <head>
           <title>Plate Shell Thin - Code Report</title>
         </head>
         <body>
-          ${i}
+          ${r}
         </body>
         </html>
-      `), o.document.close(), o.focus(), setTimeout(() => o.print(), 500));
+      `), a.document.close(), a.focus(), setTimeout(() => a.print(), 500));
     }
   });
-  document.body.append(C(a), y({
+  document.body.append(R(s), D({
     mesh: t,
     settingsObj: {
       nodes: false,
@@ -832,12 +890,12 @@ export function getMesh(options: MeshOptions): MeshResult {
       loads: false,
       shellResults: "displacementZ"
     }
-  }), M(t), E({
+  }), C(t), A({
     position: "bottom-center"
-  }), D({
-    dialogBody: x
-  }), w({
-    clickedButton: f,
+  }), O({
+    dialogBody: E
+  }), I({
+    clickedButton: x,
     buttons: [
       "Report",
       "Print"
