@@ -1,12 +1,11 @@
 import { w as J, x as N, v as t, g as Z, e as q, b as Q, d as W } from "./styles-DdZBjQss.js";
 import { g as Y } from "./getParameters-Cw5eBGZx.js";
 import { g as tt } from "./getTables-DThCF-Le.js";
-import { g as et } from "./getDialog-Be7ZRRm-.js";
+import { g as et } from "./getDialog-COZgeqJ-.js";
 import { g as at } from "./getReport-CR2O-zfl.js";
 import { a as st } from "./analyze-CmnHHflB.js";
-import { d as ot, __tla as __tla_0 } from "./deformCpp-BfqFyY9O.js";
-import { g as lt, a as nt, b as it, c as A, d as H, __tla as __tla_1 } from "./getSolids-C7MEMDDh.js";
-import "./directive-C_Rw-dL6.js";
+import { d as lt, __tla as __tla_0 } from "./deformCpp-BfqFyY9O.js";
+import { g as ot, a as nt, b as it, c as A, d as H, __tla as __tla_1 } from "./getSolids-C7MEMDDh.js";
 import "./complex-i8qiIvCl.js";
 import { __tla as __tla_2 } from "./getMesh-DmUdekin.js";
 import "./__vite-browser-external-D7Ct-6yo.js";
@@ -61,8 +60,8 @@ Promise.all([
           icon: "w2ui-icon-cross"
         }
       ],
-      onClick(o) {
-        o.target === "clear-points" ? s() : a(o.target);
+      onClick(l) {
+        l.target === "clear-points" ? s() : a(l.target);
       }
     }), n;
   }
@@ -72,8 +71,8 @@ Promise.all([
       <span>Tip: Hold</span>
       <span class="key">${s ? "Cmd" : "Ctrl"}</span>
       <span>to snap to grid points</span>
-    `, a.classList.add("show"), document.addEventListener("keydown", (o) => {
-      (o.ctrlKey || o.metaKey) && a.classList.remove("show");
+    `, a.classList.add("show"), document.addEventListener("keydown", (l) => {
+      (l.ctrlKey || l.metaKey) && a.classList.remove("show");
     });
     const n = document.createElement("style");
     return n.textContent = `
@@ -84,25 +83,25 @@ Promise.all([
   }
 `, document.head.appendChild(n), a;
   }
-  function mt(a, s, n, o, u, C) {
-    const p = n - 1, b = s * n + o * p, l = Array.from({
+  function mt(a, s, n, l, u, C) {
+    const p = n - 1, b = s * n + l * p, o = Array.from({
       length: n + p
-    }, (i, y) => y % 2 === 0 ? s : o);
+    }, (i, y) => y % 2 === 0 ? s : l);
     let d = [
       0
     ], P = 0;
-    for (let i of l) P += i, d.push(P);
+    for (let i of o) P += i, d.push(P);
     const M = d.map((i) => i - b / 2);
     let B = 0, R = [];
     const $ = 1e3;
-    for (let i = 0; i < l.length; i++) {
-      let y = l[i], G = $ * y ** 3 / 12, K = $ * y, X = M[i + 1], E = G + K * X ** 2;
+    for (let i = 0; i < o.length; i++) {
+      let y = o[i], G = $ * y ** 3 / 12, K = $ * y, X = M[i + 1], E = G + K * X ** 2;
       R.push(E), B += E;
     }
     const k = M.map((i) => Number((u * 1e6 * i / B).toFixed(2))), O = Math.max(...k), F = a.f_mk * C, _ = k.map((i) => Number((i / F).toFixed(2))), j = Math.max(..._);
     return {
       slabHeight: b,
-      thicknesses: l,
+      thicknesses: o,
       zCordsFromMid: M,
       inertiaList: R,
       inertia: B,
@@ -186,12 +185,12 @@ Promise.all([
           <th>Utilization Ratio</th>
         </tr>
         <tbody id="stressTable">
-          ${s.val.bendingStresses.map((n, o) => N`
+          ${s.val.bendingStresses.map((n, l) => N`
               <tr>
-                <td>Layer ${o + 1}</td>
-                <td>${s.val.zCordsFromMid[o]} mm</td>
+                <td>Layer ${l + 1}</td>
+                <td>${s.val.zCordsFromMid[l]} mm</td>
                 <td>${n.toFixed(2)} N/mm²</td>
-                <td>${(s.val.eta[o] * 100).toFixed(0)}%</td>
+                <td>${(s.val.eta[l] * 100).toFixed(0)}%</td>
               </tr>
             `)}
         </tbody>
@@ -256,7 +255,7 @@ Promise.all([
     slabsByStory: t.state(/* @__PURE__ */ new Map()),
     columnData: t.state(/* @__PURE__ */ new Map()),
     slabData: t.state(/* @__PURE__ */ new Map())
-  }, I = lt(), L = nt(), g = t.state([
+  }, I = ot(), L = nt(), g = t.state([
     L
   ]), ht = t.state([
     I
@@ -396,17 +395,17 @@ Promise.all([
     x == "1st-floor" && (c.val = f.val), x == "2nd-floor" && (m.val = f.val, h.val = S.val);
   });
   t.derive(() => {
-    const a = /* @__PURE__ */ new Map(), s = /* @__PURE__ */ new Map(), n = /* @__PURE__ */ new Map(), o = [], u = [], C = [], p = [];
-    if (o.length, m.val.length > 0) for (let l = 0; l < m.val.length; l++) C.push([
-      m.val[l][0],
-      m.val[l][1],
+    const a = /* @__PURE__ */ new Map(), s = /* @__PURE__ */ new Map(), n = /* @__PURE__ */ new Map(), l = [], u = [], C = [], p = [];
+    if (l.length, m.val.length > 0) for (let o = 0; o < m.val.length; o++) C.push([
+      m.val[o][0],
+      m.val[o][1],
       w
-    ]), o.push([
-      m.val[l][0],
-      m.val[l][1],
+    ]), l.push([
+      m.val[o][0],
+      m.val[o][1],
       w
     ]);
-    s.set(0, Array.from(h.rawVal.keys())), h.rawVal.forEach((l, d) => {
+    s.set(0, Array.from(h.rawVal.keys())), h.rawVal.forEach((o, d) => {
       n.set(d, {
         analysisInput: {
           meshSize: v.meshSize.value.val,
@@ -422,8 +421,8 @@ Promise.all([
     });
     const b = [];
     if (c.val.length > 0) {
-      for (let l = 0; l < c.val.length; l++) {
-        const d = c.val[l];
+      for (let o = 0; o < c.val.length; o++) {
+        const d = c.val[o];
         p.push([
           [
             d[0],
@@ -432,20 +431,20 @@ Promise.all([
           ]
         ]);
       }
-      for (let l = 0; l < p.length; l++) {
-        const d = o.length;
-        o.push(...p[l]), u.push(d), b.push(u.length - 1);
+      for (let o = 0; o < p.length; o++) {
+        const d = l.length;
+        l.push(...p[o]), u.push(d), b.push(u.length - 1);
       }
     }
-    a.set(0, b), e.points.val = o, e.columns.val = u, e.slabs.val = h.val, e.columnsByStory.val = a, e.slabsByStory.val = s, e.slabData.val = n;
+    a.set(0, b), e.points.val = l, e.columns.val = u, e.slabs.val = h.val, e.columnsByStory.val = a, e.slabsByStory.val = s, e.slabData.val = n;
   });
   t.derive(() => {
-    const { nodes: a, elements: s, nodeInputs: n, elementInputs: o } = it(e.points.val, e.stories.val, e.columns.val, e.slabs.val, e.columnsByStory.val, e.slabsByStory.val, e.columnData.val, e.slabData.val);
+    const { nodes: a, elements: s, nodeInputs: n, elementInputs: l } = it(e.points.val, e.stories.val, e.columns.val, e.slabs.val, e.columnsByStory.val, e.slabsByStory.val, e.columnData.val, e.slabData.val);
     L.geometry = A(e.points.val, [], e.columns.val), I.geometry = H(e.points.val, e.slabs.val, e.columns.val), g.val = [
       ...g.rawVal
-    ], r.deformOutputs.val = ot(a, s, n, o), r.analyzeOutputs.val = st(a, s, o, r.deformOutputs.val), T.val = Math.max(...Array.from(r.analyzeOutputs.val.bendingXX.values()).flat()) * 1e-3, U.val = mt({
+    ], r.deformOutputs.val = lt(a, s, n, l), r.analyzeOutputs.val = st(a, s, l, r.deformOutputs.val), T.val = Math.max(...Array.from(r.analyzeOutputs.val.bendingXX.values()).flat()) * 1e-3, U.val = mt({
       f_mk: 24
-    }, 55, 3, 20, T.val, 0.8), r.nodes.val = a, r.elements.val = s, r.nodeInputs.val = n, r.elementInputs.val = o;
+    }, 55, 3, 20, T.val, 0.8), r.nodes.val = a, r.elements.val = s, r.nodeInputs.val = n, r.elementInputs.val = l;
   });
   t.derive(() => {
     z.val === "Tables" && (D.val = tt({
