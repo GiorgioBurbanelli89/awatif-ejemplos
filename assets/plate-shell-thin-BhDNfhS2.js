@@ -1,8 +1,8 @@
-import { v as e, g as D, e as C, b as A, d as I } from "./styles-CWPU-Lqy.js";
-import { d as k, a as T, __tla as __tla_0 } from "./deformCpp-BprT8Kg9.js";
-import { g as R } from "./getParameters-COCExR_5.js";
-import { g as O } from "./getDialog-Dp-ldI_q.js";
-import { g as L, __tla as __tla_1 } from "./getMesh-DmUdekin.js";
+import { v as a, g as O, e as P, b as U, d as B } from "./styles-CWPU-Lqy.js";
+import { d as N, a as G, __tla as __tla_0 } from "./deformCpp-BprT8Kg9.js";
+import { g as q } from "./getParameters-COCExR_5.js";
+import { g as X } from "./getDialog-Dp-ldI_q.js";
+import { g as V, __tla as __tla_1 } from "./getMesh-DmUdekin.js";
 import "./complex-i8qiIvCl.js";
 import "./__vite-browser-external-D7Ct-6yo.js";
 Promise.all([
@@ -19,7 +19,193 @@ Promise.all([
     }
   })()
 ]).then(async () => {
-  const P = `
+  const Y = `
+<style>
+  .calcpad-report {
+    font-family: 'Segoe UI', 'Arial Nova', Helvetica, sans-serif;
+    font-size: 11pt;
+    max-width: 210mm;
+    margin: 0 auto;
+    padding: 25px;
+    background: white;
+    color: #333;
+  }
+  .calcpad-report h1 {
+    color: #1a5276;
+    border-bottom: 3px solid #1a5276;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+  }
+  .calcpad-report h2 {
+    color: #2874a6;
+    border-bottom: 1px solid #aed6f1;
+    margin-top: 25px;
+    padding-bottom: 5px;
+  }
+  .calcpad-report h3 {
+    color: #5dade2;
+    margin-top: 15px;
+  }
+  .calcpad-report .calc-line {
+    font-family: 'Cambria Math', 'Times New Roman', serif;
+    font-size: 12pt;
+    margin: 8px 0;
+    padding: 8px 15px;
+    background: #f8f9fa;
+    border-left: 3px solid #3498db;
+  }
+  .calcpad-report .calc-line .result {
+    color: #e74c3c;
+    font-weight: bold;
+  }
+  .calcpad-report .calc-section {
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 15px 20px;
+    margin: 15px 0;
+  }
+  .calcpad-report .result-box {
+    background: #e8f6f3;
+    border-left: 4px solid #1abc9c;
+    padding: 15px 20px;
+    margin: 15px 0;
+  }
+  .calcpad-report .result-box .value {
+    font-size: 14pt;
+    font-weight: bold;
+    color: #16a085;
+  }
+  .calcpad-report table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 15px 0;
+  }
+  .calcpad-report th, .calcpad-report td {
+    border: 1px solid #bdc3c7;
+    padding: 10px;
+    text-align: left;
+  }
+  .calcpad-report th {
+    background: #3498db;
+    color: white;
+  }
+  .calcpad-report tr:nth-child(even) {
+    background: #f8f9fa;
+  }
+  .calcpad-report .check-ok {
+    color: #27ae60;
+    font-weight: bold;
+  }
+  .calcpad-report .check-warn {
+    color: #f39c12;
+    font-weight: bold;
+  }
+</style>
+
+<div class="calcpad-report">
+  <h1>AN\xC1LISIS DE PLACA RECTANGULAR</h1>
+  <p><strong>M\xE9todo:</strong> Elementos Finitos - Teor\xEDa de Mindlin-Reissner</p>
+  <p><strong>Fecha:</strong> {{date}}</p>
+
+  <h2>1. DATOS DE ENTRADA</h2>
+
+  <table>
+    <tr><th>Par\xE1metro</th><th>S\xEDmbolo</th><th>Valor</th><th>Unidad</th></tr>
+    <tr><td>Ancho de placa</td><td>B</td><td>{{ancho}}</td><td>-</td></tr>
+    <tr><td>Largo de placa</td><td>L</td><td>{{largo}}</td><td>-</td></tr>
+    <tr><td>Espesor</td><td>t</td><td>{{espesor}}</td><td>-</td></tr>
+    <tr><td>M\xF3dulo de elasticidad</td><td>E</td><td>{{moduloE}}</td><td>-</td></tr>
+    <tr><td>Coeficiente de Poisson</td><td>\u03BD</td><td>{{poisson}}</td><td>-</td></tr>
+    <tr><td>Carga uniforme</td><td>q</td><td>{{carga}}</td><td>-</td></tr>
+    <tr><td>Tama\xF1o de malla</td><td>h</td><td>{{mallado}}</td><td>-</td></tr>
+  </table>
+
+  <h2>2. PROPIEDADES DERIVADAS</h2>
+
+  <h3>2.1 M\xF3dulo de Corte</h3>
+  <div class="calc-line">
+    G = E / [2\xB7(1 + \u03BD)]
+  </div>
+  <div class="calc-line">
+    G = {{moduloE}} / [2\xB7(1 + {{poisson}})] = <span class="result">{{G}}</span>
+  </div>
+
+  <h3>2.2 Rigidez a Flexi\xF3n</h3>
+  <div class="calc-line">
+    D = E\xB7t\xB3 / [12\xB7(1 - \u03BD\xB2)]
+  </div>
+  <div class="calc-line">
+    D = {{moduloE}}\xB7{{espesor}}\xB3 / [12\xB7(1 - {{poisson}}\xB2)] = <span class="result">{{D}}</span>
+  </div>
+
+  <h3>2.3 Geometr\xEDa</h3>
+  <div class="calc-line">
+    A = B\xB7L = {{ancho}}\xB7{{largo}} = <span class="result">{{area}}</span>
+  </div>
+  <div class="calc-line">
+    Relaci\xF3n de aspecto: L/B = {{largo}}/{{ancho}} = <span class="result">{{aspectRatio}}</span>
+  </div>
+
+  <h2>3. MALLA DE ELEMENTOS FINITOS</h2>
+
+  <div class="result-box">
+    <p>N\xFAmero de nodos: <span class="value">{{numNodes}}</span></p>
+    <p>N\xFAmero de elementos: <span class="value">{{numElements}}</span></p>
+    <p>Grados de libertad totales: <span class="value">{{totalDOF}}</span></p>
+  </div>
+
+  <div class="calc-line">
+    Tama\xF1o promedio de elemento \u2248 \u221A(A/n) = \u221A({{area}}/{{numElements}}) = <span class="result">{{avgElemSize}}</span>
+  </div>
+
+  <h2>4. RESULTADOS DEL AN\xC1LISIS FEM</h2>
+
+  <h3>4.1 Desplazamientos</h3>
+  <div class="result-box">
+    <p>Desplazamiento m\xE1ximo (Uz): <span class="value">{{maxDisplacement}}</span></p>
+  </div>
+
+  <h3>4.2 Momentos Flectores</h3>
+  <div class="result-box">
+    <p>Momento m\xE1ximo Mxx: <span class="value">{{maxMomentX}}</span></p>
+    <p>Momento m\xE1ximo Myy: <span class="value">{{maxMomentY}}</span></p>
+    <p>Momento m\xE1ximo Mxy: <span class="value">{{maxMomentXY}}</span></p>
+  </div>
+
+  <h2>5. VERIFICACI\xD3N ANAL\xCDTICA</h2>
+
+  <h3>5.1 Soluci\xF3n de Navier (Placa Simplemente Apoyada)</h3>
+  <div class="calc-section">
+    <p>Para placa rectangular con carga uniforme:</p>
+    <p>w<sub>max</sub> \u2248 \u03B1\xB7q\xB7a\u2074/D</p>
+    <p>donde \u03B1 = 0.00406 para a/b = 1 (placa cuadrada)</p>
+  </div>
+
+  <div class="calc-line">
+    a = min(B, L) = min({{ancho}}, {{largo}}) = <span class="result">{{aMin}}</span>
+  </div>
+  <div class="calc-line">
+    w<sub>anal\xEDtico</sub> = 0.00406\xB7|q|\xB7a\u2074/D
+  </div>
+  <div class="calc-line">
+    w<sub>anal\xEDtico</sub> = 0.00406\xB7|{{carga}}|\xB7{{aMin}}\u2074/{{D}} = <span class="result">{{wAnalytical}}</span>
+  </div>
+
+  <h3>5.2 Comparaci\xF3n FEM vs Anal\xEDtico</h3>
+  <div class="result-box">
+    <p>w<sub>FEM</sub> = {{maxDisplacementAbs}}</p>
+    <p>w<sub>anal\xEDtico</sub> = {{wAnalytical}}</p>
+    <p>Error relativo = |w<sub>FEM</sub> - w<sub>anal\xEDtico</sub>| / w<sub>anal\xEDtico</sub> \xD7 100 = <span class="value">{{errorPercent}}%</span></p>
+    <p class="{{checkClass}}">{{checkMessage}}</p>
+  </div>
+
+  <hr>
+  <p style="text-align: center; color: #888; font-size: 9pt;">
+    Generado con Awatif FEM<br>
+    <a href="https://github.com/GiorgioBurbanelli89/awatif-ejemplos">github.com/GiorgioBurbanelli89/awatif-ejemplos</a>
+  </p>
+</div>
+`, _ = `
 <style>
   .report-calcpad {
     font-family: 'Segoe UI', 'Arial Nova', Helvetica, sans-serif;
@@ -141,61 +327,6 @@ Promise.all([
     <tr><td>Carga Uniforme</td><td>q</td><td>{{carga}}</td><td>Carga distribuida en Z</td></tr>
   </table>
 
-  <h2>2. C\xC1LCULOS ESTILO CALCPAD</h2>
-
-  <h3>2.1 Datos de Entrada</h3>
-  <div class="equation">
-    B = {{ancho}}<br>
-    L = {{largo}}<br>
-    t = {{espesor}}<br>
-    E = {{moduloE}}<br>
-    \u03BD = {{poisson}}<br>
-    q = {{carga}}
-  </div>
-
-  <h3>2.2 Propiedades Derivadas</h3>
-  <div class="equation">
-    <strong>M\xF3dulo de Corte:</strong><br>
-    G = E / [2\xB7(1 + \u03BD)] = {{moduloE}} / [2\xB7(1 + {{poisson}})] = <strong>{{G}}</strong>
-  </div>
-
-  <div class="equation">
-    <strong>Rigidez a Flexi\xF3n:</strong><br>
-    D = E\xB7t\xB3 / [12\xB7(1 - \u03BD\xB2)] = {{moduloE}}\xB7{{espesor}}\xB3 / [12\xB7(1 - {{poisson}}\xB2)] = <strong>{{D}}</strong>
-  </div>
-
-  <div class="equation">
-    <strong>\xC1rea de la Placa:</strong><br>
-    A = B\xB7L = {{ancho}}\xB7{{largo}} = <strong>{{area}}</strong>
-  </div>
-
-  <h3>2.3 Malla de Elementos Finitos</h3>
-  <div class="equation-result">
-    N\xFAmero de Nodos = <strong>{{numNodes}}</strong><br>
-    N\xFAmero de Elementos = <strong>{{numElements}}</strong><br>
-    Tama\xF1o promedio de elemento \u2248 \u221A(A / n<sub>elem</sub>) = \u221A({{area}} / {{numElements}}) \u2248 <strong>{{avgElemSize}}</strong>
-  </div>
-
-  <h3>2.4 Resultados del An\xE1lisis FEM</h3>
-  <div class="equation-result">
-    <strong>Desplazamiento M\xE1ximo:</strong><br>
-    U<sub>z,max</sub> = <strong>{{maxDisplacement}}</strong>
-  </div>
-
-  <div class="equation-result">
-    <strong>Momento Flector M\xE1ximo:</strong><br>
-    M<sub>xx,max</sub> = <strong>{{maxMoment}}</strong>
-  </div>
-
-  <div class="equation">
-    <strong>Verificaci\xF3n Anal\xEDtica (Placa Simplemente Apoyada):</strong><br>
-    Para placa rectangular con carga uniforme (Navier):<br>
-    w<sub>max</sub> \u2248 0.00406\xB7q\xB7a\u2074/D (para a/b = 1)<br>
-    w<sub>max,calc</sub> = 0.00406\xB7{{carga}}\xB7{{ancho}}\u2074/{{D}} = <strong>{{wAnalytical}}</strong>
-  </div>
-
-  <hr style="margin: 30px 0; border: 2px solid #3498db;">
-  <h1 style="color: #e74c3c;">EXPLICACI\xD3N DEL C\xD3DIGO</h1>
 
   <h2>2. FUNCIONES DE AWATIF UTILIZADAS</h2>
 
@@ -705,7 +836,7 @@ export function getMesh(options: MeshOptions): MeshResult {
 </div>
 `, s = {
     ancho: {
-      value: e.state(10),
+      value: a.state(10),
       min: 1,
       max: 30,
       step: 0.5,
@@ -713,7 +844,7 @@ export function getMesh(options: MeshOptions): MeshResult {
       unit: "length"
     },
     largo: {
-      value: e.state(15),
+      value: a.state(15),
       min: 1,
       max: 30,
       step: 0.5,
@@ -721,7 +852,7 @@ export function getMesh(options: MeshOptions): MeshResult {
       unit: "length"
     },
     espesor: {
-      value: e.state(0.2),
+      value: a.state(0.2),
       min: 0.05,
       max: 1,
       step: 0.05,
@@ -729,7 +860,7 @@ export function getMesh(options: MeshOptions): MeshResult {
       unit: "length"
     },
     moduloE: {
-      value: e.state(21e4),
+      value: a.state(21e4),
       min: 1e4,
       max: 5e5,
       step: 1e3,
@@ -737,14 +868,14 @@ export function getMesh(options: MeshOptions): MeshResult {
       unit: "stress"
     },
     poisson: {
-      value: e.state(0.3),
+      value: a.state(0.3),
       min: 0.1,
       max: 0.45,
       step: 0.05,
       label: "Poisson (\u03BD)"
     },
     mallado: {
-      value: e.state(1),
+      value: a.state(1),
       min: 0.3,
       max: 3,
       step: 0.1,
@@ -752,23 +883,23 @@ export function getMesh(options: MeshOptions): MeshResult {
       unit: "length"
     },
     carga: {
-      value: e.state(-10),
+      value: a.state(-10),
       min: -50,
       max: 50,
       step: 1,
       label: "Carga uniforme",
       unit: "force"
     }
-  }, t = {
-    nodes: e.state([]),
-    elements: e.state([]),
-    nodeInputs: e.state({}),
-    elementInputs: e.state({}),
-    deformOutputs: e.state({}),
-    analyzeOutputs: e.state({})
+  }, o = {
+    nodes: a.state([]),
+    elements: a.state([]),
+    nodeInputs: a.state({}),
+    elementInputs: a.state({}),
+    deformOutputs: a.state({}),
+    analyzeOutputs: a.state({})
   };
-  e.derive(() => {
-    const r = s.ancho.value.val, a = s.largo.value.val, u = s.espesor.value.val, l = s.moduloE.value.val, d = s.poisson.value.val, b = s.mallado.value.val, m = s.carga.value.val, { nodes: c, elements: n, boundaryIndices: g } = L({
+  a.derive(() => {
+    const e = s.ancho.value.val, t = s.largo.value.val, m = s.espesor.value.val, d = s.moduloE.value.val, c = s.poisson.value.val, x = s.mallado.value.val, g = s.carga.value.val, { nodes: p, elements: r, boundaryIndices: b } = V({
       points: [
         [
           0,
@@ -776,18 +907,18 @@ export function getMesh(options: MeshOptions): MeshResult {
           0
         ],
         [
-          r,
+          e,
           0,
           0
         ],
         [
-          r,
-          a,
+          e,
+          t,
           0
         ],
         [
           0,
-          a,
+          t,
           0
         ]
       ],
@@ -797,11 +928,11 @@ export function getMesh(options: MeshOptions): MeshResult {
         2,
         3
       ],
-      maxMeshSize: b
+      maxMeshSize: x
     });
-    t.nodeInputs.val = {
-      supports: new Map(g.map((i) => [
-        i,
+    o.nodeInputs.val = {
+      supports: new Map(b.map((l) => [
+        l,
         [
           true,
           true,
@@ -811,93 +942,135 @@ export function getMesh(options: MeshOptions): MeshResult {
           true
         ]
       ])),
-      loads: new Map(c.map((i, o) => [
-        o,
+      loads: new Map(p.map((l, n) => [
+        n,
         [
           0,
           0,
-          m,
+          g,
           0,
           0,
           0
         ]
       ]))
-    }, t.nodes.val = c, t.elements.val = n;
-    const h = l / (2 * (1 + d));
-    t.elementInputs.val = {
-      elasticities: new Map(n.map((i, o) => [
-        o,
-        l
-      ])),
-      elasticitiesOrthogonal: new Map(n.map((i, o) => [
-        o,
-        l
-      ])),
-      thicknesses: new Map(n.map((i, o) => [
-        o,
-        u
-      ])),
-      poissonsRatios: new Map(n.map((i, o) => [
-        o,
+    }, o.nodes.val = p, o.elements.val = r;
+    const M = d / (2 * (1 + c));
+    o.elementInputs.val = {
+      elasticities: new Map(r.map((l, n) => [
+        n,
         d
       ])),
-      shearModuli: new Map(n.map((i, o) => [
-        o,
-        h
+      elasticitiesOrthogonal: new Map(r.map((l, n) => [
+        n,
+        d
+      ])),
+      thicknesses: new Map(r.map((l, n) => [
+        n,
+        m
+      ])),
+      poissonsRatios: new Map(r.map((l, n) => [
+        n,
+        c
+      ])),
+      shearModuli: new Map(r.map((l, n) => [
+        n,
+        M
       ]))
-    }, t.deformOutputs.val = k(c, n, t.nodeInputs.val, t.elementInputs.val), t.analyzeOutputs.val = T(c, n, t.elementInputs.val, t.deformOutputs.val);
+    }, o.deformOutputs.val = N(p, r, o.nodeInputs.val, o.elementInputs.val), o.analyzeOutputs.val = G(p, r, o.elementInputs.val, o.deformOutputs.val);
   });
-  const x = e.state(""), E = e.state(void 0);
-  function y() {
-    const r = s.ancho.value.val, a = s.largo.value.val, u = s.espesor.value.val, l = s.moduloE.value.val, d = s.poisson.value.val, b = s.mallado.value.val, m = s.carga.value.val, c = l / (2 * (1 + d)), n = l * Math.pow(u, 3) / (12 * (1 - d * d)), g = r * a, h = t.nodes.val, i = t.elements.val, o = t.deformOutputs.val, w = Math.sqrt(g / Math.max(i.length, 1));
-    let f = 0;
-    (o == null ? void 0 : o.displacements) && o.displacements.forEach((p) => {
-      Math.abs(p[2]) > Math.abs(f) && (f = p[2]);
+  const v = a.state(""), S = a.state(void 0);
+  function R() {
+    const e = s.ancho.value.val, t = s.largo.value.val, m = s.espesor.value.val, d = s.moduloE.value.val, c = s.poisson.value.val, x = s.mallado.value.val, g = s.carga.value.val, p = d / (2 * (1 + c)), r = d * Math.pow(m, 3) / (12 * (1 - c * c)), b = e * t, M = t / e, l = o.nodes.val, n = o.elements.val, D = o.deformOutputs.val, u = o.analyzeOutputs.val, I = Math.sqrt(b / Math.max(n.length, 1)), T = l.length * 6;
+    let h = 0;
+    (D == null ? void 0 : D.displacements) && D.displacements.forEach((i) => {
+      Math.abs(i[2]) > Math.abs(h) && (h = i[2]);
     });
-    let v = 0;
-    const M = t.analyzeOutputs.val;
-    (M == null ? void 0 : M.bendingMomentsX) && M.bendingMomentsX.forEach((p) => {
-      Math.abs(p) > Math.abs(v) && (v = p);
+    let y = 0, E = 0, w = 0;
+    (u == null ? void 0 : u.bendingMomentsX) && u.bendingMomentsX.forEach((i) => {
+      Math.abs(i) > Math.abs(y) && (y = i);
+    }), (u == null ? void 0 : u.bendingMomentsY) && u.bendingMomentsY.forEach((i) => {
+      Math.abs(i) > Math.abs(E) && (E = i);
+    }), (u == null ? void 0 : u.bendingMomentsXY) && u.bendingMomentsXY.forEach((i) => {
+      Math.abs(i) > Math.abs(w) && (w = i);
     });
-    const z = Math.min(r, a), S = 406e-5 * Math.abs(m) * Math.pow(z, 4) / n;
-    return P.replace(/\{\{date\}\}/g, (/* @__PURE__ */ new Date()).toLocaleString()).replace(/\{\{ancho\}\}/g, r.toString()).replace(/\{\{largo\}\}/g, a.toString()).replace(/\{\{espesor\}\}/g, u.toString()).replace(/\{\{moduloE\}\}/g, l.toString()).replace(/\{\{poisson\}\}/g, d.toString()).replace(/\{\{mallado\}\}/g, b.toString()).replace(/\{\{carga\}\}/g, m.toString()).replace(/\{\{G\}\}/g, c.toFixed(2)).replace(/\{\{D\}\}/g, n.toFixed(4)).replace(/\{\{area\}\}/g, g.toString()).replace(/\{\{avgElemSize\}\}/g, w.toFixed(3)).replace(/\{\{numNodes\}\}/g, h.length.toString()).replace(/\{\{numElements\}\}/g, i.length.toString()).replace(/\{\{maxDisplacement\}\}/g, f.toFixed(6)).replace(/\{\{maxMoment\}\}/g, v.toFixed(4)).replace(/\{\{wAnalytical\}\}/g, S.toFixed(6));
+    const A = Math.min(e, t), f = 406e-5 * Math.abs(g) * Math.pow(A, 4) / r, C = Math.abs(h), z = f > 0 ? Math.abs(C - f) / f * 100 : 0, F = z < 10 ? "check-ok" : "check-warn", L = z < 10 ? "\u2713 Error < 10% - Resultado aceptable" : "\u26A0 Error > 10% - Verificar malla";
+    return {
+      B: e,
+      L: t,
+      t: m,
+      E: d,
+      nu: c,
+      meshSize: x,
+      load: g,
+      G: p,
+      D: r,
+      area: b,
+      aspectRatio: M,
+      nodes: l,
+      elements: n,
+      avgElemSize: I,
+      totalDOF: T,
+      maxUz: h,
+      maxMxx: y,
+      maxMyy: E,
+      maxMxy: w,
+      aMin: A,
+      wAnalytical: f,
+      maxDisplacementAbs: C,
+      errorPercent: z,
+      checkClass: F,
+      checkMessage: L
+    };
   }
-  e.derive(() => {
-    if (x.val === "Report") {
-      const r = y(), a = document.createElement("div");
-      a.innerHTML = r, E.val = a;
+  function k() {
+    const e = R();
+    return Y.replace(/\{\{date\}\}/g, (/* @__PURE__ */ new Date()).toLocaleString()).replace(/\{\{ancho\}\}/g, e.B.toString()).replace(/\{\{largo\}\}/g, e.L.toString()).replace(/\{\{espesor\}\}/g, e.t.toString()).replace(/\{\{moduloE\}\}/g, e.E.toString()).replace(/\{\{poisson\}\}/g, e.nu.toString()).replace(/\{\{mallado\}\}/g, e.meshSize.toString()).replace(/\{\{carga\}\}/g, e.load.toString()).replace(/\{\{G\}\}/g, e.G.toFixed(2)).replace(/\{\{D\}\}/g, e.D.toFixed(4)).replace(/\{\{area\}\}/g, e.area.toString()).replace(/\{\{aspectRatio\}\}/g, e.aspectRatio.toFixed(2)).replace(/\{\{numNodes\}\}/g, e.nodes.length.toString()).replace(/\{\{numElements\}\}/g, e.elements.length.toString()).replace(/\{\{totalDOF\}\}/g, e.totalDOF.toString()).replace(/\{\{avgElemSize\}\}/g, e.avgElemSize.toFixed(3)).replace(/\{\{maxDisplacement\}\}/g, e.maxUz.toFixed(6)).replace(/\{\{maxMomentX\}\}/g, e.maxMxx.toFixed(4)).replace(/\{\{maxMomentY\}\}/g, e.maxMyy.toFixed(4)).replace(/\{\{maxMomentXY\}\}/g, e.maxMxy.toFixed(4)).replace(/\{\{aMin\}\}/g, e.aMin.toString()).replace(/\{\{wAnalytical\}\}/g, e.wAnalytical.toFixed(6)).replace(/\{\{maxDisplacementAbs\}\}/g, e.maxDisplacementAbs.toFixed(6)).replace(/\{\{errorPercent\}\}/g, e.errorPercent.toFixed(2)).replace(/\{\{checkClass\}\}/g, e.checkClass).replace(/\{\{checkMessage\}\}/g, e.checkMessage);
+  }
+  function W() {
+    const e = R();
+    return _.replace(/\{\{date\}\}/g, (/* @__PURE__ */ new Date()).toLocaleString()).replace(/\{\{ancho\}\}/g, e.B.toString()).replace(/\{\{largo\}\}/g, e.L.toString()).replace(/\{\{espesor\}\}/g, e.t.toString()).replace(/\{\{moduloE\}\}/g, e.E.toString()).replace(/\{\{poisson\}\}/g, e.nu.toString()).replace(/\{\{mallado\}\}/g, e.meshSize.toString()).replace(/\{\{carga\}\}/g, e.load.toString()).replace(/\{\{numNodes\}\}/g, e.nodes.length.toString()).replace(/\{\{numElements\}\}/g, e.elements.length.toString()).replace(/\{\{maxDisplacement\}\}/g, e.maxUz.toFixed(6)).replace(/\{\{maxMoment\}\}/g, e.maxMxx.toFixed(4));
+  }
+  a.derive(() => {
+    if (v.val === "Report") {
+      const e = k(), t = document.createElement("div");
+      t.innerHTML = e, S.val = t;
     }
-    if (x.val === "Print") {
-      const r = y(), a = window.open("", "_blank");
-      a && (a.document.write(`
+    if (v.val === "Code") {
+      const e = W(), t = document.createElement("div");
+      t.innerHTML = e, S.val = t;
+    }
+    if (v.val === "Print") {
+      const e = k(), t = window.open("", "_blank");
+      t && (t.document.write(`
         <!DOCTYPE html>
         <html>
         <head>
-          <title>Plate Shell Thin - Code Report</title>
+          <title>Plate Shell Thin - Report</title>
         </head>
         <body>
-          ${r}
+          ${e}
         </body>
         </html>
-      `), a.document.close(), a.focus(), setTimeout(() => a.print(), 500));
+      `), t.document.close(), t.focus(), setTimeout(() => t.print(), 500));
     }
   });
-  document.body.append(R(s), D({
-    mesh: t,
+  document.body.append(q(s), O({
+    mesh: o,
     settingsObj: {
       nodes: false,
       deformedShape: true,
       loads: false,
       shellResults: "displacementZ"
     }
-  }), C(t), A({
+  }), P(o), U({
     position: "bottom-center"
-  }), O({
-    dialogBody: E
-  }), I({
-    clickedButton: x,
+  }), X({
+    dialogBody: S
+  }), B({
+    clickedButton: v,
     buttons: [
       "Report",
+      "Code",
       "Print"
     ],
     sourceCode: "https://github.com/GiorgioBurbanelli89/awatif-ejemplos/tree/master/plate-shell-thin",
