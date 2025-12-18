@@ -1,11 +1,13 @@
-import { x as ut, v as L, g as vt, e as Mt, b as wt, d as zt } from "./styles-CWPU-Lqy.js";
-import { d as kt, a as Et, __tla as __tla_0 } from "./deformCpp-BprT8Kg9.js";
-import { g as St } from "./getParameters-COCExR_5.js";
-import { g as Ct } from "./getDialog-Dp-ldI_q.js";
-import { g as it } from "./getReport-B2dSsEEo.js";
+import { x as ut, v as L, g as vt, e as Mt, b as wt, d as zt } from "./styles-DdZBjQss.js";
+import { a as kt } from "./analyze-CmnHHflB.js";
+import { d as Et, __tla as __tla_0 } from "./deformCpp-BfqFyY9O.js";
+import { g as St } from "./getParameters-Cw5eBGZx.js";
+import { g as Ct } from "./getDialog-Be7ZRRm-.js";
+import { g as it } from "./getReport-CR2O-zfl.js";
 import { g as Ft, __tla as __tla_1 } from "./getMesh-DmUdekin.js";
-import { o as bt } from "./unsafe-html-ChtKbCv5.js";
+import { o as bt } from "./unsafe-html-BlTtRwDP.js";
 import "./complex-i8qiIvCl.js";
+import "./directive-C_Rw-dL6.js";
 import "./__vite-browser-external-D7Ct-6yo.js";
 Promise.all([
   (() => {
@@ -1487,7 +1489,7 @@ emcc deform.cpp -O3 \\
         i,
         S
       ]))
-    }, B.deformOutputs.val = kt(v, m, B.nodeInputs.val, B.elementInputs.val), B.analyzeOutputs.val = Et(v, m, B.elementInputs.val, B.deformOutputs.val);
+    }, B.deformOutputs.val = Et(v, m, B.nodeInputs.val, B.elementInputs.val), B.analyzeOutputs.val = kt(v, m, B.elementInputs.val, B.deformOutputs.val);
   });
   const et = L.state(""), st = L.state(void 0), ot = L.state(false);
   L.derive(() => {

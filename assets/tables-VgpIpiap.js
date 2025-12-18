@@ -1,6 +1,7 @@
-import { f as n, B as d, h as r, v as e, i as c, d as f, g as b } from "./styles-CWPU-Lqy.js";
-import { g as m } from "./getTables-DtoYGpcc.js";
-import { g as p } from "./getDialog-Dp-ldI_q.js";
+import { f as n, B as d, h as r, v as e, i as c, d as f, g as m } from "./styles-DdZBjQss.js";
+import { g as b } from "./getTables-DThCF-Le.js";
+import { g as p } from "./getDialog-Be7ZRRm-.js";
+import "./directive-C_Rw-dL6.js";
 const a = e.state([[0, 0, 0], [5, 0, 5], [10, 0, 0]]), i = new n(new d(), new r()), t = e.state([i]), o = /* @__PURE__ */ new Map();
 o.set("polyline", { text: "Polyline", fields: [{ field: "A", text: "X-coordinate", min: "25", editable: { type: "float" } }, { field: "B", text: "Y-coordinate", editable: { type: "float" } }, { field: "C", text: "Z-coordinate", editable: { type: "float" } }], data: a });
 e.derive(() => a.val = o.get("polyline").data.val);
@@ -9,6 +10,6 @@ e.derive(() => {
 });
 const l = e.state(""), s = e.state(void 0);
 e.derive(() => {
-  l.val === "Tables" && (s.val = m({ tables: o }));
+  l.val === "Tables" && (s.val = b({ tables: o }));
 });
-document.body.append(f({ clickedButton: l, buttons: ["Tables"], sourceCode: "https://github.com/madil4/awatif/blob/main/examples/src/tables/main.ts", author: "https://www.linkedin.com/in/cal-mense/" }), p({ dialogBody: s }), b({ objects3D: t }));
+document.body.append(f({ clickedButton: l, buttons: ["Tables"], sourceCode: "https://github.com/madil4/awatif/blob/main/examples/src/tables/main.ts", author: "https://www.linkedin.com/in/cal-mense/" }), p({ dialogBody: s }), m({ objects3D: t }));

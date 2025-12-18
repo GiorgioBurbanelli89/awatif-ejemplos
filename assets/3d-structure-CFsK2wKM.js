@@ -1,6 +1,7 @@
-import { v as e, g as z, e as S, b as O, d as I } from "./styles-CWPU-Lqy.js";
-import { d as M, a as k, __tla as __tla_0 } from "./deformCpp-BprT8Kg9.js";
-import { g as C } from "./getParameters-COCExR_5.js";
+import { v as e, g as z, e as S, b as O, d as I } from "./styles-DdZBjQss.js";
+import { a as M } from "./analyze-CmnHHflB.js";
+import { d as k, __tla as __tla_0 } from "./deformCpp-BfqFyY9O.js";
+import { g as C } from "./getParameters-Cw5eBGZx.js";
 import "./complex-i8qiIvCl.js";
 Promise.all([
   (() => {
@@ -10,7 +11,7 @@ Promise.all([
     }
   })()
 ]).then(async () => {
-  const n = {
+  const o = {
     dx: {
       value: e.state(2),
       min: 1,
@@ -47,24 +48,24 @@ Promise.all([
     }
   }, f = e.state([]), h = e.state([]), b = e.state({}), g = e.state({}), x = e.state({}), w = e.state({});
   e.derive(() => {
-    const d = n.dx.value.val, i = n.dy.value.val, o = n.dz.value.val, l = n.divisions.value.val;
+    const d = o.dx.value.val, i = o.dy.value.val, n = o.dz.value.val, l = o.divisions.value.val;
     let s = [], a = [];
     for (let t = 0; t <= l; t++) s.push([
       0,
       0,
-      o * t
+      n * t
     ], [
       d,
       0,
-      o * t
+      n * t
     ], [
       d,
       i,
-      o * t
+      n * t
     ], [
       0,
       i,
-      o * t
+      n * t
     ]);
     s = s.map((t) => [
       6 + t[0],
@@ -104,7 +105,7 @@ Promise.all([
       t + 1,
       t + 6
     ]);
-    const u = [
+    const m = [
       true,
       true,
       true,
@@ -115,26 +116,26 @@ Promise.all([
       supports: /* @__PURE__ */ new Map([
         [
           0,
-          u
+          m
         ],
         [
           1,
-          u
+          m
         ],
         [
           2,
-          u
+          m
         ],
         [
           3,
-          u
+          m
         ]
       ]),
       loads: /* @__PURE__ */ new Map([
         [
           s.length - 2,
           [
-            n.load.value.val,
+            o.load.value.val,
             0,
             0,
             0,
@@ -143,7 +144,7 @@ Promise.all([
           ]
         ]
       ])
-    }, m = {
+    }, u = {
       elasticities: new Map(a.map((t, p) => [
         p,
         100
@@ -152,8 +153,8 @@ Promise.all([
         p,
         10
       ]))
-    }, c = M(s, a, r, m), y = k(s, a, m, c);
-    f.val = s, h.val = a, b.val = r, g.val = m, x.val = c, w.val = y;
+    }, c = k(s, a, r, u), y = M(s, a, u, c);
+    f.val = s, h.val = a, b.val = r, g.val = u, x.val = c, w.val = y;
   });
   const v = {
     nodes: f,
@@ -163,7 +164,7 @@ Promise.all([
     deformOutputs: x,
     analyzeOutputs: w
   };
-  document.body.append(C(n), z({
+  document.body.append(C(o), z({
     mesh: v,
     settingsObj: {
       deformedShape: true,

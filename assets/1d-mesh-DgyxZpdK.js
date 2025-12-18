@@ -1,6 +1,7 @@
-import { v as s, g as I, d as b } from "./styles-CWPU-Lqy.js";
-import { d as k, a as S, __tla as __tla_0 } from "./deformCpp-BprT8Kg9.js";
-import { g as A } from "./getParameters-COCExR_5.js";
+import { v as s, g as I, d as b } from "./styles-DdZBjQss.js";
+import { a as k } from "./analyze-CmnHHflB.js";
+import { d as S, __tla as __tla_0 } from "./deformCpp-BfqFyY9O.js";
+import { g as A } from "./getParameters-Cw5eBGZx.js";
 import "./complex-i8qiIvCl.js";
 Promise.all([
   (() => {
@@ -35,13 +36,13 @@ Promise.all([
     }
   }, h = s.state([]), c = s.state([]), v = s.state({}), y = s.state({}), g = s.state({}), w = s.state({});
   s.derive(() => {
-    const o = [], t = [], p = m.meshDensity.value.val, u = m.height.value.val, l = m.span.value.val, f = m.load.value.val;
+    const o = [], t = [], p = m.meshDensity.value.val, r = m.height.value.val, l = m.span.value.val, f = m.load.value.val;
     o.push(...[
       ...Array(p + 1).keys()
     ].map((e) => [
       0,
       0,
-      u / p * e
+      r / p * e
     ])), t.push(...[
       ...Array(p).keys()
     ].map((e) => [
@@ -54,7 +55,7 @@ Promise.all([
     ].map((e) => [
       l / p * (e + 1),
       0,
-      u
+      r
     ])), t.push(...[
       ...Array(p - 1).keys()
     ].map((e) => [
@@ -70,7 +71,7 @@ Promise.all([
     ].map((e) => [
       l,
       0,
-      u - u / p * (e + 1)
+      r - r / p * (e + 1)
     ])), t.push(...[
       ...Array(p - 1).keys()
     ].map((e) => [
@@ -118,7 +119,7 @@ Promise.all([
           ]
         ]
       ])
-    }, r = {
+    }, u = {
       elasticities: new Map(t.map((e, a) => [
         a,
         10
@@ -143,8 +144,8 @@ Promise.all([
         a,
         10
       ]))
-    }, i = k(o, t, d, r), O = S(o, t, r, i);
-    h.val = o, c.val = t, v.val = d, y.val = r, g.val = i, w.val = O;
+    }, i = S(o, t, d, u), O = k(o, t, u, i);
+    h.val = o, c.val = t, v.val = d, y.val = u, g.val = i, w.val = O;
   });
   document.body.append(A(m), I({
     mesh: {

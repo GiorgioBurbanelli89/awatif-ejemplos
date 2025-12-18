@@ -1,4 +1,4 @@
-import { v as o, l as s } from "./styles-CWPU-Lqy.js";
+import { v as o, t as s } from "./styles-DdZBjQss.js";
 function u({ template: t, data: n }) {
   const e = document.createElement("div");
   return o.derive(() => {

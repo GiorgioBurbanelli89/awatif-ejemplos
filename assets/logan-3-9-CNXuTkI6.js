@@ -1,6 +1,7 @@
-import { v as t, g as $, e as h, b as O, d as w } from "./styles-CWPU-Lqy.js";
-import { d as z, a as I, __tla as __tla_0 } from "./deformCpp-BprT8Kg9.js";
-import { g as N } from "./getParameters-COCExR_5.js";
+import { v as t, g as $, e as h, b as O, d as w } from "./styles-DdZBjQss.js";
+import { a as z } from "./analyze-CmnHHflB.js";
+import { d as I, __tla as __tla_0 } from "./deformCpp-BfqFyY9O.js";
+import { g as N } from "./getParameters-Cw5eBGZx.js";
 import "./complex-i8qiIvCl.js";
 Promise.all([
   (() => {
@@ -68,7 +69,7 @@ Promise.all([
         3,
         0
       ]
-    ], c = {
+    ], m = {
       supports: /* @__PURE__ */ new Map([
         [
           1,
@@ -126,7 +127,7 @@ Promise.all([
         o,
         y
       ]))
-    }, a = z(n, s, c, r), i = I(n, s, r, a);
+    }, a = I(n, s, m, r), i = z(n, s, r, a);
     if (console.log("=".repeat(60)), console.log("LOGAN 3.9 - RESULTS"), console.log("=".repeat(60)), a == null ? void 0 : a.deformations) {
       const e = a.deformations.get(0);
       e && (console.log(`
@@ -134,12 +135,12 @@ Displacements Node 0:`), console.log(`  Ux = ${(e[0] * 1e3).toFixed(4)} mm`), co
     }
     (i == null ? void 0 : i.normals) && (console.log(`
 Axial Forces:`), i.normals.forEach((e, o) => {
-      const m = Array.isArray(e) ? (e[0] + e[1]) / 2 : e, S = m < 0 ? "compression" : "tension";
-      console.log(`  E${o}: ${m.toFixed(2)} kN (${S})`);
+      const c = Array.isArray(e) ? (e[0] + e[1]) / 2 : e, S = c < 0 ? "compression" : "tension";
+      console.log(`  E${o}: ${c.toFixed(2)} kN (${S})`);
     })), (a == null ? void 0 : a.reactions) && (console.log(`
 Reactions:`), a.reactions.forEach((e, o) => {
       console.log(`  Node ${o}: Rx=${e[0].toFixed(2)}, Ry=${e[1].toFixed(2)}, Rz=${e[2].toFixed(2)} kN`);
-    })), console.log("=".repeat(60)), u.val = n, d.val = s, g.val = c, f.val = r, v.val = a, b.val = i;
+    })), console.log("=".repeat(60)), u.val = n, d.val = s, g.val = m, f.val = r, v.val = a, b.val = i;
   });
   const p = {
     nodes: u,

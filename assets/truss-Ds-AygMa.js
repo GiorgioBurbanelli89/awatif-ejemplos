@@ -1,6 +1,7 @@
-import { v as a, g as z, e as M, b as C, d as _ } from "./styles-CWPU-Lqy.js";
-import { d as k, a as N, __tla as __tla_0 } from "./deformCpp-BprT8Kg9.js";
-import { g as j } from "./getParameters-COCExR_5.js";
+import { v as a, g as z, e as M, b as C, d as _ } from "./styles-DdZBjQss.js";
+import { a as k } from "./analyze-CmnHHflB.js";
+import { d as N, __tla as __tla_0 } from "./deformCpp-BfqFyY9O.js";
+import { g as j } from "./getParameters-Cw5eBGZx.js";
 import "./complex-i8qiIvCl.js";
 Promise.all([
   (() => {
@@ -54,17 +55,17 @@ Promise.all([
     }
   }, d = a.state([]), v = a.state([]), h = a.state({}), f = a.state({}), g = a.state({}), b = a.state({});
   a.derive(() => {
-    const w = n.span.value.val, e = n.divisions.value.val, y = n.height.value.val, x = n.elasticity.value.val * 1e6, S = n.area.value.val * 1e-4, O = n.load.value.val, l = [], s = [], i = w / e, p = [];
+    const w = n.span.value.val, e = n.divisions.value.val, y = n.height.value.val, x = n.elasticity.value.val * 1e6, S = n.area.value.val * 1e-4, O = n.load.value.val, l = [], s = [], u = w / e, p = [];
     for (let t = 0; t <= e; t++) {
       const o = [
-        i * t,
+        u * t,
         0,
         0
       ];
       l.push(o), p.push(o);
     }
     for (let t = 0; t <= e; t++) l.push([
-      i * t,
+      u * t,
       0,
       y
     ]);
@@ -123,7 +124,7 @@ Promise.all([
           0
         ]
       ]))
-    }, u = {
+    }, i = {
       elasticities: new Map(s.map((t, o) => [
         o,
         x
@@ -132,8 +133,8 @@ Promise.all([
         o,
         S
       ]))
-    }, m = k(l, s, r, u), I = N(l, s, u, m);
-    d.val = l, v.val = s, h.val = r, f.val = u, g.val = m, b.val = I;
+    }, m = N(l, s, r, i), I = k(l, s, i, m);
+    d.val = l, v.val = s, h.val = r, f.val = i, g.val = m, b.val = I;
   });
   const c = {
     nodes: d,

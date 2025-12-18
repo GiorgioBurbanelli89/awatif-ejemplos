@@ -1,6 +1,7 @@
-import { c as f, a as b, v as l, L as T, F as S, g as Z, b as H, d as J } from "./styles-CWPU-Lqy.js";
-import { d as K, a as W, __tla as __tla_0 } from "./deformCpp-BprT8Kg9.js";
-import { g as k, r as q } from "./getParameters-COCExR_5.js";
+import { c as $, a as b, v as l, L as T, F as S, g as Z, b as H, d as J } from "./styles-DdZBjQss.js";
+import { a as K } from "./analyze-CmnHHflB.js";
+import { d as W, __tla as __tla_0 } from "./deformCpp-BfqFyY9O.js";
+import { g as k, r as q } from "./getParameters-Cw5eBGZx.js";
 import "./complex-i8qiIvCl.js";
 Promise.all([
   (() => {
@@ -16,7 +17,7 @@ Promise.all([
     depth: l.state(0.3),
     width: l.state(0.15)
   };
-  let M = f.val, g = b.val;
+  let M = $.val, g = b.val;
   const e = {
     length: {
       value: l.state(300),
@@ -67,18 +68,18 @@ Promise.all([
   function P(t, a) {
     return t * T[a];
   }
-  function $(t, a) {
+  function f(t, a) {
     return t / S[a];
   }
   function Q(t, a) {
     return t * S[a];
   }
   function X() {
-    const t = b.val, a = f.val;
-    e.length.value.val = i(I.length.val, t), e.load.value.val = $(I.load.val, a), e.depth.value.val = i(I.depth.val, t), e.width.value.val = i(I.width.val, t), e.length.label = `L (${t})`, e.load.label = `P (${a})`, e.depth.label = `h (${t})`, e.width.label = `b (${t})`, C(t, a);
+    const t = b.val, a = $.val;
+    e.length.value.val = i(I.length.val, t), e.load.value.val = f(I.load.val, a), e.depth.value.val = i(I.depth.val, t), e.width.value.val = i(I.width.val, t), e.length.label = `L (${t})`, e.load.label = `P (${a})`, e.depth.label = `h (${t})`, e.width.label = `b (${t})`, C(t, a);
   }
   function C(t, a) {
-    const o = {
+    const n = {
       length: {
         min: 0,
         max: 10,
@@ -99,35 +100,35 @@ Promise.all([
       max: 490,
       step: 9.8
     };
-    e.length.min = i(o.length.min, t), e.length.max = i(o.length.max, t), e.length.step = i(o.length.step, t), e.depth.min = i(o.depth.min, t), e.depth.max = i(o.depth.max, t), e.depth.step = i(o.depth.step, t), e.width.min = i(o.width.min, t), e.width.max = i(o.width.max, t), e.width.step = i(o.width.step, t), e.load.min = $(c.min, a), e.load.max = $(c.max, a), e.load.step = $(c.step, a);
+    e.length.min = i(n.length.min, t), e.length.max = i(n.length.max, t), e.length.step = i(n.length.step, t), e.depth.min = i(n.depth.min, t), e.depth.max = i(n.depth.max, t), e.depth.step = i(n.depth.step, t), e.width.min = i(n.width.min, t), e.width.max = i(n.width.max, t), e.width.step = i(n.width.step, t), e.load.min = f(c.min, a), e.load.max = f(c.max, a), e.load.step = f(c.step, a);
   }
   X();
   const R = l.state([]), z = l.state([]), D = l.state({}), A = l.state({}), G = l.state({}), N = l.state({});
   l.derive(() => {
-    const t = f.val, a = b.val, o = t !== M, c = a !== g;
-    if (o || c) {
+    const t = $.val, a = b.val, n = t !== M, c = a !== g;
+    if (n || c) {
       if (console.log(`Units changed: ${M}\u2192${t}, ${g}\u2192${a}`), c) {
         const m = P(e.length.value.val, g), s = P(e.depth.value.val, g), r = P(e.width.value.val, g);
         e.length.value.val = i(m, a), e.depth.value.val = i(s, a), e.width.value.val = i(r, a), e.length.label = `L (${a})`, e.depth.label = `h (${a})`, e.width.label = `b (${a})`;
       }
-      if (o) {
+      if (n) {
         const m = Q(e.load.value.val, M);
-        e.load.value.val = $(m, t), e.load.label = `P (${t})`;
+        e.load.value.val = f(m, t), e.load.label = `P (${t})`;
       }
       C(a, t), q(), M = t, g = a;
     }
   });
   l.derive(() => {
     var _a, _b, _c, _d, _e, _f;
-    const t = T[b.val], a = S[f.val], o = e.length.value.val * t, c = e.load.value.val * a, m = e.elasticity.value.val * 1e6, s = e.depth.value.val * t, r = e.width.value.val * t, d = Math.round(e.divisions.value.val), E = r * s, x = r * s * s * s / 12, U = m / (2 * (1 + 0.3)), B = r * s * s * s * (1 / 3 - 0.21 * (s / r) * (1 - s * s * s * s / (12 * r * r * r * r))), V = o / d, w = [], F = [];
-    for (let n = 0; n <= d; n++) w.push([
-      n * V,
+    const t = T[b.val], a = S[$.val], n = e.length.value.val * t, c = e.load.value.val * a, m = e.elasticity.value.val * 1e6, s = e.depth.value.val * t, r = e.width.value.val * t, d = Math.round(e.divisions.value.val), E = r * s, x = r * s * s * s / 12, U = m / (2 * (1 + 0.3)), B = r * s * s * s * (1 / 3 - 0.21 * (s / r) * (1 - s * s * s * s / (12 * r * r * r * r))), V = n / d, w = [], F = [];
+    for (let o = 0; o <= d; o++) w.push([
+      o * V,
       0,
       0
     ]);
-    for (let n = 0; n < d; n++) F.push([
-      n,
-      n + 1
+    for (let o = 0; o < d; o++) F.push([
+      o,
+      o + 1
     ]);
     const _ = {
       supports: /* @__PURE__ */ new Map([
@@ -164,23 +165,23 @@ Promise.all([
       momentsOfInertiaY: /* @__PURE__ */ new Map(),
       momentsOfInertiaZ: /* @__PURE__ */ new Map()
     };
-    for (let n = 0; n < d; n++) (_a = p.elasticities) == null ? void 0 : _a.set(n, m), (_b = p.shearModuli) == null ? void 0 : _b.set(n, U), (_c = p.areas) == null ? void 0 : _c.set(n, E), (_d = p.torsionalConstants) == null ? void 0 : _d.set(n, B), (_e = p.momentsOfInertiaY) == null ? void 0 : _e.set(n, x), (_f = p.momentsOfInertiaZ) == null ? void 0 : _f.set(n, x * (r / s) * (r / s));
-    const u = K(w, F, _, p), j = W(w, F, p, u), h = b.val, y = f.val, v = 1 / t, L = 1 / a;
-    if (console.log("=".repeat(60)), console.log("CANTILEVER BEAM - AWATIF RESULTS"), console.log(`Units: ${y}, ${h}`), console.log(`Model: ${d} elements, ${d + 1} nodes`), console.log("=".repeat(60)), console.log(`Input: L=${(o * v).toFixed(2)} ${h}, P=${(c * L).toFixed(2)} ${y}`), console.log(`Section: ${(s * v).toFixed(1)}x${(r * v).toFixed(1)} ${h}`), console.log(`E = ${m / 1e6} GPa, A = ${(E * 1e4).toFixed(1)} cm\xB2, I = ${(x * 1e8).toFixed(0)} cm\u2074`), u == null ? void 0 : u.deformations) {
-      const n = u.deformations.get(d);
-      if (n) {
+    for (let o = 0; o < d; o++) (_a = p.elasticities) == null ? void 0 : _a.set(o, m), (_b = p.shearModuli) == null ? void 0 : _b.set(o, U), (_c = p.areas) == null ? void 0 : _c.set(o, E), (_d = p.torsionalConstants) == null ? void 0 : _d.set(o, B), (_e = p.momentsOfInertiaY) == null ? void 0 : _e.set(o, x), (_f = p.momentsOfInertiaZ) == null ? void 0 : _f.set(o, x * (r / s) * (r / s));
+    const u = W(w, F, _, p), j = K(w, F, p, u), h = b.val, y = $.val, v = 1 / t, L = 1 / a;
+    if (console.log("=".repeat(60)), console.log("CANTILEVER BEAM - AWATIF RESULTS"), console.log(`Units: ${y}, ${h}`), console.log(`Model: ${d} elements, ${d + 1} nodes`), console.log("=".repeat(60)), console.log(`Input: L=${(n * v).toFixed(2)} ${h}, P=${(c * L).toFixed(2)} ${y}`), console.log(`Section: ${(s * v).toFixed(1)}x${(r * v).toFixed(1)} ${h}`), console.log(`E = ${m / 1e6} GPa, A = ${(E * 1e4).toFixed(1)} cm\xB2, I = ${(x * 1e8).toFixed(0)} cm\u2074`), u == null ? void 0 : u.deformations) {
+      const o = u.deformations.get(d);
+      if (o) {
         console.log(`
-Displacements (Node ${d} - Free end):`), console.log(`  Uz = ${(n[2] * v).toFixed(4)} ${h}`);
-        const O = c * o * o * o / (3 * m * x);
+Displacements (Node ${d} - Free end):`), console.log(`  Uz = ${(o[2] * v).toFixed(4)} ${h}`);
+        const O = c * n * n * n / (3 * m * x);
         console.log(`  Theory: ${(O * v).toFixed(4)} ${h}`);
-        const Y = Math.abs((Math.abs(n[2]) - O) / O * 100);
+        const Y = Math.abs((Math.abs(o[2]) - O) / O * 100);
         console.log(`  Error: ${Y.toFixed(2)}%`);
       }
     }
     if (u == null ? void 0 : u.reactions) {
-      const n = u.reactions.get(0);
-      n && (console.log(`
-Reactions (Node 0 - Fixed end):`), console.log(`  Rz = ${(n[2] * L).toFixed(2)} ${y}`), console.log(`  My = ${(n[4] * L * v).toFixed(2)} ${y}\xB7${h}`));
+      const o = u.reactions.get(0);
+      o && (console.log(`
+Reactions (Node 0 - Fixed end):`), console.log(`  Rz = ${(o[2] * L).toFixed(2)} ${y}`), console.log(`  My = ${(o[4] * L * v).toFixed(2)} ${y}\xB7${h}`));
     }
     console.log("=".repeat(60)), R.val = w, z.val = F, D.val = _, A.val = p, G.val = u, N.val = j;
   });
