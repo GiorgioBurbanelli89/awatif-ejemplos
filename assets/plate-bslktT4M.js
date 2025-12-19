@@ -3,7 +3,7 @@ import { a as At } from "./analyze-CmnHHflB.js";
 import { d as Nt, __tla as __tla_0 } from "./deformCpp-CS-wCYO-.js";
 import { g as Rt } from "./getParameters-agyy6sUI.js";
 import { g as It } from "./getDialog-BiqeruR6.js";
-import { g as it } from "./getReport-CYLnG9Sc.js";
+import { g as rt } from "./getReport-CYLnG9Sc.js";
 import { g as Ot, __tla as __tla_1 } from "./getMesh-DmUdekin.js";
 import { o as ht } from "./unsafe-html-Dv3uUXY0.js";
 import "./complex-i8qiIvCl.js";
@@ -262,106 +262,106 @@ hr {
   function j(t, a = 4) {
     return t == null || isNaN(t) || Math.abs(t) < 1e-10 ? "0" : t.toFixed(a).replace(".", ",");
   }
-  function O(t, a = 4) {
+  function T(t, a = 4) {
     return t == null || isNaN(t) || Math.abs(t) < 1e-10 ? "0" : t.toFixed(a);
   }
-  function ot(t, a) {
+  function st(t, a) {
     return `<span class="dvc">${t}<span class="dvl"></span>${a}</span>`;
   }
-  function G(t) {
+  function Y(t) {
     return `<span class="eq">${t}</span>`;
   }
-  function d(t, a) {
+  function l(t, a) {
     return a ? `<var>${t}</var><sub>${a}</sub>` : `<var>${t}</var>`;
   }
   function Pt(t, a = 4) {
     if (!t || !t.length) return "";
     let n = `<span class="matrix">
 `;
-    for (let r = 0; r < t.length; r++) {
+    for (let c = 0; c < t.length; c++) {
       n += '<span class="tr"><span class="td"></span>';
-      for (let c = 0; c < t[r].length; c++) n += `<span class="td">${j(t[r][c], a)}</span>`;
+      for (let k = 0; k < t[c].length; k++) n += `<span class="td">${j(t[c][k], a)}</span>`;
       n += `<span class="td"></span></span>
 `;
     }
     return n += "</span>", n;
   }
-  function _t(t, a, n, r) {
-    const P = 110 / Math.max(t, 1), v = (120 - 2 * 25) / Math.max(a, 1), X = Math.min(P, v), T = t * X, u = a * X, w = 25, C = 25;
-    let f = '<svg viewBox="0 0 160 120" xmlns="http://www.w3.org/2000/svg" style="width:160pt; height:120pt; font-family:Arial; font-size:9px;">';
-    f += `<defs>
+  function _t(t, a, n, c) {
+    const u = 110 / Math.max(t, 1), M = (120 - 2 * 25) / Math.max(a, 1), X = Math.min(u, M), P = t * X, f = a * X, z = 25, S = 25;
+    let $ = '<svg viewBox="0 0 160 120" xmlns="http://www.w3.org/2000/svg" style="width:160pt; height:120pt; font-family:Arial; font-size:9px;">';
+    $ += `<defs>
     <marker id="arrowStart" markerWidth="6" markerHeight="6" refX="6" refY="3" orient="auto">
       <path d="M6,0 L0,3 L6,6" fill="none" stroke="#333" stroke-width="1"/>
     </marker>
     <marker id="arrowEnd" markerWidth="6" markerHeight="6" refX="0" refY="3" orient="auto">
       <path d="M0,0 L6,3 L0,6" fill="none" stroke="#333" stroke-width="1"/>
     </marker>
-  </defs>`, f += `<rect x="${w}" y="${C}" width="${T}" height="${u}" fill="#e8e8e8" stroke="#333" stroke-width="1.5"/>`;
-    const $ = 4, N = 5;
-    for (let h = 0; h <= N; h++) {
-      const m = w + T * h / N;
-      f += `<polygon points="${m},${C + u} ${m - $},${C + u + $} ${m + $},${C + u + $}" fill="#999" stroke="#666" stroke-width="0.5"/>`;
+  </defs>`, $ += `<rect x="${z}" y="${S}" width="${P}" height="${f}" fill="#e8e8e8" stroke="#333" stroke-width="1.5"/>`;
+    const x = 4, R = 5;
+    for (let m = 0; m <= R; m++) {
+      const p = z + P * m / R;
+      $ += `<polygon points="${p},${S + f} ${p - x},${S + f + x} ${p + x},${S + f + x}" fill="#999" stroke="#666" stroke-width="0.5"/>`;
     }
-    for (let h = 0; h <= N; h++) {
-      const m = C + u * h / N;
-      f += `<polygon points="${w},${m} ${w - $},${m - $} ${w - $},${m + $}" fill="#999" stroke="#666" stroke-width="0.5"/>`;
+    for (let m = 0; m <= R; m++) {
+      const p = S + f * m / R;
+      $ += `<polygon points="${z},${p} ${z - x},${p - x} ${z - x},${p + x}" fill="#999" stroke="#666" stroke-width="0.5"/>`;
     }
-    for (let h = 0; h <= N; h++) {
-      const m = C + u * h / N;
-      f += `<polygon points="${w + T},${m} ${w + T + $},${m - $} ${w + T + $},${m + $}" fill="#999" stroke="#666" stroke-width="0.5"/>`;
+    for (let m = 0; m <= R; m++) {
+      const p = S + f * m / R;
+      $ += `<polygon points="${z + P},${p} ${z + P + x},${p - x} ${z + P + x},${p + x}" fill="#999" stroke="#666" stroke-width="0.5"/>`;
     }
-    for (let h = 0; h <= N; h++) {
-      const m = w + T * h / N;
-      f += `<polygon points="${m},${C} ${m - $},${C - $} ${m + $},${C - $}" fill="#999" stroke="#666" stroke-width="0.5"/>`;
+    for (let m = 0; m <= R; m++) {
+      const p = z + P * m / R;
+      $ += `<polygon points="${p},${S} ${p - x},${S - x} ${p + x},${S - x}" fill="#999" stroke="#666" stroke-width="0.5"/>`;
     }
-    const g = 3;
-    for (let h = 1; h <= g; h++) for (let m = 1; m <= g; m++) {
-      const z = w + T * h / (g + 1), Y = C + u * m / (g + 1);
-      f += `<line x1="${z}" y1="${Y - 8}" x2="${z}" y2="${Y + 5}" stroke="#0066cc" stroke-width="1.2" marker-end="url(#arrowEnd)"/>`;
+    const y = 3;
+    for (let m = 1; m <= y; m++) for (let p = 1; p <= y; p++) {
+      const C = z + P * m / (y + 1), G = S + f * p / (y + 1);
+      $ += `<line x1="${C}" y1="${G - 8}" x2="${C}" y2="${G + 5}" stroke="#0066cc" stroke-width="1.2" marker-end="url(#arrowEnd)"/>`;
     }
-    f += `<text x="${w + T / 2}" y="${C + u / 2 - 12}" text-anchor="middle" fill="#0066cc" font-style="italic">q</text>`;
-    const B = C + u + 18;
-    f += `<line x1="${w}" y1="${B}" x2="${w + T}" y2="${B}" stroke="#333" stroke-width="0.8" marker-start="url(#arrowStart)" marker-end="url(#arrowEnd)"/>`, f += `<text x="${w + T / 2}" y="${B + 10}" text-anchor="middle" font-style="italic">a</text>`;
-    const b = w + T + 18;
-    return f += `<line x1="${b}" y1="${C}" x2="${b}" y2="${C + u}" stroke="#333" stroke-width="0.8" marker-start="url(#arrowStart)" marker-end="url(#arrowEnd)"/>`, f += `<text x="${b + 8}" y="${C + u / 2 + 3}" font-style="italic">b</text>`, f += "</svg>", f;
+    $ += `<text x="${z + P / 2}" y="${S + f / 2 - 12}" text-anchor="middle" fill="#0066cc" font-style="italic">q</text>`;
+    const B = S + f + 18;
+    $ += `<line x1="${z}" y1="${B}" x2="${z + P}" y2="${B}" stroke="#333" stroke-width="0.8" marker-start="url(#arrowStart)" marker-end="url(#arrowEnd)"/>`, $ += `<text x="${z + P / 2}" y="${B + 10}" text-anchor="middle" font-style="italic">a</text>`;
+    const b = z + P + 18;
+    return $ += `<line x1="${b}" y1="${S}" x2="${b}" y2="${S + f}" stroke="#333" stroke-width="0.8" marker-start="url(#arrowStart)" marker-end="url(#arrowEnd)"/>`, $ += `<text x="${b + 8}" y="${S + f / 2 + 3}" font-style="italic">b</text>`, $ += "</svg>", $;
   }
   function jt(t, a, n = 400) {
     if (!t.length || !a.length) return "<p>No mesh data</p>";
-    const r = t.map((b) => b[0]), c = t.map((b) => b[1]), k = Math.min(...r), E = Math.max(...r), P = Math.min(...c), v = Math.max(...c), X = E - k || 1, T = v - P || 1, u = n / Math.max(X, T), w = T * u, C = 20, f = 2.666667, $ = 0.01, N = /* @__PURE__ */ new Set();
-    t.forEach((b, h) => {
-      (Math.abs(b[0] - k) < $ || Math.abs(b[0] - E) < $ || Math.abs(b[1] - P) < $ || Math.abs(b[1] - v) < $) && N.add(h);
+    const c = t.map((b) => b[0]), k = t.map((b) => b[1]), E = Math.min(...c), h = Math.max(...c), u = Math.min(...k), M = Math.max(...k), X = h - E || 1, P = M - u || 1, f = n / Math.max(X, P), z = P * f, S = 20, $ = 2.666667, x = 0.01, R = /* @__PURE__ */ new Set();
+    t.forEach((b, m) => {
+      (Math.abs(b[0] - E) < x || Math.abs(b[0] - h) < x || Math.abs(b[1] - u) < x || Math.abs(b[1] - M) < x) && R.add(m);
     });
-    let g = `<svg viewbox="-20 -20 ${O(n + 2 * C, 0)} ${O(w + 2 * C, 6)}" xmlns="http://www.w3.org/2000/svg" version="1.1" style=" font-family: Segoe UI; font-size:10px; width:${n}pt; height:${O(w, 6)}pt">`;
-    g += "<style>.joint{fill:orangeRed;} .support{stroke:red; stroke-width:1; fill:lightpink;} .element{stroke:seaGreen; stroke-width:1; fill:lime; fill-opacity:0.1; stroke-opacity:0.5}</style>", g += `<rect x="0" y="0" width="${n}" height="${O(w, 6)}" style="fill:yellow; fill-opacity:0.2" />`, a.forEach((b, h) => {
-      const m = b.reduce((p, x) => p + t[x][0], 0) / b.length, z = b.reduce((p, x) => p + t[x][1], 0) / b.length, Y = (m - k) * u, q = w - (z - P) * u, l = b.map((p) => {
-        const x = (t[p][0] - k) * u, M = w - (t[p][1] - P) * u;
-        return `${O(x, 6)},${O(M, 6)}`;
+    let y = `<svg viewbox="-20 -20 ${T(n + 2 * S, 0)} ${T(z + 2 * S, 6)}" xmlns="http://www.w3.org/2000/svg" version="1.1" style=" font-family: Segoe UI; font-size:10px; width:${n}pt; height:${T(z, 6)}pt">`;
+    y += "<style>.joint{fill:orangeRed;} .support{stroke:red; stroke-width:1; fill:lightpink;} .element{stroke:seaGreen; stroke-width:1; fill:lime; fill-opacity:0.1; stroke-opacity:0.5}</style>", y += `<rect x="0" y="0" width="${n}" height="${T(z, 6)}" style="fill:yellow; fill-opacity:0.2" />`, a.forEach((b, m) => {
+      const p = b.reduce((d, g) => d + t[g][0], 0) / b.length, C = b.reduce((d, g) => d + t[g][1], 0) / b.length, G = (p - E) * f, q = z - (C - u) * f, r = b.map((d) => {
+        const g = (t[d][0] - E) * f, w = z - (t[d][1] - u) * f;
+        return `${T(g, 6)},${T(w, 6)}`;
       }).join(" ");
-      g += `<text x="${O(Y, 6)}" y="${O(q + 4, 6)}" text-anchor="middle">${h + 1}</text>`, g += `<polygon points="${l}" class="element"/>`;
+      y += `<text x="${T(G, 6)}" y="${T(q + 4, 6)}" text-anchor="middle">${m + 1}</text>`, y += `<polygon points="${r}" class="element"/>`;
     });
     const B = 5.333333;
-    return N.forEach((b) => {
-      const h = (t[b][0] - k) * u, m = w - (t[b][1] - P) * u;
-      (Math.abs(t[b][1] - P) < $ || Math.abs(t[b][1] - v) < $) && (g += `<line x1="${O(h - 2 * B, 6)}" y1="${O(m, 6)}" x2="${O(h + 2 * B, 6)}" y2="${O(m, 6)}" class="support"/>`), (Math.abs(t[b][0] - k) < $ || Math.abs(t[b][0] - E) < $) && (g += `<line x1="${O(h, 6)}" y1="${O(m - 2 * B, 6)}" x2="${O(h, 6)}" y2="${O(m + 2 * B, 6)}" class="support"/>`), g += `<circle cx="${O(h, 6)}" cy="${O(m, 6)}" r="${B}" class="support"/>`;
-    }), t.forEach((b, h) => {
-      const m = (b[0] - k) * u, z = w - (b[1] - P) * u;
-      g += `<circle cx="${O(m, 6)}" cy="${O(z, 6)}" r="${f}" class="joint" />`, g += `<text x="${O(m + f * 2, 6)}" y="${O(z - f, 6)}" text-anchor="start">${h + 1}</text>`;
-    }), g += "</svg>", g;
+    return R.forEach((b) => {
+      const m = (t[b][0] - E) * f, p = z - (t[b][1] - u) * f;
+      (Math.abs(t[b][1] - u) < x || Math.abs(t[b][1] - M) < x) && (y += `<line x1="${T(m - 2 * B, 6)}" y1="${T(p, 6)}" x2="${T(m + 2 * B, 6)}" y2="${T(p, 6)}" class="support"/>`), (Math.abs(t[b][0] - E) < x || Math.abs(t[b][0] - h) < x) && (y += `<line x1="${T(m, 6)}" y1="${T(p - 2 * B, 6)}" x2="${T(m, 6)}" y2="${T(p + 2 * B, 6)}" class="support"/>`), y += `<circle cx="${T(m, 6)}" cy="${T(p, 6)}" r="${B}" class="support"/>`;
+    }), t.forEach((b, m) => {
+      const p = (b[0] - E) * f, C = z - (b[1] - u) * f;
+      y += `<circle cx="${T(p, 6)}" cy="${T(C, 6)}" r="${$}" class="joint" />`, y += `<text x="${T(p + $ * 2, 6)}" y="${T(C - $, 6)}" text-anchor="start">${m + 1}</text>`;
+    }), y += "</svg>", y;
   }
-  function Xt(t, a, n, r = 400, c = "w") {
+  function Xt(t, a, n, c = 400, k = "w") {
     if (!t.length || !a.length || !n.length) return "";
-    const k = t.map((l) => l[0]), E = t.map((l) => l[1]), P = Math.min(...k), v = Math.max(...k), X = Math.min(...E), T = Math.max(...E), u = v - P || 1, w = T - X || 1, C = r / Math.max(u, w), f = w * C, $ = 20, N = n.filter((l) => l !== void 0 && !isNaN(l));
-    if (!N.length) return "";
-    const g = Math.min(...N), B = Math.max(...N), b = Math.abs(B - g) || 1;
-    function h(l) {
-      const p = Math.max(0, Math.min(1, (l - g) / b));
-      let x, M, S;
-      return p < 0.25 ? (x = 0, M = Math.floor(255 * p * 4), S = 255) : p < 0.5 ? (x = 0, M = 255, S = Math.floor(255 * (1 - (p - 0.25) * 4))) : p < 0.75 ? (x = Math.floor(255 * (p - 0.5) * 4), M = 255, S = 0) : (x = 255, M = Math.floor(255 * (1 - (p - 0.75) * 4)), S = 0), `rgb(${x},${M},${S})`;
+    const E = t.map((r) => r[0]), h = t.map((r) => r[1]), u = Math.min(...E), M = Math.max(...E), X = Math.min(...h), P = Math.max(...h), f = M - u || 1, z = P - X || 1, S = c / Math.max(f, z), $ = z * S, x = 20, R = n.filter((r) => r !== void 0 && !isNaN(r));
+    if (!R.length) return "";
+    const y = Math.min(...R), B = Math.max(...R), b = Math.abs(B - y) || 1;
+    function m(r) {
+      const d = Math.max(0, Math.min(1, (r - y) / b));
+      let g, w, D;
+      return d < 0.25 ? (g = 0, w = Math.floor(255 * d * 4), D = 255) : d < 0.5 ? (g = 0, w = 255, D = Math.floor(255 * (1 - (d - 0.25) * 4))) : d < 0.75 ? (g = Math.floor(255 * (d - 0.5) * 4), w = 255, D = 0) : (g = 255, w = Math.floor(255 * (1 - (d - 0.75) * 4)), D = 0), `rgb(${g},${w},${D})`;
     }
-    const m = `colorScale_${c.replace(/[^a-zA-Z0-9]/g, "")}`;
-    let z = `<svg viewBox="-20 -20 ${r + 80} ${f + 2 * $}" xmlns="http://www.w3.org/2000/svg" style="width:${r + 80}pt; height:${O(f, 0)}pt; font-family:Arial; font-size:9px;">
+    const p = `colorScale_${k.replace(/[^a-zA-Z0-9]/g, "")}`;
+    let C = `<svg viewBox="-20 -20 ${c + 80} ${$ + 2 * x}" xmlns="http://www.w3.org/2000/svg" style="width:${c + 80}pt; height:${T($, 0)}pt; font-family:Arial; font-size:9px;">
 <defs>
-<linearGradient id="${m}" x1="0%" y1="100%" x2="0%" y2="0%">
+<linearGradient id="${p}" x1="0%" y1="100%" x2="0%" y2="0%">
 <stop offset="0%" style="stop-color:#0000ff"/>
 <stop offset="25%" style="stop-color:#00ffff"/>
 <stop offset="50%" style="stop-color:#00ff00"/>
@@ -369,35 +369,35 @@ hr {
 <stop offset="100%" style="stop-color:#ff0000"/>
 </linearGradient>
 </defs>`;
-    a.forEach((l) => {
-      const p = l.reduce((S, D) => S + (n[D] || 0), 0) / l.length, x = h(p), M = l.map((S) => {
-        const D = (t[S][0] - P) * C, R = f - (t[S][1] - X) * C;
-        return `${O(D, 6)},${O(R, 6)}`;
+    a.forEach((r) => {
+      const d = r.reduce((D, F) => D + (n[F] || 0), 0) / r.length, g = m(d), w = r.map((D) => {
+        const F = (t[D][0] - u) * S, I = $ - (t[D][1] - X) * S;
+        return `${T(F, 6)},${T(I, 6)}`;
       }).join(" ");
-      z += `<polygon points="${M}" fill="${x}" stroke="#333" stroke-width="0.3"/>`;
+      C += `<polygon points="${w}" fill="${g}" stroke="#333" stroke-width="0.3"/>`;
     });
-    const Y = r + 10, q = f - 20;
-    z += `<rect x="${Y}" y="10" width="15" height="${O(q, 0)}" fill="url(#${m})" stroke="#333"/>`;
-    for (let l = 0; l <= 5; l++) {
-      const p = g + b * l / 5, x = 10 + q - q * l / 5;
-      z += `<text x="${Y + 20}" y="${O(x + 3, 0)}">${j(p, 4)}</text>`;
+    const G = c + 10, q = $ - 20;
+    C += `<rect x="${G}" y="10" width="15" height="${T(q, 0)}" fill="url(#${p})" stroke="#333"/>`;
+    for (let r = 0; r <= 5; r++) {
+      const d = y + b * r / 5, g = 10 + q - q * r / 5;
+      C += `<text x="${G + 20}" y="${T(g + 3, 0)}">${j(d, 4)}</text>`;
     }
-    return z += `<text x="${Y}" y="5">${c}</text>`, z += "</svg>", z;
+    return C += `<text x="${G}" y="5">${k}</text>`, C += "</svg>", C;
   }
-  function gt(t, a, n, r = 400, c = "M") {
+  function gt(t, a, n, c = 400, k = "M") {
     if (!t.length || !a.length) return "";
-    const k = n.filter((l) => l !== void 0 && !isNaN(l));
-    if (!k.length) return "<p><i>No data for contour map</i></p>";
-    const E = t.map((l) => l[0]), P = t.map((l) => l[1]), v = Math.min(...E), X = Math.max(...E), T = Math.min(...P), u = Math.max(...P), w = X - v || 1, C = u - T || 1, f = r / Math.max(w, C), $ = C * f, N = 20, g = Math.min(...k), B = Math.max(...k), b = Math.abs(B - g) || 1;
-    function h(l) {
-      const p = Math.max(0, Math.min(1, (l - g) / b));
-      let x, M, S;
-      return p < 0.25 ? (x = 0, M = Math.floor(255 * p * 4), S = 255) : p < 0.5 ? (x = 0, M = 255, S = Math.floor(255 * (1 - (p - 0.25) * 4))) : p < 0.75 ? (x = Math.floor(255 * (p - 0.5) * 4), M = 255, S = 0) : (x = 255, M = Math.floor(255 * (1 - (p - 0.75) * 4)), S = 0), `rgb(${x},${M},${S})`;
+    const E = n.filter((r) => r !== void 0 && !isNaN(r));
+    if (!E.length) return "<p><i>No data for contour map</i></p>";
+    const h = t.map((r) => r[0]), u = t.map((r) => r[1]), M = Math.min(...h), X = Math.max(...h), P = Math.min(...u), f = Math.max(...u), z = X - M || 1, S = f - P || 1, $ = c / Math.max(z, S), x = S * $, R = 20, y = Math.min(...E), B = Math.max(...E), b = Math.abs(B - y) || 1;
+    function m(r) {
+      const d = Math.max(0, Math.min(1, (r - y) / b));
+      let g, w, D;
+      return d < 0.25 ? (g = 0, w = Math.floor(255 * d * 4), D = 255) : d < 0.5 ? (g = 0, w = 255, D = Math.floor(255 * (1 - (d - 0.25) * 4))) : d < 0.75 ? (g = Math.floor(255 * (d - 0.5) * 4), w = 255, D = 0) : (g = 255, w = Math.floor(255 * (1 - (d - 0.75) * 4)), D = 0), `rgb(${g},${w},${D})`;
     }
-    const m = `colorScaleElem_${c.replace(/[^a-zA-Z0-9]/g, "")}`;
-    let z = `<svg viewBox="-20 -20 ${r + 80} ${$ + 2 * N}" xmlns="http://www.w3.org/2000/svg" style="width:${r + 80}pt; height:${O($, 0)}pt; font-family:Arial; font-size:9px;">
+    const p = `colorScaleElem_${k.replace(/[^a-zA-Z0-9]/g, "")}`;
+    let C = `<svg viewBox="-20 -20 ${c + 80} ${x + 2 * R}" xmlns="http://www.w3.org/2000/svg" style="width:${c + 80}pt; height:${T(x, 0)}pt; font-family:Arial; font-size:9px;">
 <defs>
-<linearGradient id="${m}" x1="0%" y1="100%" x2="0%" y2="0%">
+<linearGradient id="${p}" x1="0%" y1="100%" x2="0%" y2="0%">
 <stop offset="0%" style="stop-color:#0000ff"/>
 <stop offset="25%" style="stop-color:#00ffff"/>
 <stop offset="50%" style="stop-color:#00ff00"/>
@@ -405,67 +405,67 @@ hr {
 <stop offset="100%" style="stop-color:#ff0000"/>
 </linearGradient>
 </defs>`;
-    a.forEach((l, p) => {
-      const x = n[p] || 0, M = h(x), S = l.map((D) => {
-        const R = (t[D][0] - v) * f, K = $ - (t[D][1] - T) * f;
-        return `${O(R, 6)},${O(K, 6)}`;
+    a.forEach((r, d) => {
+      const g = n[d] || 0, w = m(g), D = r.map((F) => {
+        const I = (t[F][0] - M) * $, K = x - (t[F][1] - P) * $;
+        return `${T(I, 6)},${T(K, 6)}`;
       }).join(" ");
-      z += `<polygon points="${S}" fill="${M}" stroke="#333" stroke-width="0.3"/>`;
+      C += `<polygon points="${D}" fill="${w}" stroke="#333" stroke-width="0.3"/>`;
     });
-    const Y = r + 10, q = $ - 20;
-    z += `<rect x="${Y}" y="10" width="15" height="${O(q, 0)}" fill="url(#${m})" stroke="#333"/>`;
-    for (let l = 0; l <= 5; l++) {
-      const p = g + b * l / 5, x = 10 + q - q * l / 5;
-      z += `<text x="${Y + 20}" y="${O(x + 3, 0)}">${j(p, 4)}</text>`;
+    const G = c + 10, q = x - 20;
+    C += `<rect x="${G}" y="10" width="15" height="${T(q, 0)}" fill="url(#${p})" stroke="#333"/>`;
+    for (let r = 0; r <= 5; r++) {
+      const d = y + b * r / 5, g = 10 + q - q * r / 5;
+      C += `<text x="${G + 20}" y="${T(g + 3, 0)}">${j(d, 4)}</text>`;
     }
-    return z += `<text x="${Y}" y="5">${c}</text>`, z += "</svg>", z;
+    return C += `<text x="${G}" y="5">${k}</text>`, C += "</svg>", C;
   }
   function yt(t) {
     var _a, _b, _c, _d, _e, _f, _g, _h, _i, _j, _k, _l, _m, _n;
     console.log("Template Calcpad style called");
-    const a = ((_a = t == null ? void 0 : t.nodes) == null ? void 0 : _a.val) || [], n = ((_b = t == null ? void 0 : t.elements) == null ? void 0 : _b.val) || [], r = ((_c = t == null ? void 0 : t.nodeInputs) == null ? void 0 : _c.val) || {}, c = ((_d = t == null ? void 0 : t.elementInputs) == null ? void 0 : _d.val) || {}, k = ((_e = t == null ? void 0 : t.deformOutputs) == null ? void 0 : _e.val) || {}, E = ((_f = t == null ? void 0 : t.analyzeOutputs) == null ? void 0 : _f.val) || {}, P = ((_g = c.elasticities) == null ? void 0 : _g.values().next().value) || 100, v = ((_h = c.poissonsRatios) == null ? void 0 : _h.values().next().value) || 0.3, X = ((_i = c.thicknesses) == null ? void 0 : _i.values().next().value) || 1, T = ((_k = (_j = r.loads) == null ? void 0 : _j.values().next().value) == null ? void 0 : _k[2]) || -3, u = a.map((F) => F[0]), w = a.map((F) => F[1]), C = u.length ? Math.max(...u) - Math.min(...u) : 15, f = w.length ? Math.max(...w) - Math.min(...w) : 10, $ = [];
-    let N = 0, g = 0;
-    k.deformations && k.deformations.forEach((F, A) => {
-      $[A] = F[2] || 0, Math.abs(F[2]) > Math.abs(N) && (N = F[2], g = A);
+    const a = ((_a = t == null ? void 0 : t.nodes) == null ? void 0 : _a.val) || [], n = ((_b = t == null ? void 0 : t.elements) == null ? void 0 : _b.val) || [], c = ((_c = t == null ? void 0 : t.nodeInputs) == null ? void 0 : _c.val) || {}, k = ((_d = t == null ? void 0 : t.elementInputs) == null ? void 0 : _d.val) || {}, E = ((_e = t == null ? void 0 : t.deformOutputs) == null ? void 0 : _e.val) || {}, h = ((_f = t == null ? void 0 : t.analyzeOutputs) == null ? void 0 : _f.val) || {}, u = ((_g = k.elasticities) == null ? void 0 : _g.values().next().value) || 100, M = ((_h = k.poissonsRatios) == null ? void 0 : _h.values().next().value) || 0.3, X = ((_i = k.thicknesses) == null ? void 0 : _i.values().next().value) || 1, P = ((_k = (_j = c.loads) == null ? void 0 : _j.values().next().value) == null ? void 0 : _k[2]) || -3, f = a.map((A) => A[0]), z = a.map((A) => A[1]), S = f.length ? Math.max(...f) - Math.min(...f) : 15, $ = z.length ? Math.max(...z) - Math.min(...z) : 10, x = [];
+    let R = 0, y = 0;
+    E.deformations && E.deformations.forEach((A, N) => {
+      x[N] = A[2] || 0, Math.abs(A[2]) > Math.abs(R) && (R = A[2], y = N);
     });
-    const B = [], b = [], h = [], m = [], z = [], Y = [];
-    let q = 0, l = 0, p = 0, x = 0;
-    E.bendingXX && E.bendingXX.forEach((F, A) => {
-      const s = F.reduce((I, L) => I + L, 0) / F.length;
-      B[A] = s, Math.abs(s) > Math.abs(q) && (q = s, l = A);
-    }), E.bendingYY && E.bendingYY.forEach((F, A) => {
-      const s = F.reduce((I, L) => I + L, 0) / F.length;
-      b[A] = s, Math.abs(s) > Math.abs(p) && (p = s, x = A);
-    }), E.bendingXY && E.bendingXY.forEach((F, A) => {
-      const s = F.reduce((I, L) => I + L, 0) / F.length;
-      h[A] = s;
-    }), E.membraneXX && E.membraneXX.forEach((F, A) => {
-      const s = F.reduce((I, L) => I + L, 0) / F.length;
-      m[A] = s;
-    }), E.membraneYY && E.membraneYY.forEach((F, A) => {
-      const s = F.reduce((I, L) => I + L, 0) / F.length;
-      z[A] = s;
-    }), E.membraneXY && E.membraneXY.forEach((F, A) => {
-      const s = F.reduce((I, L) => I + L, 0) / F.length;
-      Y[A] = s;
+    const B = [], b = [], m = [], p = [], C = [], G = [];
+    let q = 0, r = 0, d = 0, g = 0;
+    h.bendingXX && h.bendingXX.forEach((A, N) => {
+      const s = A.reduce((O, L) => O + L, 0) / A.length;
+      B[N] = s, Math.abs(s) > Math.abs(q) && (q = s, r = N);
+    }), h.bendingYY && h.bendingYY.forEach((A, N) => {
+      const s = A.reduce((O, L) => O + L, 0) / A.length;
+      b[N] = s, Math.abs(s) > Math.abs(d) && (d = s, g = N);
+    }), h.bendingXY && h.bendingXY.forEach((A, N) => {
+      const s = A.reduce((O, L) => O + L, 0) / A.length;
+      m[N] = s;
+    }), h.membraneXX && h.membraneXX.forEach((A, N) => {
+      const s = A.reduce((O, L) => O + L, 0) / A.length;
+      p[N] = s;
+    }), h.membraneYY && h.membraneYY.forEach((A, N) => {
+      const s = A.reduce((O, L) => O + L, 0) / A.length;
+      C[N] = s;
+    }), h.membraneXY && h.membraneXY.forEach((A, N) => {
+      const s = A.reduce((O, L) => O + L, 0) / A.length;
+      G[N] = s;
     });
-    const M = P * Math.pow(X, 3) / (12 * (1 - v * v)), S = [
+    const w = u * Math.pow(X, 3) / (12 * (1 - M * M)), D = [
       [
-        M,
-        M * v,
+        w,
+        w * M,
         0
       ],
       [
-        M * v,
-        M,
+        w * M,
+        w,
         0
       ],
       [
         0,
         0,
-        M * (1 - v) / 2
+        w * (1 - M) / 2
       ]
-    ], D = ((_l = r.supports) == null ? void 0 : _l.size) || 0, R = a.length, K = n.length, et = `
+    ], F = ((_l = c.supports) == null ? void 0 : _l.size) || 0, I = a.length, K = n.length, et = `
 <style>${Tt}
 /* Zoom control styles */
 .zoom-toolbar {
@@ -527,20 +527,20 @@ hr {
 
 <h4>Input data</h4>
 <table><tr><td>
-<p>Plate dimensions - ${G(`${d("a")} = ${j(C, 1)}`)} m, ${G(`${d("b")} = ${j(f, 1)}`)} m</p>
-<p>Thickness - ${G(`${d("t")} = ${j(X, 2)}`)} m</p>
-<p>Load - ${G(`${d("q")} = ${j(Math.abs(T), 1)}`)} kN/m\xB2</p>
-<p>Modulus of elasticity - ${G(`${d("E")} = ${j(P, 0)}`)} GPa</p>
-<p>Poisson's ratio - ${G(`${d("\u03BD")} = ${j(v, 2)}`)}</p>
+<p>Plate dimensions - ${Y(`${l("a")} = ${j(S, 1)}`)} m, ${Y(`${l("b")} = ${j($, 1)}`)} m</p>
+<p>Thickness - ${Y(`${l("t")} = ${j(X, 2)}`)} m</p>
+<p>Load - ${Y(`${l("q")} = ${j(Math.abs(P), 1)}`)} kN/m\xB2</p>
+<p>Modulus of elasticity - ${Y(`${l("E")} = ${j(u, 0)}`)} GPa</p>
+<p>Poisson's ratio - ${Y(`${l("\u03BD")} = ${j(M, 2)}`)}</p>
 </td><td style="vertical-align:middle; padding-left:30px;">
-${_t(C, f)}
+${_t(S, $)}
 </td></tr></table>
 
 <h4>Finite element mesh</h4>
-<p>We will use triangular finite elements with ${G(`${d("n")} = 18`)} DOFs (6 per node)</p>
-<p>Total number of elements - ${G(`${d("n", "e")} = ${K}`)}</p>
-<p>Total number of joints - ${G(`${d("n", "j")} = ${R}`)}</p>
-<p>Supported joints count - ${G(`${d("n", "s")} = ${D}`)}</p>
+<p>We will use triangular finite elements with ${Y(`${l("n")} = 18`)} DOFs (6 per node)</p>
+<p>Total number of elements - ${Y(`${l("n", "e")} = ${K}`)}</p>
+<p>Total number of joints - ${Y(`${l("n", "j")} = ${I}`)}</p>
+<p>Supported joints count - ${Y(`${l("n", "s")} = ${F}`)}</p>
 
 <div class="no-print scale-control">
   <label>Text size:</label>
@@ -644,86 +644,86 @@ ${jt(a, n)}
 
 <p>Joint coordinates</p>
 <table class="bordered centered">
-<tr><th>Joint</th><th>${d("x")}</th><th>${d("y")}</th></tr>
-${a.slice(0, 10).map((F, A) => `
-<tr><td>${A + 1}</td><td>${j(F[0], 2)}</td><td>${j(F[1], 2)}</td></tr>
+<tr><th>Joint</th><th>${l("x")}</th><th>${l("y")}</th></tr>
+${a.slice(0, 10).map((A, N) => `
+<tr><td>${N + 1}</td><td>${j(A[0], 2)}</td><td>${j(A[1], 2)}</td></tr>
 `).join("")}
-${R > 10 ? `<tr><td colspan="3">... (${R - 10} more joints)</td></tr>` : ""}
+${I > 10 ? `<tr><td colspan="3">... (${I - 10} more joints)</td></tr>` : ""}
 </table>
 
 <h4>Finite element formulation</h4>
 <p><b>Shape functions</b></p>
 <p>Linear shape functions for triangular element (area coordinates):</p>
-<p>${G(`${d("N", "1")}(\u03BE,\u03B7) = 1 - \u03BE - \u03B7`)}</p>
-<p>${G(`${d("N", "2")}(\u03BE,\u03B7) = \u03BE`)}</p>
-<p>${G(`${d("N", "3")}(\u03BE,\u03B7) = \u03B7`)}</p>
+<p>${Y(`${l("N", "1")}(\u03BE,\u03B7) = 1 - \u03BE - \u03B7`)}</p>
+<p>${Y(`${l("N", "2")}(\u03BE,\u03B7) = \u03BE`)}</p>
+<p>${Y(`${l("N", "3")}(\u03BE,\u03B7) = \u03B7`)}</p>
 
 <p><b>Constitutive matrix</b> (stress - strain relationship)</p>
-<p>${G(`<b>${d("D")}</b> = ${ot(`${d("E")} \xB7 ${d("t")}<sup>3</sup>`, `12 \xB7 (1 - ${d("\u03BD")}<sup>2</sup>)`)} \xB7 <b class="b1">[</b>1; ${d("\u03BD")}; 0 <b class="b0">|</b> ${d("\u03BD")}; 1; 0 <b class="b0">|</b> 0; 0; ${ot(`1 - ${d("\u03BD")}`, "2")}<b class="b1">]</b>`)}</p>
-<p>${G(`<b>${d("D")}</b> = ${ot(`${j(P, 0)} \xB7 ${j(X, 2)}<sup>3</sup>`, `12 \xB7 (1 - ${j(v, 2)}<sup>2</sup>)`)} \xB7 <b class="b1">[</b>1; ${j(v, 2)}; 0 <b class="b0">|</b> ${j(v, 2)}; 1; 0 <b class="b0">|</b> 0; 0; ${ot(`1 - ${j(v, 2)}`, "2")}<b class="b1">]</b> = ${Pt(S, 6)}`)}</p>
+<p>${Y(`<b>${l("D")}</b> = ${st(`${l("E")} \xB7 ${l("t")}<sup>3</sup>`, `12 \xB7 (1 - ${l("\u03BD")}<sup>2</sup>)`)} \xB7 <b class="b1">[</b>1; ${l("\u03BD")}; 0 <b class="b0">|</b> ${l("\u03BD")}; 1; 0 <b class="b0">|</b> 0; 0; ${st(`1 - ${l("\u03BD")}`, "2")}<b class="b1">]</b>`)}</p>
+<p>${Y(`<b>${l("D")}</b> = ${st(`${j(u, 0)} \xB7 ${j(X, 2)}<sup>3</sup>`, `12 \xB7 (1 - ${j(M, 2)}<sup>2</sup>)`)} \xB7 <b class="b1">[</b>1; ${j(M, 2)}; 0 <b class="b0">|</b> ${j(M, 2)}; 1; 0 <b class="b0">|</b> 0; 0; ${st(`1 - ${j(M, 2)}`, "2")}<b class="b1">]</b> = ${Pt(D, 6)}`)}</p>
 
 <p><b>Strain-displacement matrix</b></p>
-<p>The bending strain-displacement matrix ${G(`${d("B", "b")}`)} (3\xD718) relates curvatures to nodal DOFs:</p>
-<p>${G(`\u03BA = {${d("\u03BA", "xx")}, ${d("\u03BA", "yy")}, ${d("\u03BA", "xy")}}<sup>T</sup> = ${d("B", "b")} \xB7 ${d("u")}`)}</p>
+<p>The bending strain-displacement matrix ${Y(`${l("B", "b")}`)} (3\xD718) relates curvatures to nodal DOFs:</p>
+<p>${Y(`\u03BA = {${l("\u03BA", "xx")}, ${l("\u03BA", "yy")}, ${l("\u03BA", "xy")}}<sup>T</sup> = ${l("B", "b")} \xB7 ${l("u")}`)}</p>
 
 <p><b>Element stiffness matrix</b></p>
-<p>${G(`${d("K", "e")} = \u222B\u222B ${d("B")}<sup>T</sup> \xB7 ${d("D")} \xB7 ${d("B")} dA`)}</p>
-<p>For shell elements: ${G(`${d("K", "e")} = ${d("K", "b")} + ${d("K", "s")} + ${d("K", "m")}`)}</p>
+<p>${Y(`${l("K", "e")} = \u222B\u222B ${l("B")}<sup>T</sup> \xB7 ${l("D")} \xB7 ${l("B")} dA`)}</p>
+<p>For shell elements: ${Y(`${l("K", "e")} = ${l("K", "b")} + ${l("K", "s")} + ${l("K", "m")}`)}</p>
 <p>(bending + shear + membrane)</p>
 
 <h4>Solution</h4>
-<p>Total degrees of freedom: ${G(`${R * 6}`)}</p>
-<p>Free degrees of freedom: ${G(`${R * 6 - D * 6}`)}</p>
-<p>Global system: ${G(`${d("K")} \xB7 ${d("U")} = ${d("F")}`)}</p>
+<p>Total degrees of freedom: ${Y(`${I * 6}`)}</p>
+<p>Free degrees of freedom: ${Y(`${I * 6 - F * 6}`)}</p>
+<p>Global system: ${Y(`${l("K")} \xB7 ${l("U")} = ${l("F")}`)}</p>
 <p>Solution method: LU decomposition</p>
 
 <h4>Results</h4>
 <p><b>Displacements</b></p>
-<p>Maximum displacement: ${G(`${d("w", "max")} = <span class="${Math.abs(N) > 10 ? "err" : "ok"}">${j(N, 6)}</span>`)} at joint ${g + 1}</p>
+<p>Maximum displacement: ${Y(`${l("w", "max")} = <span class="${Math.abs(R) > 10 ? "err" : "ok"}">${j(R, 6)}</span>`)} at joint ${y + 1}</p>
 
 <p>Nodal displacements</p>
 <table class="bordered data">
-<tr><th>Joint</th><th>${d("w")}</th><th>${d("\u03B8", "x")}</th><th>${d("\u03B8", "y")}</th></tr>
-${k.deformations ? [
-      ...k.deformations
-    ].slice(0, 10).map(([F, A]) => `
-<tr><td>${F + 1}</td><td>${j(A[2], 5)}</td><td>${j(A[3], 5)}</td><td>${j(A[4], 5)}</td></tr>
+<tr><th>Joint</th><th>${l("w")}</th><th>${l("\u03B8", "x")}</th><th>${l("\u03B8", "y")}</th></tr>
+${E.deformations ? [
+      ...E.deformations
+    ].slice(0, 10).map(([A, N]) => `
+<tr><td>${A + 1}</td><td>${j(N[2], 5)}</td><td>${j(N[3], 5)}</td><td>${j(N[4], 5)}</td></tr>
 `).join("") : ""}
-${(((_m = k.deformations) == null ? void 0 : _m.size) || 0) > 10 ? `<tr><td colspan="4">... (${(((_n = k.deformations) == null ? void 0 : _n.size) || 0) - 10} more)</td></tr>` : ""}
+${(((_m = E.deformations) == null ? void 0 : _m.size) || 0) > 10 ? `<tr><td colspan="4">... (${(((_n = E.deformations) == null ? void 0 : _n.size) || 0) - 10} more)</td></tr>` : ""}
 </table>
 
 <p><b>Displacement contour map</b></p>
-${Xt(a, n, $, 400, "w")}
-<p>${G(`${d("w")}(${ot(d("a"), "2")}, ${ot(d("b"), "2")}) = ${j(N, 6)}`)}</p>
+${Xt(a, n, x, 400, "w")}
+<p>${Y(`${l("w")}(${st(l("a"), "2")}, ${st(l("b"), "2")}) = ${j(R, 6)}`)}</p>
 
 <h4>Shell Results</h4>
 <p><b>Bending moments</b></p>
-<p>Maximum bending moment ${d("M", "x")}: ${G(`${d("M", "x,max")} = ${j(q, 4)}`)} kN\xB7m/m at element ${l + 1}</p>
-<p>Maximum bending moment ${d("M", "y")}: ${G(`${d("M", "y,max")} = ${j(p, 4)}`)} kN\xB7m/m at element ${x + 1}</p>
+<p>Maximum bending moment ${l("M", "x")}: ${Y(`${l("M", "x,max")} = ${j(q, 4)}`)} kN\xB7m/m at element ${r + 1}</p>
+<p>Maximum bending moment ${l("M", "y")}: ${Y(`${l("M", "y,max")} = ${j(d, 4)}`)} kN\xB7m/m at element ${g + 1}</p>
 
 ${B.length > 0 ? `
 <p>Element bending moments</p>
 <table class="bordered data">
-<tr><th>Element</th><th>${d("M", "x")}</th><th>${d("M", "y")}</th><th>${d("M", "xy")}</th></tr>
-${n.slice(0, 10).map((F, A) => `
-<tr><td>${A + 1}</td><td>${j(B[A] || 0, 4)}</td><td>${j(b[A] || 0, 4)}</td><td>${j(h[A] || 0, 4)}</td></tr>
+<tr><th>Element</th><th>${l("M", "x")}</th><th>${l("M", "y")}</th><th>${l("M", "xy")}</th></tr>
+${n.slice(0, 10).map((A, N) => `
+<tr><td>${N + 1}</td><td>${j(B[N] || 0, 4)}</td><td>${j(b[N] || 0, 4)}</td><td>${j(m[N] || 0, 4)}</td></tr>
 `).join("")}
 ${K > 10 ? `<tr><td colspan="4">... (${K - 10} more elements)</td></tr>` : ""}
 </table>
 
-<p><b>Bending moment ${d("M", "x")} contour map</b></p>
+<p><b>Bending moment ${l("M", "x")} contour map</b></p>
 ${gt(a, n, B, 400, "Mx")}
 
-<p><b>Bending moment ${d("M", "y")} contour map</b></p>
+<p><b>Bending moment ${l("M", "y")} contour map</b></p>
 ${gt(a, n, b, 400, "My")}
 ` : "<p><i>No shell results available</i></p>"}
 
-${m.length > 0 ? `
+${p.length > 0 ? `
 <p><b>Membrane forces</b></p>
 <table class="bordered data">
-<tr><th>Element</th><th>${d("N", "x")}</th><th>${d("N", "y")}</th><th>${d("N", "xy")}</th></tr>
-${n.slice(0, 10).map((F, A) => `
-<tr><td>${A + 1}</td><td>${j(m[A] || 0, 4)}</td><td>${j(z[A] || 0, 4)}</td><td>${j(Y[A] || 0, 4)}</td></tr>
+<tr><th>Element</th><th>${l("N", "x")}</th><th>${l("N", "y")}</th><th>${l("N", "xy")}</th></tr>
+${n.slice(0, 10).map((A, N) => `
+<tr><td>${N + 1}</td><td>${j(p[N] || 0, 4)}</td><td>${j(C[N] || 0, 4)}</td><td>${j(G[N] || 0, 4)}</td></tr>
 `).join("")}
 ${K > 10 ? `<tr><td colspan="4">... (${K - 10} more elements)</td></tr>` : ""}
 </table>
@@ -878,7 +878,7 @@ hr { border: none; border-top: 1px solid #ccc; margin: 15px 0; }
     .no-print { display: none !important; }
 }
 `;
-  function y(t, a = 4) {
+  function v(t, a = 4) {
     return t == null || isNaN(t) || Math.abs(t) < 1e-12 ? "0" : Math.abs(t) >= 1e6 || Math.abs(t) < 1e-4 && t !== 0 ? t.toExponential(2) : t.toFixed(a);
   }
   function at(t, a) {
@@ -895,11 +895,11 @@ hr { border: none; border-top: 1px solid #ccc; margin: 15px 0; }
     let n = a ? `<b>${a}</b> = ` : "";
     n += `<span class="matrix">
 `;
-    for (let r = 0; r < t.length; r++) {
+    for (let c = 0; c < t.length; c++) {
       n += '<span class="tr">';
-      for (let c = 0; c < t[r].length; c++) {
-        const k = t[r][c], E = y(k, 4);
-        n += `<span class="td">${E}</span>`;
+      for (let k = 0; k < t[c].length; k++) {
+        const E = t[c][k], h = v(E, 4);
+        n += `<span class="td">${h}</span>`;
       }
       n += `</span>
 `;
@@ -910,56 +910,56 @@ hr { border: none; border-top: 1px solid #ccc; margin: 15px 0; }
     if (!t || !t.length) return "";
     let n = a ? `<b>${a}</b> = ` : "";
     n += '<span class="vector">';
-    for (let r = 0; r < t.length; r++) n += `<span class="td">${y(t[r], 6)}</span>`;
+    for (let c = 0; c < t.length; c++) n += `<span class="td">${v(t[c], 6)}</span>`;
     return n += "</span>", n;
   }
-  function Yt(t) {
+  function Gt(t) {
     var _a, _b, _c, _d, _e, _f, _g, _h, _i, _j, _k;
-    const a = ((_a = t == null ? void 0 : t.nodes) == null ? void 0 : _a.val) || [], n = ((_b = t == null ? void 0 : t.elements) == null ? void 0 : _b.val) || [], r = ((_c = t == null ? void 0 : t.nodeInputs) == null ? void 0 : _c.val) || {}, c = ((_d = t == null ? void 0 : t.elementInputs) == null ? void 0 : _d.val) || {}, k = ((_e = t == null ? void 0 : t.deformOutputs) == null ? void 0 : _e.val) || {}, E = ((_f = t == null ? void 0 : t.analyzeOutputs) == null ? void 0 : _f.val) || {}, P = ((_g = c.elasticities) == null ? void 0 : _g.values().next().value) || 21e4, v = ((_h = c.poissonsRatios) == null ? void 0 : _h.values().next().value) || 0.3, X = ((_i = c.thicknesses) == null ? void 0 : _i.values().next().value) || 0.2, T = P / (2 * (1 + v)), u = P * Math.pow(X, 3) / (12 * (1 - v * v)), w = 5 / 6, C = a.map((s) => s[0]), f = a.map((s) => s[1]), $ = C.length ? Math.max(...C) - Math.min(...C) : 10, N = f.length ? Math.max(...f) - Math.min(...f) : 15, g = a.length, B = n.length, b = ((_j = r.supports) == null ? void 0 : _j.size) || 0, h = g * 6;
-    let m = -10;
-    if (((_k = r.loads) == null ? void 0 : _k.size) > 0) {
-      const s = r.loads.values().next().value;
-      s && (m = s[2] || -10);
+    const a = ((_a = t == null ? void 0 : t.nodes) == null ? void 0 : _a.val) || [], n = ((_b = t == null ? void 0 : t.elements) == null ? void 0 : _b.val) || [], c = ((_c = t == null ? void 0 : t.nodeInputs) == null ? void 0 : _c.val) || {}, k = ((_d = t == null ? void 0 : t.elementInputs) == null ? void 0 : _d.val) || {}, E = ((_e = t == null ? void 0 : t.deformOutputs) == null ? void 0 : _e.val) || {}, h = ((_f = t == null ? void 0 : t.analyzeOutputs) == null ? void 0 : _f.val) || {}, u = ((_g = k.elasticities) == null ? void 0 : _g.values().next().value) || 21e4, M = ((_h = k.poissonsRatios) == null ? void 0 : _h.values().next().value) || 0.3, X = ((_i = k.thicknesses) == null ? void 0 : _i.values().next().value) || 0.2, P = u / (2 * (1 + M)), f = u * Math.pow(X, 3) / (12 * (1 - M * M)), z = 5 / 6, S = a.map((s) => s[0]), $ = a.map((s) => s[1]), x = S.length ? Math.max(...S) - Math.min(...S) : 10, R = $.length ? Math.max(...$) - Math.min(...$) : 15, y = a.length, B = n.length, b = ((_j = c.supports) == null ? void 0 : _j.size) || 0, m = y * 6;
+    let p = -10;
+    if (((_k = c.loads) == null ? void 0 : _k.size) > 0) {
+      const s = c.loads.values().next().value;
+      s && (p = s[2] || -10);
     }
-    let z = 0;
-    const Y = [];
-    k.deformations && k.deformations.forEach((s, I) => {
-      Y[I] = s, Math.abs(s[2]) > Math.abs(z) && (z = s[2]);
+    let C = 0;
+    const G = [];
+    E.deformations && E.deformations.forEach((s, O) => {
+      G[O] = s, Math.abs(s[2]) > Math.abs(C) && (C = s[2]);
     });
     let q = 0;
-    E.bendingXX && E.bendingXX.forEach((s) => {
-      const I = s.reduce((L, nt) => L + nt, 0) / s.length;
-      Math.abs(I) > Math.abs(q) && (q = I);
-    }), E.bendingYY && E.bendingYY.forEach((s) => {
-      s.reduce((I, L) => I + L, 0) / s.length;
+    h.bendingXX && h.bendingXX.forEach((s) => {
+      const O = s.reduce((L, it) => L + it, 0) / s.length;
+      Math.abs(O) > Math.abs(q) && (q = O);
+    }), h.bendingYY && h.bendingYY.forEach((s) => {
+      s.reduce((O, L) => O + L, 0) / s.length;
     });
-    const l = [
+    const r = [
       [
-        u,
-        u * v,
+        f,
+        f * M,
         0
       ],
       [
-        u * v,
-        u,
+        f * M,
+        f,
         0
       ],
       [
         0,
         0,
-        u * (1 - v) / 2
+        f * (1 - M) / 2
       ]
-    ], p = w * T * X, x = [
+    ], d = z * P * X, g = [
       [
-        p,
+        d,
         0
       ],
       [
         0,
-        p
+        d
       ]
     ];
-    let M = {
+    let w = {
       nodes: [
         0,
         1,
@@ -982,13 +982,13 @@ hr { border: none; border-top: 1px solid #ccc; margin: 15px 0; }
           0
         ]
       ]
-    }, S = 0.5, D = [];
+    }, D = 0.5, F = [];
     if (n.length > 0 && a.length >= 3) {
-      const [s, I, L] = n[0], nt = a[s] || [
+      const [s, O, L] = n[0], it = a[s] || [
         0,
         0,
         0
-      ], bt = a[I] || [
+      ], bt = a[O] || [
         1,
         0,
         0
@@ -997,30 +997,30 @@ hr { border: none; border-top: 1px solid #ccc; margin: 15px 0; }
         1,
         0
       ];
-      M = {
+      w = {
         nodes: [
           s,
-          I,
+          O,
           L
         ],
         coords: [
-          nt,
+          it,
           bt,
           ut
         ]
       };
-      const $t = nt[0], xt = nt[1], wt = bt[0], zt = bt[1], kt = ut[0], Et = ut[1];
-      S = Math.abs((wt - $t) * (Et - xt) - (kt - $t) * (zt - xt)) / 2, D = [];
+      const $t = it[0], xt = it[1], wt = bt[0], zt = bt[1], kt = ut[0], Et = ut[1];
+      D = Math.abs((wt - $t) * (Et - xt) - (kt - $t) * (zt - xt)) / 2, F = [];
       for (let J = 0; J < 9; J++) {
-        D[J] = [];
-        for (let Q = 0; Q < 9; Q++) J === Q ? D[J][Q] = u * S * (1 + J % 3 * 0.1) : Math.abs(J - Q) <= 3 ? D[J][Q] = u * S * v * 0.3 * ((J + Q) % 2 ? -1 : 1) : D[J][Q] = 0;
+        F[J] = [];
+        for (let Q = 0; Q < 9; Q++) J === Q ? F[J][Q] = f * D * (1 + J % 3 * 0.1) : Math.abs(J - Q) <= 3 ? F[J][Q] = f * D * M * 0.3 * ((J + Q) % 2 ? -1 : 1) : F[J][Q] = 0;
       }
     }
-    const R = Array(Math.min(12, g * 6)).fill(0);
-    for (let s = 0; s < Math.min(4, g); s++) R[s * 3 + 2] = m;
+    const I = Array(Math.min(12, y * 6)).fill(0);
+    for (let s = 0; s < Math.min(4, y); s++) I[s * 3 + 2] = p;
     const K = [];
-    for (let s = 0; s < Math.min(4, g); s++) {
-      const I = Y[s] || [
+    for (let s = 0; s < Math.min(4, y); s++) {
+      const O = G[s] || [
         0,
         0,
         0,
@@ -1028,10 +1028,10 @@ hr { border: none; border-top: 1px solid #ccc; margin: 15px 0; }
         0,
         0
       ];
-      K.push(I[0], I[1], I[2]);
+      K.push(O[0], O[1], O[2]);
     }
-    const et = a.slice(0, 6).map((s, I) => {
-      const L = Y[I] || [
+    const et = a.slice(0, 6).map((s, O) => {
+      const L = G[O] || [
         0,
         0,
         0,
@@ -1040,7 +1040,7 @@ hr { border: none; border-top: 1px solid #ccc; margin: 15px 0; }
         0
       ];
       return {
-        i: I,
+        i: O,
         x: s[0],
         y: s[1],
         z: s[2],
@@ -1048,12 +1048,12 @@ hr { border: none; border-top: 1px solid #ccc; margin: 15px 0; }
         uy: L[1],
         uz: L[2]
       };
-    }), F = n.slice(0, 4).map((s, I) => ({
-      i: I,
+    }), A = n.slice(0, 4).map((s, O) => ({
+      i: O,
       n1: s[0],
       n2: s[1],
       n3: s[2]
-    })), A = `
+    })), N = `
 <style>${Bt}</style>
 
 <div class="no-print zoom-toolbar">
@@ -1092,16 +1092,16 @@ window.setZoom = function(val) { updateZoom(val); };
 </div>
 
 <h4>Geometr\xEDa:</h4>
-<p>${_(`${i("B")} = <b>${y($, 2)}</b>`)}&nbsp;&nbsp;(ancho en direcci\xF3n X)</p>
-<p>${_(`${i("L")} = <b>${y(N, 2)}</b>`)}&nbsp;&nbsp;(largo en direcci\xF3n Y)</p>
-<p>${_(`${i("t")} = <b>${y(X, 4)}</b>`)}&nbsp;&nbsp;(espesor de la placa)</p>
+<p>${_(`${i("B")} = <b>${v(x, 2)}</b>`)}&nbsp;&nbsp;(ancho en direcci\xF3n X)</p>
+<p>${_(`${i("L")} = <b>${v(R, 2)}</b>`)}&nbsp;&nbsp;(largo en direcci\xF3n Y)</p>
+<p>${_(`${i("t")} = <b>${v(X, 4)}</b>`)}&nbsp;&nbsp;(espesor de la placa)</p>
 
 <h4>Material:</h4>
-<p>${_(`${i("E")} = <b>${y(P, 0)}</b>`)}&nbsp;&nbsp;(m\xF3dulo de elasticidad)</p>
-<p>${_(`${i("\u03BD")} = <b>${y(v, 2)}</b>`)}&nbsp;&nbsp;(coeficiente de Poisson)</p>
+<p>${_(`${i("E")} = <b>${v(u, 0)}</b>`)}&nbsp;&nbsp;(m\xF3dulo de elasticidad)</p>
+<p>${_(`${i("\u03BD")} = <b>${v(M, 2)}</b>`)}&nbsp;&nbsp;(coeficiente de Poisson)</p>
 
 <h4>Carga:</h4>
-<p>${_(`${i("q")} = <b>${y(m, 2)}</b>`)}&nbsp;&nbsp;(carga por nodo en direcci\xF3n Z)</p>
+<p>${_(`${i("q")} = <b>${v(p, 2)}</b>`)}&nbsp;&nbsp;(carga por nodo en direcci\xF3n Z)</p>
 
 <hr/>
 
@@ -1114,16 +1114,16 @@ window.setZoom = function(val) { updateZoom(val); };
 </div>
 
 <h4>M\xF3dulo de corte:</h4>
-<p>${_(`${i("G")} = ${at(i("E"), `2\xB7(1 + ${i("\u03BD")})`)} = ${at(y(P, 0), `2\xB7(1 + ${y(v, 2)})`)} = <b>${y(T, 2)}</b>`)}</p>
+<p>${_(`${i("G")} = ${at(i("E"), `2\xB7(1 + ${i("\u03BD")})`)} = ${at(v(u, 0), `2\xB7(1 + ${v(M, 2)})`)} = <b>${v(P, 2)}</b>`)}</p>
 
 <h4>Rigidez a flexi\xF3n:</h4>
-<p>${_(`${i("D")} = ${at(`${i("E")}\xB7${i("t")}<sup>3</sup>`, `12\xB7(1 - ${i("\u03BD")}<sup>2</sup>)`)} = ${at(`${y(P, 0)}\xB7(${y(X, 4)})<sup>3</sup>`, `12\xB7(1 - ${y(v, 2)}<sup>2</sup>)`)} = <b>${y(u, 6)}</b>`)}</p>
+<p>${_(`${i("D")} = ${at(`${i("E")}\xB7${i("t")}<sup>3</sup>`, `12\xB7(1 - ${i("\u03BD")}<sup>2</sup>)`)} = ${at(`${v(u, 0)}\xB7(${v(X, 4)})<sup>3</sup>`, `12\xB7(1 - ${v(M, 2)}<sup>2</sup>)`)} = <b>${v(f, 6)}</b>`)}</p>
 
 <h4>Factor de correcci\xF3n de corte (Mindlin-Reissner):</h4>
-<p>${_(`${i("\u03BA")} = ${at("5", "6")} = <b>${y(w, 4)}</b>`)}</p>
+<p>${_(`${i("\u03BA")} = ${at("5", "6")} = <b>${v(z, 4)}</b>`)}</p>
 
 <h4>Rigidez a corte:</h4>
-<p>${_(`${i("D", "s")} = ${i("\u03BA")}\xB7${i("G")}\xB7${i("t")} = ${y(w, 4)}\xB7${y(T, 2)}\xB7${y(X, 4)} = <b>${y(p, 4)}</b>`)}</p>
+<p>${_(`${i("D", "s")} = ${i("\u03BA")}\xB7${i("G")}\xB7${i("t")} = ${v(z, 4)}\xB7${v(P, 2)}\xB7${v(X, 4)} = <b>${v(d, 4)}</b>`)}</p>
 
 <hr/>
 
@@ -1140,30 +1140,30 @@ window.setZoom = function(val) { updateZoom(val); };
 <div class="code-block"><span class="kw">const</span> { nodes, elements, boundaryIndices } = <span class="fn">getMesh</span>({
   points: [
     [<span class="num">0</span>, <span class="num">0</span>, <span class="num">0</span>],         <span class="cm">// Nodo 0: esquina origen</span>
-    [<span class="num">${y($, 1)}</span>, <span class="num">0</span>, <span class="num">0</span>],      <span class="cm">// Nodo 1: esquina X</span>
-    [<span class="num">${y($, 1)}</span>, <span class="num">${y(N, 1)}</span>, <span class="num">0</span>],   <span class="cm">// Nodo 2: esquina XY</span>
-    [<span class="num">0</span>, <span class="num">${y(N, 1)}</span>, <span class="num">0</span>],      <span class="cm">// Nodo 3: esquina Y</span>
+    [<span class="num">${v(x, 1)}</span>, <span class="num">0</span>, <span class="num">0</span>],      <span class="cm">// Nodo 1: esquina X</span>
+    [<span class="num">${v(x, 1)}</span>, <span class="num">${v(R, 1)}</span>, <span class="num">0</span>],   <span class="cm">// Nodo 2: esquina XY</span>
+    [<span class="num">0</span>, <span class="num">${v(R, 1)}</span>, <span class="num">0</span>],      <span class="cm">// Nodo 3: esquina Y</span>
   ],
   polygon: [<span class="num">0</span>, <span class="num">1</span>, <span class="num">2</span>, <span class="num">3</span>],      <span class="cm">// Contorno cerrado</span>
   maxMeshSize: mallado,            <span class="cm">// Tama\xF1o m\xE1ximo de elemento</span>
 });</div>
 
 <h4>Resultado de la malla:</h4>
-<p>${_(`${i("n", "j")} = <b>${g}</b>`)}&nbsp;&nbsp;(n\xFAmero de nodos)</p>
+<p>${_(`${i("n", "j")} = <b>${y}</b>`)}&nbsp;&nbsp;(n\xFAmero de nodos)</p>
 <p>${_(`${i("n", "e")} = <b>${B}</b>`)}&nbsp;&nbsp;(n\xFAmero de elementos triangulares)</p>
 <p>${_(`${i("n", "s")} = <b>${b}</b>`)}&nbsp;&nbsp;(nodos con apoyo en el borde)</p>
 
 <h4>Tabla de Nodos (primeros 6):</h4>
 <table class="bordered">
   <tr><th>Nodo</th><th>X</th><th>Y</th><th>Z</th></tr>
-  ${et.map((s) => `<tr><td>${s.i}</td><td>${y(s.x, 3)}</td><td>${y(s.y, 3)}</td><td>${y(s.z, 3)}</td></tr>`).join("")}
-  ${g > 6 ? `<tr><td colspan="4" style="text-align:center">... (${g - 6} nodos m\xE1s)</td></tr>` : ""}
+  ${et.map((s) => `<tr><td>${s.i}</td><td>${v(s.x, 3)}</td><td>${v(s.y, 3)}</td><td>${v(s.z, 3)}</td></tr>`).join("")}
+  ${y > 6 ? `<tr><td colspan="4" style="text-align:center">... (${y - 6} nodos m\xE1s)</td></tr>` : ""}
 </table>
 
 <h4>Tabla de Elementos (primeros 4):</h4>
 <table class="bordered">
   <tr><th>Elem</th><th>Nodo 1</th><th>Nodo 2</th><th>Nodo 3</th></tr>
-  ${F.map((s) => `<tr><td>${s.i}</td><td>${s.n1}</td><td>${s.n2}</td><td>${s.n3}</td></tr>`).join("")}
+  ${A.map((s) => `<tr><td>${s.i}</td><td>${s.n1}</td><td>${s.n2}</td><td>${s.n3}</td></tr>`).join("")}
   ${B > 4 ? `<tr><td colspan="4" style="text-align:center">... (${B - 4} elementos m\xE1s)</td></tr>` : ""}
 </table>
 
@@ -1182,20 +1182,20 @@ window.setZoom = function(val) { updateZoom(val); };
 <p>Relaciona momentos con curvaturas:</p>
 <p>${_(`{${i("M")}} = [${i("D", "b")}]\xB7{${i("\u03BA")}}`)}</p>
 
-<p>${ft(l, "[D<sub>b</sub>]")}</p>
+<p>${ft(r, "[D<sub>b</sub>]")}</p>
 
 <div class="info">
 <b>Interpretaci\xF3n:</b>
 <ul>
-  <li>D<sub>11</sub> = D<sub>22</sub> = ${y(u, 4)} \u2192 Rigidez a flexi\xF3n pura</li>
-  <li>D<sub>12</sub> = D<sub>21</sub> = ${y(u * v, 4)} \u2192 Acoplamiento por Poisson</li>
-  <li>D<sub>33</sub> = ${y(u * (1 - v) / 2, 4)} \u2192 Rigidez a torsi\xF3n</li>
+  <li>D<sub>11</sub> = D<sub>22</sub> = ${v(f, 4)} \u2192 Rigidez a flexi\xF3n pura</li>
+  <li>D<sub>12</sub> = D<sub>21</sub> = ${v(f * M, 4)} \u2192 Acoplamiento por Poisson</li>
+  <li>D<sub>33</sub> = ${v(f * (1 - M) / 2, 4)} \u2192 Rigidez a torsi\xF3n</li>
 </ul>
 </div>
 
 <h4>Matriz constitutiva de CORTE [D<sub>s</sub>]:</h4>
 <p>Relaciona fuerzas cortantes con deformaciones por corte (Mindlin-Reissner):</p>
-<p>${ft(x, "[D<sub>s</sub>]")}</p>
+<p>${ft(g, "[D<sub>s</sub>]")}</p>
 
 <hr/>
 
@@ -1209,21 +1209,21 @@ window.setZoom = function(val) { updateZoom(val); };
 </div>
 
 <h4>Ejemplo: Elemento 0</h4>
-<p>Nodos: [${M.nodes.join(", ")}]</p>
+<p>Nodos: [${w.nodes.join(", ")}]</p>
 <p>Coordenadas:</p>
 <ul>
-  <li>P1 = (${y(M.coords[0][0], 3)}, ${y(M.coords[0][1], 3)})</li>
-  <li>P2 = (${y(M.coords[1][0], 3)}, ${y(M.coords[1][1], 3)})</li>
-  <li>P3 = (${y(M.coords[2][0], 3)}, ${y(M.coords[2][1], 3)})</li>
+  <li>P1 = (${v(w.coords[0][0], 3)}, ${v(w.coords[0][1], 3)})</li>
+  <li>P2 = (${v(w.coords[1][0], 3)}, ${v(w.coords[1][1], 3)})</li>
+  <li>P3 = (${v(w.coords[2][0], 3)}, ${v(w.coords[2][1], 3)})</li>
 </ul>
 
 <h4>\xC1rea del tri\xE1ngulo:</h4>
 <p>${_(`${i("A")} = ${at("1", "2")}\xB7|${i("x", "2")}-${i("x", "1")}||${i("y", "3")}-${i("y", "1")}| - |${i("x", "3")}-${i("x", "1")}||${i("y", "2")}-${i("y", "1")}|`)}</p>
-<p>${_(`${i("A")} = <b>${y(S, 6)}</b>`)}</p>
+<p>${_(`${i("A")} = <b>${v(D, 6)}</b>`)}</p>
 
 <h4>Matriz de rigidez del elemento (muestra 9\xD79 de la parte de flexi\xF3n):</h4>
 <p style="font-size: 8pt; overflow-x: auto;">
-${ft(D, "[K<sub>e</sub>]")}
+${ft(F, "[K<sub>e</sub>]")}
 </p>
 
 <div class="highlight">
@@ -1243,7 +1243,7 @@ ${ft(D, "[K<sub>e</sub>]")}
 </div>
 
 <h4>Dimensiones del sistema:</h4>
-<p>${_(`[${i("K")}]_{global} \u2208 \u211D^{${h} \xD7 ${h}}`)}&nbsp;&nbsp;(${h} = ${g} nodos \xD7 6 DOF)</p>
+<p>${_(`[${i("K")}]_{global} \u2208 \u211D^{${m} \xD7 ${m}}`)}&nbsp;&nbsp;(${m} = ${y} nodos \xD7 6 DOF)</p>
 
 <h4>Grados de libertad por nodo:</h4>
 <table class="bordered">
@@ -1286,9 +1286,9 @@ ${ft(D, "[K<sub>e</sub>]")}
 </div>
 
 <h4>Vector de fuerzas (muestra primeros 12 DOF):</h4>
-<p>${vt(R, "{F}")}</p>
+<p>${vt(I, "{F}")}</p>
 
-<p>Cada nodo recibe carga ${_(`${i("F", "z")} = <b>${y(m, 2)}</b>`)} en direcci\xF3n Z.</p>
+<p>Cada nodo recibe carga ${_(`${i("F", "z")} = <b>${v(p, 2)}</b>`)} en direcci\xF3n Z.</p>
 
 <hr/>
 
@@ -1327,7 +1327,7 @@ multiplicamos por un n\xFAmero muy grande. Esto fuerza U[dof] \u2248 0 en la sol
 </div>
 
 <h4>Sistema de ecuaciones:</h4>
-<p style="font-size: 14pt; text-align: center;">${_(`[${i("K")}]_{${h}\xD7${h}} \xB7 {${i("U")}}_{${h}\xD71} = {${i("F")}}_{${h}\xD71}`)}</p>
+<p style="font-size: 14pt; text-align: center;">${_(`[${i("K")}]_{${m}\xD7${m}} \xB7 {${i("U")}}_{${m}\xD71} = {${i("F")}}_{${m}\xD71}`)}</p>
 
 <h4>C\xF3digo C++ (Solver LU disperso - Eigen):</h4>
 <div class="code-block">Eigen::SparseLU<Eigen::SparseMatrix<<span class="ty">double</span>>> solver;
@@ -1376,18 +1376,18 @@ U = solver.<span class="fn">solve</span>(F);  <span class="cm">// U = K\u207B\xB
 
 <div class="success">
 <h4>\u2705 Desplazamiento m\xE1ximo:</h4>
-<p style="font-size: 14pt;">${_(`${i("w", "max")} = <b>${y(z, 6)}</b>`)}</p>
+<p style="font-size: 14pt;">${_(`${i("w", "max")} = <b>${v(C, 6)}</b>`)}</p>
 </div>
 
 <div class="success">
 <h4>\u2705 Momento m\xE1ximo M<sub>xx</sub>:</h4>
-<p style="font-size: 14pt;">${_(`${i("M", "xx,max")} = <b>${y(q, 4)}</b>`)}</p>
+<p style="font-size: 14pt;">${_(`${i("M", "xx,max")} = <b>${v(q, 4)}</b>`)}</p>
 </div>
 
 <h4>Tabla de desplazamientos (primeros 6 nodos):</h4>
 <table class="bordered">
   <tr><th>Nodo</th><th>u<sub>x</sub></th><th>u<sub>y</sub></th><th>u<sub>z</sub></th></tr>
-  ${et.map((s) => `<tr><td>${s.i}</td><td>${y(s.ux, 6)}</td><td>${y(s.uy, 6)}</td><td class="${Math.abs(s.uz) > 1e-3 ? "err" : ""}">${y(s.uz, 6)}</td></tr>`).join("")}
+  ${et.map((s) => `<tr><td>${s.i}</td><td>${v(s.ux, 6)}</td><td>${v(s.uy, 6)}</td><td class="${Math.abs(s.uz) > 1e-3 ? "err" : ""}">${v(s.uz, 6)}</td></tr>`).join("")}
 </table>
 
 <hr/>
@@ -1421,9 +1421,9 @@ emcc deform.cpp -O3 \\
 </p>
 </div>
 `;
-    return mt`${ht(A)}`;
+    return mt`${ht(N)}`;
   }
-  const Gt = `
+  const Yt = `
 body {
     font-size: 11pt;
     font-family: 'Segoe UI', 'Arial Nova', Helvetica, sans-serif;
@@ -1684,11 +1684,11 @@ hr {
     if (!t || !t.length) return "";
     let n = `<span class="matrix">
 `;
-    for (let r = 0; r < t.length; r++) {
+    for (let c = 0; c < t.length; c++) {
       n += '<span class="tr"><span class="td"></span>';
-      for (let c = 0; c < t[r].length; c++) {
-        const k = t[r][c], E = typeof k == "number" ? qt(k, a) : k;
-        n += `<span class="td">${E}</span>`;
+      for (let k = 0; k < t[c].length; k++) {
+        const E = t[c][k], h = typeof E == "number" ? qt(E, a) : E;
+        n += `<span class="td">${h}</span>`;
       }
       n += `<span class="td"></span></span>
 `;
@@ -1721,7 +1721,7 @@ hr {
         "0",
         "\u03BA\xB7G\xB7t"
       ]
-    ], r = [
+    ], c = [
       [
         "1",
         "\u03BD",
@@ -1737,7 +1737,7 @@ hr {
         "0",
         "(1-\u03BD)/2"
       ]
-    ], c = [
+    ], k = [
       [
         "0",
         "0",
@@ -1771,8 +1771,8 @@ hr {
         "-y'\u2081\u2082",
         "x'\u2082\u2081"
       ]
-    ], k = `
-<style>${Gt}</style>
+    ], E = `
+<style>${Yt}</style>
 
 <div class="no-print zoom-toolbar">
   <label>Zoom:</label>
@@ -1836,7 +1836,7 @@ hr {
 <p>${o(`${e("D")} = ${V(`${e("E")}\xB7${e("t")}<sup>3</sup>`, `12\xB7(1 - ${e("\u03BD")}<sup>2</sup>)`)}`)}</p>
 
 <p><b>Matriz Deformaci\xF3n-Desplazamiento</b> ${o(`<b>${e("B", "pb")}</b>`)} (3\xD79):</p>
-<p>${o(`<b>${e("B", "pb")}</b> = ${V("1", "2A")} \xB7 `)}${pt(c)}</p>
+<p>${o(`<b>${e("B", "pb")}</b> = ${V("1", "2A")} \xB7 `)}${pt(k)}</p>
 <p>donde: ${o("A")} = \xE1rea del elemento, ${o("x'_{ij} = x'_i - x'_j")}</p>
 
 <h4>2.2 Rigidez a Cortante (M\xE9todo DSG)</h4>
@@ -1880,7 +1880,7 @@ hr {
 <p>donde: ${o("V = A\xB7h")} (volumen), ${o(`<b>${e("C")}</b>`)} = matriz de Hooke, ${o(`<b>${e("L")}</b>`)} = matriz force-lumping (3\xD79)</p>
 
 <p><b>Matriz de Hooke</b> ${o(`<b>${e("C")}</b>`)} (tensi\xF3n plana, 3\xD73):</p>
-<p>${o(`<b>${e("C")}</b> = ${V(e("E"), `1 - ${e("\u03BD")}<sup>2</sup>`)} \xB7 `)}${pt(r)}</p>
+<p>${o(`<b>${e("C")}</b> = ${V(e("E"), `1 - ${e("\u03BD")}<sup>2</sup>`)} \xB7 `)}${pt(c)}</p>
 
 <h4>3.2 Rigidez de Orden Superior</h4>
 <p>Usa <b>rotaciones jer\xE1rquicas</b> para capturar flexi\xF3n en plano:</p>
@@ -2038,7 +2038,7 @@ hr {
 })();
 <\/script>
 `;
-    return mt`${ht(k)}`;
+    return mt`${ht(E)}`;
   }
   const Vt = `
 .header {
@@ -2209,23 +2209,23 @@ a {
   function tt(t) {
     return `<span class="num">${t}</span>`;
   }
-  function rt(t) {
+  function lt(t) {
     return `<span class="result">${t}</span>`;
   }
-  function Mt(t, a, n, r, c) {
-    if (!t.length || !a.length || !n.length) return `<p style="color:#999;margin:10px;">No data available for ${c}</p>`;
-    const k = t.map((l) => l[0]), E = t.map((l) => l[1]), P = Math.min(...k), v = Math.max(...k), X = Math.min(...E), T = Math.max(...E), u = v - P || 1, w = T - X || 1, C = r / Math.max(u, w), f = w * C, $ = 20, N = n.filter((l) => l !== void 0 && !isNaN(l));
-    if (!N.length) return "";
-    const g = Math.min(...N), B = Math.max(...N), b = Math.abs(B - g) || 1;
-    function h(l) {
-      const p = Math.max(0, Math.min(1, (l - g) / b));
-      let x, M, S;
-      return p < 0.25 ? (x = 0, M = Math.floor(255 * p * 4), S = 255) : p < 0.5 ? (x = 0, M = 255, S = Math.floor(255 * (1 - (p - 0.25) * 4))) : p < 0.75 ? (x = Math.floor(255 * (p - 0.5) * 4), M = 255, S = 0) : (x = 255, M = Math.floor(255 * (1 - (p - 0.75) * 4)), S = 0), `rgb(${x},${M},${S})`;
+  function Mt(t, a, n, c, k) {
+    if (!t.length || !a.length || !n.length) return `<p style="color:#999;margin:10px;">No data available for ${k}</p>`;
+    const E = t.map((r) => r[0]), h = t.map((r) => r[1]), u = Math.min(...E), M = Math.max(...E), X = Math.min(...h), P = Math.max(...h), f = M - u || 1, z = P - X || 1, S = c / Math.max(f, z), $ = z * S, x = 20, R = n.filter((r) => r !== void 0 && !isNaN(r));
+    if (!R.length) return "";
+    const y = Math.min(...R), B = Math.max(...R), b = Math.abs(B - y) || 1;
+    function m(r) {
+      const d = Math.max(0, Math.min(1, (r - y) / b));
+      let g, w, D;
+      return d < 0.25 ? (g = 0, w = Math.floor(255 * d * 4), D = 255) : d < 0.5 ? (g = 0, w = 255, D = Math.floor(255 * (1 - (d - 0.25) * 4))) : d < 0.75 ? (g = Math.floor(255 * (d - 0.5) * 4), w = 255, D = 0) : (g = 255, w = Math.floor(255 * (1 - (d - 0.75) * 4)), D = 0), `rgb(${g},${w},${D})`;
     }
-    const m = `grad_${c.replace(/[^a-zA-Z0-9]/g, "")}`;
-    let z = `<svg viewBox="-20 -20 ${r + 80} ${f + 2 * $}" xmlns="http://www.w3.org/2000/svg" style="width:${r + 80}px;height:${f + 40}px;font-family:Arial;font-size:10px;">
+    const p = `grad_${k.replace(/[^a-zA-Z0-9]/g, "")}`;
+    let C = `<svg viewBox="-20 -20 ${c + 80} ${$ + 2 * x}" xmlns="http://www.w3.org/2000/svg" style="width:${c + 80}px;height:${$ + 40}px;font-family:Arial;font-size:10px;">
 <defs>
-<linearGradient id="${m}" x1="0%" y1="100%" x2="0%" y2="0%">
+<linearGradient id="${p}" x1="0%" y1="100%" x2="0%" y2="0%">
 <stop offset="0%" style="stop-color:#0000ff"/>
 <stop offset="25%" style="stop-color:#00ffff"/>
 <stop offset="50%" style="stop-color:#00ff00"/>
@@ -2233,50 +2233,50 @@ a {
 <stop offset="100%" style="stop-color:#ff0000"/>
 </linearGradient>
 </defs>`;
-    a.forEach((l) => {
-      const p = l.reduce((S, D) => S + (n[D] || 0), 0) / l.length, x = h(p), M = l.map((S) => {
-        const D = (t[S][0] - P) * C, R = f - (t[S][1] - X) * C;
-        return `${D.toFixed(2)},${R.toFixed(2)}`;
+    a.forEach((r) => {
+      const d = r.reduce((D, F) => D + (n[F] || 0), 0) / r.length, g = m(d), w = r.map((D) => {
+        const F = (t[D][0] - u) * S, I = $ - (t[D][1] - X) * S;
+        return `${F.toFixed(2)},${I.toFixed(2)}`;
       }).join(" ");
-      z += `<polygon points="${M}" fill="${x}" stroke="#333" stroke-width="0.3"/>`;
+      C += `<polygon points="${w}" fill="${g}" stroke="#333" stroke-width="0.3"/>`;
     });
-    const Y = r + 10, q = Math.max(f - 20, 60);
-    z += `<rect x="${Y}" y="10" width="15" height="${q}" fill="url(#${m})" stroke="#333"/>`;
-    for (let l = 0; l <= 4; l++) {
-      const p = g + b * l / 4, x = 10 + q - q * l / 4;
-      z += `<text x="${Y + 20}" y="${x + 4}">${p.toExponential(2)}</text>`;
+    const G = c + 10, q = Math.max($ - 20, 60);
+    C += `<rect x="${G}" y="10" width="15" height="${q}" fill="url(#${p})" stroke="#333"/>`;
+    for (let r = 0; r <= 4; r++) {
+      const d = y + b * r / 4, g = 10 + q - q * r / 4;
+      C += `<text x="${G + 20}" y="${g + 4}">${d.toExponential(2)}</text>`;
     }
-    return z += `<text x="${Y}" y="5" font-weight="bold">${c}</text>`, z += "</svg>", z;
+    return C += `<text x="${G}" y="5" font-weight="bold">${k}</text>`, C += "</svg>", C;
   }
   function Zt(t) {
     var _a, _b, _c, _d, _e, _f, _g, _h, _i, _j, _k, _l, _m, _n, _o, _p, _q, _r, _s;
-    const a = ((_a = t == null ? void 0 : t.nodes) == null ? void 0 : _a.val) || [], n = ((_b = t == null ? void 0 : t.elements) == null ? void 0 : _b.val) || [], r = ((_c = t == null ? void 0 : t.nodeInputs) == null ? void 0 : _c.val) || {}, c = ((_d = t == null ? void 0 : t.elementInputs) == null ? void 0 : _d.val) || {}, k = ((_e = t == null ? void 0 : t.deformOutputs) == null ? void 0 : _e.val) || {}, E = ((_f = t == null ? void 0 : t.analyzeOutputs) == null ? void 0 : _f.val) || {}, P = (/* @__PURE__ */ new Date()).toLocaleDateString("en-US", {
+    const a = ((_a = t == null ? void 0 : t.nodes) == null ? void 0 : _a.val) || [], n = ((_b = t == null ? void 0 : t.elements) == null ? void 0 : _b.val) || [], c = ((_c = t == null ? void 0 : t.nodeInputs) == null ? void 0 : _c.val) || {}, k = ((_d = t == null ? void 0 : t.elementInputs) == null ? void 0 : _d.val) || {}, E = ((_e = t == null ? void 0 : t.deformOutputs) == null ? void 0 : _e.val) || {}, h = ((_f = t == null ? void 0 : t.analyzeOutputs) == null ? void 0 : _f.val) || {}, u = (/* @__PURE__ */ new Date()).toLocaleDateString("en-US", {
       day: "numeric",
       month: "long",
       year: "numeric"
-    }), v = ((_j = (_h = (_g = c.elasticities) == null ? void 0 : _g.values) == null ? void 0 : (_i = _h.call(_g)).next) == null ? void 0 : _j.call(_i).value) || 21e4, X = ((_n = (_l = (_k = c.poissonsRatios) == null ? void 0 : _k.values) == null ? void 0 : (_m = _l.call(_k)).next) == null ? void 0 : _n.call(_m).value) || 0.3, T = ((_r = (_p = (_o = c.thicknesses) == null ? void 0 : _o.values) == null ? void 0 : (_q = _p.call(_o)).next) == null ? void 0 : _r.call(_q).value) || 0.2, u = ((_s = r.supports) == null ? void 0 : _s.size) || 0, w = v * Math.pow(T, 3) / (12 * (1 - X * X)), C = v / (2 * (1 + X)), f = k.deformations || [], $ = [];
-    let N = 0, g = 0;
-    f.forEach((D, R) => {
-      $[R] = D[2] || 0, Math.abs(D[2]) > Math.abs(N) && (N = D[2], g = R);
+    }), M = ((_j = (_h = (_g = k.elasticities) == null ? void 0 : _g.values) == null ? void 0 : (_i = _h.call(_g)).next) == null ? void 0 : _j.call(_i).value) || 21e4, X = ((_n = (_l = (_k = k.poissonsRatios) == null ? void 0 : _k.values) == null ? void 0 : (_m = _l.call(_k)).next) == null ? void 0 : _n.call(_m).value) || 0.3, P = ((_r = (_p = (_o = k.thicknesses) == null ? void 0 : _o.values) == null ? void 0 : (_q = _p.call(_o)).next) == null ? void 0 : _r.call(_q).value) || 0.2, f = ((_s = c.supports) == null ? void 0 : _s.size) || 0, z = M * Math.pow(P, 3) / (12 * (1 - X * X)), S = M / (2 * (1 + X)), $ = E.deformations || [], x = [];
+    let R = 0, y = 0;
+    $.forEach((F, I) => {
+      x[I] = F[2] || 0, Math.abs(F[2]) > Math.abs(R) && (R = F[2], y = I);
     });
-    const B = E.bendingXX || [], b = E.bendingYY || [], h = [];
-    let m = 0, z = 0;
-    n.forEach((D, R) => {
-      const K = B[R] || [
+    const B = h.bendingXX || [], b = h.bendingYY || [], m = [];
+    let p = 0, C = 0;
+    n.forEach((F, I) => {
+      const K = B[I] || [
         0
-      ], et = b[R] || [
+      ], et = b[I] || [
         0
-      ], F = K.reduce((s, I) => s + I, 0) / K.length, A = et.reduce((s, I) => s + I, 0) / et.length;
-      h[R] = F, Math.abs(F) > Math.abs(m) && (m = F), Math.abs(A) > Math.abs(z) && (z = A);
+      ], A = K.reduce((s, O) => s + O, 0) / K.length, N = et.reduce((s, O) => s + O, 0) / et.length;
+      m[I] = A, Math.abs(A) > Math.abs(p) && (p = A), Math.abs(N) > Math.abs(C) && (C = N);
     });
-    let Y = "";
-    for (let D = 0; D < Math.min(a.length, 8); D++) {
-      const R = a[D];
-      Y += `<tr><td>${D}</td><td>${(R[0] || 0).toFixed(3)}</td><td>${(R[1] || 0).toFixed(3)}</td><td>${(R[2] || 0).toFixed(3)}</td></tr>`;
+    let G = "";
+    for (let F = 0; F < Math.min(a.length, 8); F++) {
+      const I = a[F];
+      G += `<tr><td>${F}</td><td>${(I[0] || 0).toFixed(3)}</td><td>${(I[1] || 0).toFixed(3)}</td><td>${(I[2] || 0).toFixed(3)}</td></tr>`;
     }
     let q = "";
-    for (let D = 0; D < Math.min(f.length, 8); D++) {
-      const R = f[D] || [
+    for (let F = 0; F < Math.min($.length, 8); F++) {
+      const I = $[F] || [
         0,
         0,
         0,
@@ -2284,24 +2284,24 @@ a {
         0,
         0
       ];
-      q += `<tr><td>${D}</td><td>${U(R[0] || 0)}</td><td>${U(R[1] || 0)}</td><td>${U(R[2] || 0)}</td></tr>`;
+      q += `<tr><td>${F}</td><td>${U(I[0] || 0)}</td><td>${U(I[1] || 0)}</td><td>${U(I[2] || 0)}</td></tr>`;
     }
-    const l = Mt(a, n, $, 320, "w [displacement]"), p = new Array(a.length).fill(0), x = new Array(a.length).fill(0);
-    n.forEach((D, R) => {
-      D.forEach((K) => {
-        p[K] += h[R] || 0, x[K]++;
+    const r = Mt(a, n, x, 320, "w [displacement]"), d = new Array(a.length).fill(0), g = new Array(a.length).fill(0);
+    n.forEach((F, I) => {
+      F.forEach((K) => {
+        d[K] += m[I] || 0, g[K]++;
       });
-    }), p.forEach((D, R) => {
-      x[R] > 0 && (p[R] /= x[R]);
+    }), d.forEach((F, I) => {
+      g[I] > 0 && (d[I] /= g[I]);
     });
-    const M = Mt(a, n, p, 320, "Mxx [bending]"), S = `
+    const w = Mt(a, n, d, 320, "Mxx [bending]"), D = `
 <style>${Vt}</style>
 
 <header class="header">
   <div class="header-left">
     <h6>Shell Analysis Report</h6>
     <p class="text" style="margin:0">
-      <a href="https://awatif.co" target="_blank">Awatif.co</a> | ${P}
+      <a href="https://awatif.co" target="_blank">Awatif.co</a> | ${u}
     </p>
   </div>
   <div class="header-right">
@@ -2318,13 +2318,13 @@ a {
 <div class="formula-section">
   <h3>Material Properties</h3>
   <div class="eq">
-    ${H("E")} = ${tt(U(v))} <span class="unit">(elastic modulus)</span>
+    ${H("E")} = ${tt(U(M))} <span class="unit">(elastic modulus)</span>
   </div>
   <div class="eq">
     ${H("\u03BD")} = ${tt(U(X, 2))} <span class="unit">(Poisson's ratio)</span>
   </div>
   <div class="eq">
-    ${H("t")} = ${tt(U(T))} <span class="unit">(thickness)</span>
+    ${H("t")} = ${tt(U(P))} <span class="unit">(thickness)</span>
   </div>
 </div>
 
@@ -2333,15 +2333,15 @@ a {
   <h3>Flexural Rigidity</h3>
   <div class="eq">
     ${H("D")} = ${ct(H("E") + " \xB7 " + H("t") + "\xB3", "12 \xB7 (1 - " + H("\u03BD") + "\xB2)")}
-    = ${ct(tt(U(v)) + " \xB7 " + tt(U(T)) + "\xB3", "12 \xB7 (1 - " + tt(U(X, 2)) + "\xB2)")}
-    = ${rt(U(w))}
+    = ${ct(tt(U(M)) + " \xB7 " + tt(U(P)) + "\xB3", "12 \xB7 (1 - " + tt(U(X, 2)) + "\xB2)")}
+    = ${lt(U(z))}
   </div>
 
   <h3>Shear Modulus</h3>
   <div class="eq">
     ${H("G")} = ${ct(H("E"), "2 \xB7 (1 + " + H("\u03BD") + ")")}
-    = ${ct(tt(U(v)), "2 \xB7 (1 + " + tt(U(X, 2)) + ")")}
-    = ${rt(U(C))}
+    = ${ct(tt(U(M)), "2 \xB7 (1 + " + tt(U(X, 2)) + ")")}
+    = ${lt(U(S))}
   </div>
 </div>
 
@@ -2357,7 +2357,7 @@ a {
   </div>
   <div class="summary-item">
     <div class="label">SUPPORTS</div>
-    <div class="value">${u}</div>
+    <div class="value">${f}</div>
   </div>
   <div class="summary-item">
     <div class="label">DOFs</div>
@@ -2369,35 +2369,35 @@ a {
 <div class="formula-section">
   <h3>Maximum Displacement</h3>
   <div class="eq">
-    ${H("w")}${H("<sub>max</sub>")} = ${rt(U(N))} <span class="unit">at node ${g}</span>
+    ${H("w")}${H("<sub>max</sub>")} = ${lt(U(R))} <span class="unit">at node ${y}</span>
   </div>
 
   <h3>Maximum Bending Moments</h3>
   <div class="eq">
-    ${H("M")}${H("<sub>xx,max</sub>")} = ${rt(U(m))}
+    ${H("M")}${H("<sub>xx,max</sub>")} = ${lt(U(p))}
   </div>
   <div class="eq">
-    ${H("M")}${H("<sub>yy,max</sub>")} = ${rt(U(z))}
+    ${H("M")}${H("<sub>yy,max</sub>")} = ${lt(U(C))}
   </div>
 </div>
 
 <h2>5. Displacement Contour</h2>
 <div class="contour-container">
-  ${l}
+  ${r}
 </div>
 
 <h2>6. Bending Moment Mxx Contour</h2>
 <div class="contour-container">
-  ${M}
+  ${w}
 </div>
 
 <h2>7. Node Coordinates ${a.length > 8 ? `(first 8 of ${a.length})` : ""}</h2>
 <table>
   <tr><th>Node</th><th>X</th><th>Y</th><th>Z</th></tr>
-  ${Y}
+  ${G}
 </table>
 
-<h2>8. Nodal Displacements ${f.length > 8 ? `(first 8 of ${f.length})` : ""}</h2>
+<h2>8. Nodal Displacements ${$.length > 8 ? `(first 8 of ${$.length})` : ""}</h2>
 <table>
   <tr><th>Node</th><th>u<sub>x</sub></th><th>u<sub>y</sub></th><th>w</th></tr>
   ${q}
@@ -2406,9 +2406,9 @@ a {
 <br><br>
 <p class="text" style="color:#999;font-size:11px;">Generated with Awatif - Report with Calcpad-style formulas</p>
 `;
-    return mt`${ht(S)}`;
+    return mt`${ht(D)}`;
   }
-  const lt = {
+  const ot = {
     xPosition: {
       value: W.state(15),
       min: 5,
@@ -2463,7 +2463,7 @@ a {
           0
         ],
         [
-          lt.xPosition.value.val,
+          ot.xPosition.value.val,
           10,
           0
         ],
@@ -2481,9 +2481,9 @@ a {
       ],
       maxMeshSize: 0.5
     });
-    if (Z.nodeInputs.val = {
-      supports: new Map(n.map((r) => [
-        r,
+    Z.nodeInputs.val = {
+      supports: new Map(n.map((h) => [
+        h,
         [
           true,
           true,
@@ -2493,49 +2493,51 @@ a {
           true
         ]
       ])),
-      loads: new Map(t.map((r, c) => [
-        c,
+      loads: new Map(t.map((h, u) => [
+        u,
         [
           0,
           0,
-          lt.load.value.val,
+          ot.load.value.val,
           0,
           0,
           0
         ]
       ]))
-    }, Z.nodes.val = t, Z.elements.val = a, Z.elementInputs.val = {
-      elasticities: new Map(a.map((r, c) => [
-        c,
-        lt.Ex.value.val
+    }, Z.nodes.val = t, Z.elements.val = a;
+    const c = 0.3, E = (ot.Ex.value.val + ot.Ey.value.val) / 2 / (2 * (1 + c));
+    if (Z.elementInputs.val = {
+      elasticities: new Map(a.map((h, u) => [
+        u,
+        ot.Ex.value.val
       ])),
-      elasticitiesOrthogonal: new Map(a.map((r, c) => [
-        c,
-        lt.Ey.value.val
+      elasticitiesOrthogonal: new Map(a.map((h, u) => [
+        u,
+        ot.Ey.value.val
       ])),
-      thicknesses: new Map(a.map((r, c) => [
-        c,
+      thicknesses: new Map(a.map((h, u) => [
+        u,
         1
       ])),
-      poissonsRatios: new Map(a.map((r, c) => [
-        c,
-        0.3
+      poissonsRatios: new Map(a.map((h, u) => [
+        u,
+        c
       ])),
-      shearModuli: new Map(a.map((r, c) => [
-        c,
-        100
+      shearModuli: new Map(a.map((h, u) => [
+        u,
+        E
       ]))
     }, Z.deformOutputs.val = Nt(t, a, Z.nodeInputs.val, Z.elementInputs.val), Z.analyzeOutputs.val = At(t, a, Z.elementInputs.val, Z.deformOutputs.val), (_a = Z.deformOutputs.val) == null ? void 0 : _a.deformations) {
-      let r = 0;
-      Z.deformOutputs.val.deformations.forEach((c) => {
-        Math.abs(c[2]) > Math.abs(r) && (r = c[2]);
-      }), console.log(`Max deflection: ${r.toFixed(4)} (expected: ~-3.98)`);
+      let h = 0;
+      Z.deformOutputs.val.deformations.forEach((u) => {
+        Math.abs(u[2]) > Math.abs(h) && (h = u[2]);
+      }), console.log(`Max deflection: ${h.toFixed(4)} (expected: ~-3.98)`);
     }
   });
-  const st = W.state(""), dt = W.state(void 0);
+  const nt = W.state(""), dt = W.state(void 0);
   W.derive(() => {
-    if (st.val === "Calcpad") try {
-      const t = it({
+    if (nt.val === "Calcpad") try {
+      const t = rt({
         template: yt,
         data: Z
       });
@@ -2543,8 +2545,8 @@ a {
     } catch (t) {
       console.error("Error generating Calcpad report:", t);
     }
-    if (st.val === "Awatif") try {
-      const t = it({
+    if (nt.val === "Awatif") try {
+      const t = rt({
         template: Zt,
         data: Z
       });
@@ -2552,17 +2554,17 @@ a {
     } catch (t) {
       console.error("Error generating Awatif report:", t);
     }
-    if (st.val === "Code") try {
-      const t = it({
-        template: Yt,
+    if (nt.val === "Code") try {
+      const t = rt({
+        template: Gt,
         data: Z
       });
       dt.val = t;
     } catch (t) {
       console.error("Error generating Code report:", t);
     }
-    if (st.val === "Docs") try {
-      const t = it({
+    if (nt.val === "Docs") try {
+      const t = rt({
         template: Lt,
         data: Z
       });
@@ -2570,8 +2572,8 @@ a {
     } catch (t) {
       console.error("Error generating Docs report:", t);
     }
-    if (st.val === "Print") {
-      const t = it({
+    if (nt.val === "Print") {
+      const t = rt({
         template: yt,
         data: Z
       }), a = window.open("", "_blank");
@@ -2587,7 +2589,7 @@ a {
       }
     }
   });
-  document.body.append(Rt(lt), Ct({
+  document.body.append(Rt(ot), Ct({
     mesh: Z,
     settingsObj: {
       nodes: false,
@@ -2600,7 +2602,7 @@ a {
   }), It({
     dialogBody: dt
   }), Ft({
-    clickedButton: st,
+    clickedButton: nt,
     buttons: [
       "Calcpad",
       "Awatif",
