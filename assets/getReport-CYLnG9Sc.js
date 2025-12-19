@@ -1,4 +1,4 @@
-import { v as o, y as s } from "./styles-E_L73LhH.js";
+import { v as o, t as s } from "./styles-9FDjb-ad.js";
 function u({ template: t, data: n }) {
   const e = document.createElement("div");
   return o.derive(() => {

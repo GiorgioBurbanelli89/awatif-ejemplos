@@ -1,6 +1,6 @@
 import { g as ee, __tla as __tla_0 } from "./getMesh-DmUdekin.js";
-import { a as X, s as V, n as te, c as ne, d as se, m as oe } from "./pureFunctionsAny.generated-Dh3LO6N2.js";
-import { n as re, B as C, h as ie, i as le, o as Z, M as ae, p as ue, S as W, P as ce, E as F, q as j, r as L } from "./styles-E_L73LhH.js";
+import { a as Z, s as V, n as te, c as ne, d as se, m as oe } from "./pureFunctionsAny.generated-Dh3LO6N2.js";
+import { l as re, B as C, h as ie, i as le, m as q, M as ae, n as ue, S as W, P as ce, E as F, o as j, p as L } from "./styles-9FDjb-ad.js";
 let Ee, Me, Ae, Te, xe;
 let __tla = Promise.all([
   (() => {
@@ -126,7 +126,7 @@ let __tla = Promise.all([
     };
     let m = [], f = [];
     const n = V(u, h), c = se(n, d);
-    for (let e = 0; e < d - 1; e++) m.push(X(h, oe(c, e + 1)));
+    for (let e = 0; e < d - 1; e++) m.push(Z(h, oe(c, e + 1)));
     if (d == 1) f.push([
       l,
       o
@@ -169,7 +169,7 @@ let __tla = Promise.all([
             0,
             0
           ];
-          o.set(a, X(i, r));
+          o.set(a, Z(i, r));
         }
       });
     }), o;
@@ -285,7 +285,7 @@ let __tla = Promise.all([
       n.setIndex(s);
     }
     for (const e in u) {
-      const s = q(u[e]);
+      const s = X(u[e]);
       if (!s) return console.error("THREE.BufferGeometryUtils: .mergeGeometries() failed while trying to merge the " + e + " attribute."), null;
       n.setAttribute(e, s);
     }
@@ -296,14 +296,14 @@ let __tla = Promise.all([
       for (let a = 0; a < s; ++a) {
         const r = [];
         for (let g = 0; g < m[e].length; ++g) r.push(m[e][g][a]);
-        const i = q(r);
+        const i = X(r);
         if (!i) return console.error("THREE.BufferGeometryUtils: .mergeGeometries() failed while trying to merge the " + e + " morphAttribute."), null;
         n.morphAttributes[e].push(i);
       }
     }
     return n;
   }
-  function q(t) {
+  function X(t) {
     let l, o, d, h = -1, u = 0;
     for (let c = 0; c < t.length; ++c) {
       const e = t[c];
@@ -313,7 +313,7 @@ let __tla = Promise.all([
       if (h === -1 && (h = e.gpuType), h !== e.gpuType) return console.error("THREE.BufferGeometryUtils: .mergeAttributes() failed. BufferAttribute.gpuType must be consistent across matching attributes."), null;
       u += e.count * o;
     }
-    const m = new l(u), f = new Z(m, o, d);
+    const m = new l(u), f = new q(m, o, d);
     let n = 0;
     for (let c = 0; c < t.length; ++c) {
       const e = t[c];
@@ -360,7 +360,7 @@ let __tla = Promise.all([
       function i(g, y = 0) {
         const G = [], p = [];
         for (let b = 0; b < g.length; b++) p.push(new j(g[b][0], g[b][1]));
-        let x = new Z(new Float32Array([
+        let x = new q(new Float32Array([
           y,
           0,
           0
