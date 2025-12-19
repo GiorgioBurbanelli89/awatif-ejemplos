@@ -1,5 +1,5 @@
-import { s, T as r } from "./styles-9FDjb-ad.js";
-import { i as n, t as o, e as c } from "./getDialog-BiqeruR6.js";
+import { z as r, T as s } from "./styles-pZ4aRE4c.js";
+import { i as n, t as o, e as c } from "./getDialog-BAM4AP6u.js";
 /**
 * @license
 * Copyright 2017 Google LLC
@@ -7,11 +7,11 @@ import { i as n, t as o, e as c } from "./getDialog-BiqeruR6.js";
 */
 class e extends n {
   constructor(t) {
-    if (super(t), this.it = s, t.type !== o.CHILD) throw Error(this.constructor.directiveName + "() can only be used in child bindings");
+    if (super(t), this.it = r, t.type !== o.CHILD) throw Error(this.constructor.directiveName + "() can only be used in child bindings");
   }
   render(t) {
-    if (t === s || t == null) return this._t = void 0, this.it = t;
-    if (t === r) return t;
+    if (t === r || t == null) return this._t = void 0, this.it = t;
+    if (t === s) return t;
     if (typeof t != "string") throw Error(this.constructor.directiveName + "() called with a non-string value");
     if (t === this.it) return this._t;
     this.it = t;
