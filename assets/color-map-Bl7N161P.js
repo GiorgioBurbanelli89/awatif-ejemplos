@@ -1,5 +1,5 @@
-import { v as e, q as l, g as c, r as d, d as p } from "./styles-9FDjb-ad.js";
-import { g as u } from "./getParameters-agyy6sUI.js";
+import { v as e, k as l, g as c, l as p, a as d } from "./styles-Dp6ubQGB.js";
+import { g as u } from "./getParameters-C4BmRb7M.js";
 import { g, __tla as __tla_0 } from "./getMesh-DmUdekin.js";
 import { n as b, s as v } from "./pureFunctionsAny.generated-Dh3LO6N2.js";
 import "./__vite-browser-external-D7Ct-6yo.js";
@@ -20,8 +20,8 @@ Promise.all([
       step: 0.1,
       label: "Boundary point"
     }
-  }, a = e.state([]), r = e.state([]), m = e.state([]), n = e.state([
-    l(a, r, m)
+  }, a = e.state([]), m = e.state([]), r = e.state([]), n = e.state([
+    l(a, m, r)
   ]);
   e.derive(() => {
     const t = [
@@ -90,17 +90,17 @@ Promise.all([
       ],
       maxMeshSize: 1
     });
-    a.val = s, r.val = o, m.val = h(t, a.val), n.val = [
+    a.val = s, m.val = o, r.val = h(t, a.val), n.val = [
       ...n.rawVal
     ];
   });
   document.body.append(u(i), c({
     mesh: {
       nodes: a,
-      elements: r
+      elements: m
     },
     objects3D: n
-  }), d(m), p({
+  }), p(r), d({
     sourceCode: "https://github.com/madil4/awatif/blob/main/examples/src/color-map/main.ts",
     author: "https://www.linkedin.com/in/siu-kai-cheung/"
   }));

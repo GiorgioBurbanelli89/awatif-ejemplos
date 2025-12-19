@@ -1,11 +1,10 @@
-import { w as J, x as N, v as t, g as Z, e as q, b as Q, d as W } from "./styles-9FDjb-ad.js";
-import { g as Y } from "./getParameters-agyy6sUI.js";
-import { g as tt } from "./getTables-BD1Sa0ad.js";
-import { g as et } from "./getDialog-BiqeruR6.js";
-import { g as at } from "./getReport-CYLnG9Sc.js";
-import { a as st } from "./analyze-CmnHHflB.js";
-import { d as lt, __tla as __tla_0 } from "./deformCpp-CS-wCYO-.js";
-import { g as ot, a as nt, b as it, c as A, d as H, __tla as __tla_1 } from "./getSolids-k6IS3eP7.js";
+import { w as J, x as N, v as t, g as Z, a as q } from "./styles-Dp6ubQGB.js";
+import { g as Q } from "./getParameters-C4BmRb7M.js";
+import { g as W } from "./getTables-BhhuDxj1.js";
+import { g as Y } from "./getDialog-OCmRZYi6.js";
+import { g as tt } from "./getReport-DmQ4_zmx.js";
+import { d as et, a as at, __tla as __tla_0 } from "./deformCpp-BprT8Kg9.js";
+import { g as st, a as lt, b as ot, c as A, d as H, __tla as __tla_1 } from "./getSolids-B0P1qQn3.js";
 import "./complex-i8qiIvCl.js";
 import { __tla as __tla_2 } from "./getMesh-DmUdekin.js";
 import "./__vite-browser-external-D7Ct-6yo.js";
@@ -30,7 +29,7 @@ Promise.all([
     }
   })()
 ]).then(async () => {
-  function rt({ onToolbarClick: a, onClearPoints: s }) {
+  function nt({ onToolbarClick: a, onClearPoints: s }) {
     const n = document.createElement("div");
     return n.id = "drawing-toolbar", new J({
       name: "toolbar",
@@ -65,7 +64,7 @@ Promise.all([
       }
     }), n;
   }
-  function dt() {
+  function it() {
     const a = document.createElement("div"), s = navigator.userAgent.includes("Macintosh");
     a.className = "snap-tip", a.innerHTML = `
       <span>Tip: Hold</span>
@@ -83,7 +82,7 @@ Promise.all([
   }
 `, document.head.appendChild(n), a;
   }
-  function mt(a, s, n, l, u, C) {
+  function rt(a, s, n, l, u, C) {
     const p = n - 1, b = s * n + l * p, o = Array.from({
       length: n + p
     }, (i, y) => y % 2 === 0 ? s : l);
@@ -112,7 +111,7 @@ Promise.all([
       etaMax: j
     };
   }
-  const ct = "" + new URL("awatif-logo-DnnuEFJ2.png", import.meta.url).href, pt = "" + new URL("clt-bending-stress-DvR3Ux1R.png", import.meta.url).href, vt = ({ designMomentInput: a, designOutputs: s }) => N`
+  const dt = "" + new URL("awatif-logo-DnnuEFJ2.png", import.meta.url).href, mt = "" + new URL("clt-bending-stress-DvR3Ux1R.png", import.meta.url).href, ct = ({ designMomentInput: a, designOutputs: s }) => N`
     <div id="report">
       <header class="header">
         <div class="header-left">
@@ -122,7 +121,7 @@ Promise.all([
           >
         </div>
         <div class="header-right">
-          <img src="${ct}" id="headerLogo" />
+          <img src="${dt}" id="headerLogo" />
         </div>
       </header>
 
@@ -204,7 +203,7 @@ Promise.all([
         width="600"
         height="400"
         style="border:1px solid #ccc;"
-        src=${pt}
+        src=${mt}
       />
 
       <br /><br />
@@ -255,9 +254,9 @@ Promise.all([
     slabsByStory: t.state(/* @__PURE__ */ new Map()),
     columnData: t.state(/* @__PURE__ */ new Map()),
     slabData: t.state(/* @__PURE__ */ new Map())
-  }, I = ot(), L = nt(), g = t.state([
+  }, I = st(), L = lt(), g = t.state([
     L
-  ]), ht = t.state([
+  ]), pt = t.state([
     I
   ]), r = {
     nodes: t.state([]),
@@ -266,7 +265,7 @@ Promise.all([
     elementInputs: t.state({}),
     deformOutputs: t.state({}),
     analyzeOutputs: t.state({})
-  }, T = t.state(10), U = t.state(), ut = [
+  }, T = t.state(10), U = t.state(), vt = [
     [
       3,
       2,
@@ -307,7 +306,7 @@ Promise.all([
       6,
       0
     ]
-  ], bt = [
+  ], ht = [
     [
       3,
       2,
@@ -348,7 +347,7 @@ Promise.all([
       6,
       4
     ]
-  ], gt = [
+  ], ut = [
     [
       0,
       1,
@@ -359,7 +358,7 @@ Promise.all([
       6
     ],
     []
-  ], c = t.state([]), m = t.state(bt), h = t.state(gt), f = t.state(ut), S = t.state([]), V = t.state({
+  ], c = t.state([]), m = t.state(ht), h = t.state(ut), f = t.state(vt), S = t.state([]), V = t.state({
     position: [
       10,
       10,
@@ -372,7 +371,7 @@ Promise.all([
     ]
   }), z = t.state(""), D = t.state(void 0), w = 4;
   let x = "1st-floor";
-  function ft(a) {
+  function bt(a) {
     x = a, V.val = {
       position: [
         10,
@@ -386,7 +385,7 @@ Promise.all([
       ]
     }, f.val = a === "1st-floor" ? c.val : m.val, S.val = a === "1st-floor" ? [] : h.val;
   }
-  function yt() {
+  function gt() {
     x === "1st-floor" ? c.val = [] : (m.val = [], h.val = []), f.val = [], S.val = [], e.points.val = [], e.columns.val = [], e.slabs.val = [], e.columnsByStory.val = /* @__PURE__ */ new Map(), e.slabsByStory.val = /* @__PURE__ */ new Map(), e.columnData.val = /* @__PURE__ */ new Map(), e.slabData.val = /* @__PURE__ */ new Map(), r.nodes.val = [], r.elements.val = [], r.nodeInputs.val = {}, L.geometry = A(e.points.val, e.slabs.val, e.columns.val), I.geometry = H(e.points.val, e.slabs.val, e.columns.val), g.val = [
       ...g.rawVal
     ];
@@ -439,15 +438,15 @@ Promise.all([
     a.set(0, b), e.points.val = l, e.columns.val = u, e.slabs.val = h.val, e.columnsByStory.val = a, e.slabsByStory.val = s, e.slabData.val = n;
   });
   t.derive(() => {
-    const { nodes: a, elements: s, nodeInputs: n, elementInputs: l } = it(e.points.val, e.stories.val, e.columns.val, e.slabs.val, e.columnsByStory.val, e.slabsByStory.val, e.columnData.val, e.slabData.val);
+    const { nodes: a, elements: s, nodeInputs: n, elementInputs: l } = ot(e.points.val, e.stories.val, e.columns.val, e.slabs.val, e.columnsByStory.val, e.slabsByStory.val, e.columnData.val, e.slabData.val);
     L.geometry = A(e.points.val, [], e.columns.val), I.geometry = H(e.points.val, e.slabs.val, e.columns.val), g.val = [
       ...g.rawVal
-    ], r.deformOutputs.val = lt(a, s, n, l), r.analyzeOutputs.val = st(a, s, l, r.deformOutputs.val), T.val = Math.max(...Array.from(r.analyzeOutputs.val.bendingXX.values()).flat()) * 1e-3, U.val = mt({
+    ], r.deformOutputs.val = et(a, s, n, l), r.analyzeOutputs.val = at(a, s, l, r.deformOutputs.val), T.val = Math.max(...Array.from(r.analyzeOutputs.val.bendingXX.values()).flat()) * 1e-3, U.val = rt({
       f_mk: 24
     }, 55, 3, 20, T.val, 0.8), r.nodes.val = a, r.elements.val = s, r.nodeInputs.val = n, r.elementInputs.val = l;
   });
   t.derive(() => {
-    z.val === "Tables" && (D.val = tt({
+    z.val === "Tables" && (D.val = W({
       tables: /* @__PURE__ */ new Map([
         [
           "columns",
@@ -492,17 +491,17 @@ Promise.all([
           }
         ]
       ])
-    })), z.val === "Report" && (D.val = at({
-      template: vt,
+    })), z.val === "Report" && (D.val = tt({
+      template: ct,
       data: {
         designMomentInput: T,
         designOutputs: U
       }
     }));
   });
-  document.body.append(Y(v), Z({
+  document.body.append(Q(v), Z({
     objects3D: g,
-    solids: ht,
+    solids: pt,
     mesh: r,
     drawingObj: {
       points: f,
@@ -516,12 +515,10 @@ Promise.all([
       solids: false,
       shellResults: "displacementZ"
     }
-  }), q(r), Q({
-    position: "bottom-center"
-  }), dt(), rt({
-    onToolbarClick: ft,
-    onClearPoints: yt
-  }), W({
+  }), it(), nt({
+    onToolbarClick: bt,
+    onClearPoints: gt
+  }), q({
     clickedButton: z,
     buttons: [
       "Tables",
@@ -529,7 +526,7 @@ Promise.all([
     ],
     sourceCode: "https://github.com/madil4/awatif/blob/main/examples/src/slab-designer/main.ts",
     author: "https://www.linkedin.com/in/abderrahmane-mazri-4638a81b8/"
-  }), et({
+  }), Y({
     dialogBody: D
   }));
 });

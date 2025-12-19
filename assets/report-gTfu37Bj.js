@@ -1,9 +1,8 @@
-import { x as s, v as e, d as w, g as $ } from "./styles-9FDjb-ad.js";
-import { a as x } from "./analyze-CmnHHflB.js";
-import { d as y, __tla as __tla_0 } from "./deformCpp-CS-wCYO-.js";
-import { g as z } from "./getParameters-agyy6sUI.js";
-import { g as T } from "./getDialog-BiqeruR6.js";
-import { g as S } from "./getReport-CYLnG9Sc.js";
+import { x as s, v as e, a as w, g as $ } from "./styles-Dp6ubQGB.js";
+import { d as x, a as y, __tla as __tla_0 } from "./deformCpp-BprT8Kg9.js";
+import { g as z } from "./getParameters-C4BmRb7M.js";
+import { g as T } from "./getDialog-OCmRZYi6.js";
+import { g as S } from "./getReport-DmQ4_zmx.js";
 import "./complex-i8qiIvCl.js";
 Promise.all([
   (() => {
@@ -194,7 +193,7 @@ Promise.all([
     <br /><br /><br />
   `;
   }
-  const i = {
+  const c = {
     xPosition: {
       value: e.state(600),
       min: 0,
@@ -205,10 +204,10 @@ Promise.all([
       min: 0,
       max: 500
     }
-  }, l = e.state([]), o = e.state([]), c = e.state({}), d = e.state({}), r = e.state({}), n = e.state({}), v = {
+  }, l = e.state([]), o = e.state([]), i = e.state({}), d = e.state({}), r = e.state({}), n = e.state({}), v = {
     nodes: l,
     elements: o,
-    nodeInputs: c,
+    nodeInputs: i,
     elementInputs: d,
     deformOutputs: r,
     analyzeOutputs: n
@@ -221,9 +220,9 @@ Promise.all([
         0
       ],
       [
-        i.xPosition.value.val,
+        c.xPosition.value.val,
         0,
-        i.zPosition.value.val
+        c.zPosition.value.val
       ],
       [
         250,
@@ -239,7 +238,7 @@ Promise.all([
         1,
         2
       ]
-    ], c.val = {
+    ], i.val = {
       supports: /* @__PURE__ */ new Map([
         [
           0,
@@ -298,7 +297,7 @@ Promise.all([
           100
         ]
       ])
-    }, r.val = y(l.val, o.val, c.val, d.val), n.val = x(l.val, o.val, d.val, r.val);
+    }, r.val = x(l.val, o.val, i.val, d.val), n.val = y(l.val, o.val, d.val, r.val);
   });
   const h = e.state(""), m = e.state(void 0);
   e.derive(() => {
@@ -316,7 +315,7 @@ Promise.all([
     author: "https://www.linkedin.com/in/cal-mense/"
   }), T({
     dialogBody: m
-  }), z(i), $({
+  }), z(c), $({
     mesh: v,
     settingsObj: {
       gridSize: 1e3

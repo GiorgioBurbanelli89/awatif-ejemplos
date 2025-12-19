@@ -1,7 +1,6 @@
-import { v as e, g as z, e as S, b as O, d as I } from "./styles-9FDjb-ad.js";
-import { a as M } from "./analyze-CmnHHflB.js";
-import { d as k, __tla as __tla_0 } from "./deformCpp-CS-wCYO-.js";
-import { g as C } from "./getParameters-agyy6sUI.js";
+import { v as e, g as y, a as z } from "./styles-Dp6ubQGB.js";
+import { d as S, a as O, __tla as __tla_0 } from "./deformCpp-BprT8Kg9.js";
+import { g as I } from "./getParameters-C4BmRb7M.js";
 import "./complex-i8qiIvCl.js";
 Promise.all([
   (() => {
@@ -11,7 +10,7 @@ Promise.all([
     }
   })()
 ]).then(async () => {
-  const o = {
+  const n = {
     dx: {
       value: e.state(2),
       min: 1,
@@ -46,33 +45,33 @@ Promise.all([
       step: 0.5,
       label: "load (kN)"
     }
-  }, f = e.state([]), h = e.state([]), b = e.state({}), g = e.state({}), x = e.state({}), w = e.state({});
+  }, c = e.state([]), f = e.state([]), h = e.state({}), x = e.state({}), b = e.state({}), g = e.state({});
   e.derive(() => {
-    const d = o.dx.value.val, i = o.dy.value.val, n = o.dz.value.val, l = o.divisions.value.val;
+    const d = n.dx.value.val, i = n.dy.value.val, l = n.dz.value.val, o = n.divisions.value.val;
     let s = [], a = [];
-    for (let t = 0; t <= l; t++) s.push([
+    for (let t = 0; t <= o; t++) s.push([
       0,
       0,
-      n * t
+      l * t
     ], [
       d,
       0,
-      n * t
+      l * t
     ], [
       d,
       i,
-      n * t
+      l * t
     ], [
       0,
       i,
-      n * t
+      l * t
     ]);
     s = s.map((t) => [
       6 + t[0],
       6 + t[1],
       t[2]
     ]);
-    for (let t = 0; t < l * 4; ) t += 4, a.push([
+    for (let t = 0; t < o * 4; ) t += 4, a.push([
       t,
       t + 1
     ], [
@@ -88,11 +87,11 @@ Promise.all([
       t,
       t + 2
     ]);
-    for (let t = 0; t < l * 4; t++) a.push([
+    for (let t = 0; t < o * 4; t++) a.push([
       t,
       t + 4
     ]);
-    for (let t = 0; t < l * 4; t += 4) a.push([
+    for (let t = 0; t < o * 4; t += 4) a.push([
       t,
       t + 5
     ], [
@@ -105,7 +104,7 @@ Promise.all([
       t + 1,
       t + 6
     ]);
-    const m = [
+    const u = [
       true,
       true,
       true,
@@ -116,26 +115,26 @@ Promise.all([
       supports: /* @__PURE__ */ new Map([
         [
           0,
-          m
+          u
         ],
         [
           1,
-          m
+          u
         ],
         [
           2,
-          m
+          u
         ],
         [
           3,
-          m
+          u
         ]
       ]),
       loads: /* @__PURE__ */ new Map([
         [
           s.length - 2,
           [
-            o.load.value.val,
+            n.load.value.val,
             0,
             0,
             0,
@@ -144,7 +143,7 @@ Promise.all([
           ]
         ]
       ])
-    }, u = {
+    }, m = {
       elasticities: new Map(a.map((t, p) => [
         p,
         100
@@ -153,26 +152,23 @@ Promise.all([
         p,
         10
       ]))
-    }, c = k(s, a, r, u), y = M(s, a, u, c);
-    f.val = s, h.val = a, b.val = r, g.val = u, x.val = c, w.val = y;
+    }, v = S(s, a, r, m), w = O(s, a, m, v);
+    c.val = s, f.val = a, h.val = r, x.val = m, b.val = v, g.val = w;
   });
-  const v = {
-    nodes: f,
-    elements: h,
-    nodeInputs: b,
-    elementInputs: g,
-    deformOutputs: x,
-    analyzeOutputs: w
-  };
-  document.body.append(C(o), z({
-    mesh: v,
+  document.body.append(I(n), y({
+    mesh: {
+      nodes: c,
+      elements: f,
+      nodeInputs: h,
+      elementInputs: x,
+      deformOutputs: b,
+      analyzeOutputs: g
+    },
     settingsObj: {
       deformedShape: true,
       gridSize: 15
     }
-  }), S(v), O({
-    position: "bottom-center"
-  }), I({
+  }), z({
     sourceCode: "https://github.com/madil4/awatif/blob/main/examples/src/3d-structure/main.ts",
     author: "https://www.linkedin.com/in/madil4/"
   }));

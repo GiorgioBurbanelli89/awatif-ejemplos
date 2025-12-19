@@ -1,5 +1,5 @@
-import { w as k, v as o, g as x, d as C } from "./styles-9FDjb-ad.js";
-import { g as P } from "./getParameters-agyy6sUI.js";
+import { w as k, v as o, g as x, a as C } from "./styles-Dp6ubQGB.js";
+import { g as P } from "./getParameters-C4BmRb7M.js";
 function T({ onToolbarClick: t }) {
   const n = document.createElement("div");
   return n.id = "drawing-toolbar", new k({ name: "toolbar", box: n, items: [{ type: "radio", id: "1st-floor", text: "1st Floor", checked: true }, { type: "radio", id: "2nd-floor", text: "2nd Floor" }], onClick(s) {
