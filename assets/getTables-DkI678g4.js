@@ -1,31 +1,31 @@
-import { j as g, v as h, k as v } from "./styles-9FDjb-ad.js";
+import { l as g, v as h, m as v } from "./styles-E_L73LhH.js";
 function E({ fields: o, data: l }) {
   const n = document.createElement("div"), e = new g({ name: Math.random().toString().substring(2), box: n, selectType: "cell", recordHeight: 26, show: { columnMenu: false, lineNumbers: true }, columns: w(o), records: b(l.rawVal, o) });
   return n.setAttribute("id", "table"), new ResizeObserver(() => e.refresh()).observe(n), e.onChange = (s) => {
     if (!o[s.detail.column]) return;
-    const t = f[s.detail.column];
-    e.records[s.detail.index][t] = s.detail.value.new, l.val = m(e.records, o);
+    const t = m[s.detail.column];
+    e.records[s.detail.index][t] = s.detail.value.new, l.val = f(e.records, o);
   }, e.onDelete = (s) => {
     s.detail.force = true, s.onComplete = () => {
-      l.val = m(e.records, o);
+      l.val = f(e.records, o);
     };
   }, e.onPaste = (s) => {
     s.onComplete = () => {
-      e.mergeChanges(), l.val = m(e.records, o);
+      e.mergeChanges(), l.val = f(e.records, o);
     };
   }, h.derive(() => {
     e.records = b(l.val, o), e.refresh();
   }), n;
 }
-const f = "ABCDEFGHIJKLMNOPRST";
+const m = "ABCDEFGHIJKLMNOPRST";
 function w(o) {
-  return f.split("").map((n) => ({ field: n, text: '<div style="text-align: center">' + n + "</div>", size: "90px", resizable: true, sortable: true, editable: { type: "text" } })).map((n) => {
+  return m.split("").map((n) => ({ field: n, text: '<div style="text-align: center">' + n + "</div>", size: "90px", resizable: true, sortable: true, editable: { type: "text" } })).map((n) => {
     const e = o.find((i) => i.field === n.field);
     return e ? { ...n, ...e } : n;
   });
 }
 function b(o, l) {
-  const n = Array.isArray(o) ? o : s(o, l), e = Array(50).fill(0).map((t, r) => ({ recid: r })), i = f.split("");
+  const n = Array.isArray(o) ? o : s(o, l), e = Array(50).fill(0).map((t, r) => ({ recid: r })), i = m.split("");
   for (let t = 0; t < n.length; t++) for (let r = 0; r < n[t].length; r++) e[t][i[r]] = n[t][r];
   return e;
   function s(t, r) {
@@ -33,12 +33,12 @@ function b(o, l) {
     return r.forEach((u) => d.set(u.field, u)), Object.keys(t).map((u) => [d.get(u).text, t[u]]);
   }
 }
-function m(o, l) {
-  if (f.includes(l[0].field)) return e(o, l);
+function f(o, l) {
+  if (m.includes(l[0].field)) return e(o, l);
   return i(o, l);
   function e(s, t) {
     let r = [...Array(s.length)].map(() => [...Array(t.length)]);
-    const d = f.split("");
+    const d = m.split("");
     for (let c = 0; c < r.length; c++) for (let a = 0; a < r[c].length; a++) r[c][a] = s[c][d[a]] ?? "";
     return r.slice(0, u(r) + 1);
     function u(c) {
