@@ -1,6 +1,7 @@
-import { v as a, g as I, a as z } from "./styles-Dp6ubQGB.js";
-import { d as M, a as C, __tla as __tla_0 } from "./deformCpp-BprT8Kg9.js";
-import { g as _ } from "./getParameters-C4BmRb7M.js";
+import { v as a, g as z, e as M, b as C, d as _ } from "./styles-9FDjb-ad.js";
+import { a as k } from "./analyze-CmnHHflB.js";
+import { d as N, __tla as __tla_0 } from "./deformCpp-CS-wCYO-.js";
+import { g as j } from "./getParameters-agyy6sUI.js";
 import "./complex-i8qiIvCl.js";
 Promise.all([
   (() => {
@@ -10,7 +11,7 @@ Promise.all([
     }
   })()
 ]).then(async () => {
-  const o = {
+  const n = {
     span: {
       value: a.state(15),
       min: 5,
@@ -52,21 +53,21 @@ Promise.all([
       step: 1,
       label: "load (kN)"
     }
-  }, c = a.state([]), d = a.state([]), v = a.state({}), h = a.state({}), f = a.state({}), b = a.state({});
+  }, d = a.state([]), v = a.state([]), h = a.state({}), f = a.state({}), g = a.state({}), b = a.state({});
   a.derive(() => {
-    const g = o.span.value.val, e = o.divisions.value.val, w = o.height.value.val, y = o.elasticity.value.val * 1e6, x = o.area.value.val * 1e-4, O = o.load.value.val, l = [], s = [], i = g / e, p = [];
+    const w = n.span.value.val, e = n.divisions.value.val, y = n.height.value.val, x = n.elasticity.value.val * 1e6, S = n.area.value.val * 1e-4, O = n.load.value.val, l = [], s = [], u = w / e, p = [];
     for (let t = 0; t <= e; t++) {
-      const n = [
-        i * t,
+      const o = [
+        u * t,
         0,
         0
       ];
-      l.push(n), p.push(n);
+      l.push(o), p.push(o);
     }
     for (let t = 0; t <= e; t++) l.push([
-      i * t,
+      u * t,
       0,
-      w
+      y
     ]);
     for (let t = 0; t < e; t++) s.push([
       t,
@@ -112,8 +113,8 @@ Promise.all([
           ]
         ]
       ]),
-      loads: new Map(p.map((t, n) => [
-        n,
+      loads: new Map(p.map((t, o) => [
+        o,
         [
           0,
           0,
@@ -123,31 +124,34 @@ Promise.all([
           0
         ]
       ]))
-    }, u = {
-      elasticities: new Map(s.map((t, n) => [
-        n,
-        y
-      ])),
-      areas: new Map(s.map((t, n) => [
-        n,
+    }, i = {
+      elasticities: new Map(s.map((t, o) => [
+        o,
         x
+      ])),
+      areas: new Map(s.map((t, o) => [
+        o,
+        S
       ]))
-    }, m = M(l, s, r, u), S = C(l, s, u, m);
-    c.val = l, d.val = s, v.val = r, h.val = u, f.val = m, b.val = S;
+    }, m = N(l, s, r, i), I = k(l, s, i, m);
+    d.val = l, v.val = s, h.val = r, f.val = i, g.val = m, b.val = I;
   });
-  document.body.append(_(o), I({
-    mesh: {
-      nodes: c,
-      elements: d,
-      nodeInputs: v,
-      elementInputs: h,
-      deformOutputs: f,
-      analyzeOutputs: b
-    },
+  const c = {
+    nodes: d,
+    elements: v,
+    nodeInputs: h,
+    elementInputs: f,
+    deformOutputs: g,
+    analyzeOutputs: b
+  };
+  document.body.append(j(n), z({
+    mesh: c,
     settingsObj: {
       deformedShape: true
     }
-  }), z({
+  }), M(c), C({
+    position: "bottom-center"
+  }), _({
     sourceCode: "https://github.com/madil4/awatif/blob/main/examples/src/truss/main.ts",
     author: "https://www.linkedin.com/in/madil4/"
   }));

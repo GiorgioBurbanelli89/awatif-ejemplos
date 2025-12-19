@@ -1,6 +1,7 @@
-import { v as t, g as d, a as c } from "./styles-Dp6ubQGB.js";
-import { d as h, a as g, __tla as __tla_0 } from "./deformCpp-BprT8Kg9.js";
-import { g as w } from "./getParameters-C4BmRb7M.js";
+import { v as e, g as c, e as g, b as h, d as w } from "./styles-9FDjb-ad.js";
+import { a as f } from "./analyze-CmnHHflB.js";
+import { d as b, __tla as __tla_0 } from "./deformCpp-CS-wCYO-.js";
+import { g as M } from "./getParameters-agyy6sUI.js";
 import "./complex-i8qiIvCl.js";
 Promise.all([
   (() => {
@@ -12,24 +13,24 @@ Promise.all([
 ]).then(async () => {
   const n = {
     length: {
-      value: t.state(10),
+      value: e.state(10),
       min: 1,
       max: 20
     },
     height: {
-      value: t.state(10),
+      value: e.state(10),
       min: 1,
       max: 10
     },
     xLoad: {
-      value: t.state(10),
+      value: e.state(10),
       min: 0,
       max: 10
     }
-  }, l = t.state([]), e = t.state([]), m = t.state({}), o = t.state({}), r = t.state({}), u = t.state({});
-  t.derive(() => {
-    const p = n.length.value.val, v = n.height.value.val, i = n.xLoad.value.val;
-    l.val = [
+  }, o = e.state([]), t = e.state([]), m = e.state({}), l = e.state({}), r = e.state({}), u = e.state({});
+  e.derive(() => {
+    const p = n.length.value.val, i = n.height.value.val, d = n.xLoad.value.val;
+    o.val = [
       [
         0,
         0,
@@ -38,19 +39,19 @@ Promise.all([
       [
         0,
         0,
-        v
+        i
       ],
       [
         p,
         0,
-        v
+        i
       ],
       [
         p,
         0,
         0
       ]
-    ], e.val = [
+    ], t.val = [
       [
         0,
         1
@@ -92,7 +93,7 @@ Promise.all([
         [
           2,
           [
-            i,
+            d,
             0,
             0,
             0,
@@ -101,46 +102,49 @@ Promise.all([
           ]
         ]
       ])
-    }, o.val = {
-      elasticities: new Map(e.val.map((s, a) => [
+    }, l.val = {
+      elasticities: new Map(t.val.map((s, a) => [
         a,
         10
       ])),
-      shearModuli: new Map(e.val.map((s, a) => [
+      shearModuli: new Map(t.val.map((s, a) => [
         a,
         10
       ])),
-      areas: new Map(e.val.map((s, a) => [
+      areas: new Map(t.val.map((s, a) => [
         a,
         10
       ])),
-      torsionalConstants: new Map(e.val.map((s, a) => [
+      torsionalConstants: new Map(t.val.map((s, a) => [
         a,
         10
       ])),
-      momentsOfInertiaY: new Map(e.val.map((s, a) => [
+      momentsOfInertiaY: new Map(t.val.map((s, a) => [
         a,
         10
       ])),
-      momentsOfInertiaZ: new Map(e.val.map((s, a) => [
+      momentsOfInertiaZ: new Map(t.val.map((s, a) => [
         a,
         10
       ]))
-    }, r.val = h(l.val, e.val, m.val, o.val), u.val = g(l.val, e.val, o.val, r.val);
+    }, r.val = b(o.val, t.val, m.val, l.val), u.val = f(o.val, t.val, l.val, r.val);
   });
-  document.body.append(w(n), d({
-    mesh: {
-      nodes: l,
-      elements: e,
-      nodeInputs: m,
-      elementInputs: o,
-      deformOutputs: r,
-      analyzeOutputs: u
-    },
+  const v = {
+    nodes: o,
+    elements: t,
+    nodeInputs: m,
+    elementInputs: l,
+    deformOutputs: r,
+    analyzeOutputs: u
+  };
+  document.body.append(M(n), c({
+    mesh: v,
     settingsObj: {
       deformedShape: true
     }
-  }), c({
+  }), g(v), h({
+    position: "bottom-center"
+  }), w({
     sourceCode: "https://github.com/madil4/awatif/blob/main/examples/src/beams/main.ts",
     author: "https://www.linkedin.com/in/madil4/"
   }));

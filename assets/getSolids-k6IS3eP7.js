@@ -1,6 +1,6 @@
 import { g as ee, __tla as __tla_0 } from "./getMesh-DmUdekin.js";
 import { a as Z, s as V, n as te, c as ne, d as se, m as oe } from "./pureFunctionsAny.generated-Dh3LO6N2.js";
-import { e as re, B as C, b as ie, F as le, f as q, M as ae, h as ue, S as W, P as ce, E as F, i as _, j as L } from "./styles-Dp6ubQGB.js";
+import { l as re, B as C, h as ie, i as le, m as q, M as ae, n as ue, S as W, P as ce, E as F, o as j, p as L } from "./styles-9FDjb-ad.js";
 let Ee, Me, Ae, Te, xe;
 let __tla = Promise.all([
   (() => {
@@ -64,7 +64,7 @@ let __tla = Promise.all([
           const A = T.get(M), S = Y(n, z, A, y);
           S !== null && a.get(Number(i) + 1).set(M, S);
         }
-        const j = (_b = f.get(p)) == null ? void 0 : _b.analysisInput, J = ((_c = j == null ? void 0 : j.material) == null ? void 0 : _c.elasticity) ?? 1, K = (j == null ? void 0 : j.thickness) ?? 1, Q = ((_d = j == null ? void 0 : j.material) == null ? void 0 : _d.poissonsRatio) ?? 1;
+        const _ = (_b = f.get(p)) == null ? void 0 : _b.analysisInput, J = ((_c = _ == null ? void 0 : _.material) == null ? void 0 : _c.elasticity) ?? 1, K = (_ == null ? void 0 : _.thickness) ?? 1, Q = ((_d = _ == null ? void 0 : _.material) == null ? void 0 : _d.poissonsRatio) ?? 1;
         $.forEach((M) => {
           s.elasticities.set(M, J), s.thicknesses.set(M, K), s.poissonsRatios.set(M, Q);
         });
@@ -359,14 +359,14 @@ let __tla = Promise.all([
       return O(r);
       function i(g, y = 0) {
         const G = [], p = [];
-        for (let b = 0; b < g.length; b++) p.push(new _(g[b][0], g[b][1]));
+        for (let b = 0; b < g.length; b++) p.push(new j(g[b][0], g[b][1]));
         let x = new q(new Float32Array([
           y,
           0,
           0
         ]), 3);
         for (let b = 0; b < p.length; b++) {
-          let w = new _().subVectors(p[b - 1 < 0 ? p.length - 1 : b - 1], p[b]), B = new _().subVectors(p[b + 1 == p.length ? 0 : b + 1], p[b]), E = (B.angle() - w.angle()) * 0.5, I = B.angle() + Math.PI * 0.5, U = Math.tan(E - Math.PI * 0.5), P = new L().set(1, 0, 0, 0, -U, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1), R = I, H = new L().set(Math.cos(R), -Math.sin(R), 0, 0, Math.sin(R), Math.cos(R), 0, 0, 0, 0, 1, 0, 0, 0, 0, 1), k = new L().set(1, 0, 0, p[b].x, 0, 1, 0, p[b].y, 0, 0, 1, 0, 0, 0, 0, 1), N = x.clone();
+          let w = new j().subVectors(p[b - 1 < 0 ? p.length - 1 : b - 1], p[b]), B = new j().subVectors(p[b + 1 == p.length ? 0 : b + 1], p[b]), E = (B.angle() - w.angle()) * 0.5, I = B.angle() + Math.PI * 0.5, U = Math.tan(E - Math.PI * 0.5), P = new L().set(1, 0, 0, 0, -U, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1), R = I, H = new L().set(Math.cos(R), -Math.sin(R), 0, 0, Math.sin(R), Math.cos(R), 0, 0, 0, 0, 1, 0, 0, 0, 0, 1), k = new L().set(1, 0, 0, p[b].x, 0, 1, 0, p[b].y, 0, 0, 1, 0, 0, 0, 0, 1), N = x.clone();
           N.needsUpdate = true, N.applyMatrix4(P), N.applyMatrix4(H), N.applyMatrix4(k), G.push([
             N.getX(0),
             N.getY(0),

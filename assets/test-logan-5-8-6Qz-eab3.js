@@ -1,5 +1,6 @@
-import { g as l, v as o, a as c } from "./styles-Dp6ubQGB.js";
-import { d as i, a as f, __tla as __tla_0 } from "./deformCpp-BprT8Kg9.js";
+import { g as l, v as o, d as c } from "./styles-9FDjb-ad.js";
+import { a as i } from "./analyze-CmnHHflB.js";
+import { d as f, __tla as __tla_0 } from "./deformCpp-CS-wCYO-.js";
 import "./complex-i8qiIvCl.js";
 Promise.all([
   (() => {
@@ -44,7 +45,7 @@ Promise.all([
       3,
       0
     ]
-  ], u = 2e11, p = 6e10, g = 625e-5, w = 4e-5, M = 4e-5, y = 2e-5, I = -2e5, x = -1e5, d = {
+  ], p = 2e11, u = 6e10, g = 625e-5, w = 4e-5, M = 4e-5, y = 2e-5, I = -2e5, x = -1e5, d = {
     supports: /* @__PURE__ */ new Map([
       [
         1,
@@ -96,11 +97,11 @@ Promise.all([
   }, n = {
     elasticities: new Map(t.map((a, e) => [
       e,
-      u
+      p
     ])),
     shearModuli: new Map(t.map((a, e) => [
       e,
-      p
+      u
     ])),
     areas: new Map(t.map((a, e) => [
       e,
@@ -118,7 +119,7 @@ Promise.all([
       e,
       y
     ]))
-  }, r = i(s, t, d, n), O = f(s, t, n, r), m = ((_a = r.deformations) == null ? void 0 : _a.get(0)) || [
+  }, r = f(s, t, d, n), O = i(s, t, n, r), m = ((_a = r.deformations) == null ? void 0 : _a.get(0)) || [
     0,
     0,
     0,
@@ -127,7 +128,7 @@ Promise.all([
     0
   ];
   console.log("TEST: Logan 5.8 - 3D Space Frame");
-  console.log("E =", u / 1e9, "GPa, G =", p / 1e9, "GPa");
+  console.log("E =", p / 1e9, "GPa, G =", u / 1e9, "GPa");
   console.log("Node 0 displacement:");
   console.log("  Uy =", (m[1] * 1e3).toFixed(4), "mm (expected: -0.336 mm)");
   console.log("  Rx =", (m[3] * 1e3).toFixed(4), "mrad (expected: -3.75 mrad)");
